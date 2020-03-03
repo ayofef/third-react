@@ -6,7 +6,7 @@ const LandingCard = (props) => {
 
 
     return(
-        <div className={"landing2-card__card" + props.identifier}>
+        <div className={["landing2-card__card", props.identifier].join(" ")}>
             <Link to={props.link}>
                 <img className="landing2-card__img" src={props.cardImg} alt={props.alt} />
                 <img className="landing2-card__logo" src={props.cardLogo} alt={props.alt} />

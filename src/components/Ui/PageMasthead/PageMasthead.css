@@ -1,0 +1,28 @@
+@media screen and (max-width: 37.5em) {
+  .responsive-masthed {
+    width: 160px !important;
+    opacity: 1 !important; 
+    overflow-y: scroll;
+    
+  }
+
+  .d-none-md{
+    color: #fff;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }   
+  
+  
+  
+  .main-navigation__resources--dropdown{
+      display: block;
+      transform: scaleY(1);
+      margin-bottom: 7rem;
+      background-color: #333;
+      box-shadow: none;
+  }
+
+
+
+}

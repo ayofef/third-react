@@ -5,8 +5,8 @@ const MastheadHome = (props) => {
 
 
     return(
-        <div className="masthead__logo">
-            <Link to="/index">Home</Link>
+        <div className="landing-masthead__logo">
+            <Link to="/" className="landing-masthead__logo--link">Home</Link>
         </div>
     );
 
