@@ -12,27 +12,27 @@ function SectionLeagues(props) {
             <div className="container">
                 <h2 className={["u-heading", "u-center", `${props.identifier + "-heading"}`].join(" ")}>LEAGUES</h2>
                 <div className="leagues-box">
-                    <LeagueStar identifier="premier" committe="cufl" star="leagues__card--icon-premier-star" path="/" heading="Premier Division">
+                    <LeagueStar identifier="premier" committe="cufl" star="leagues__card--icon-premier-star" path="/cufl/leagues/premier-division" heading="Premier Division">
                         <p>North</p>
                         <p>South</p>
                     </LeagueStar>
-                    <LeagueCard identifier="d1" committe="cufl" path="/" heading="Division 1">
+                    <LeagueCard identifier="d1" committe="cufl" path="/cufl/leagues/division-one" heading="Division 1">
                         <p>North</p>
                         <p>South</p>
                     </LeagueCard>
-                    <LeagueCard identifier="d2" committe="cufl" path="/" heading="Division 2">
+                    <LeagueCard identifier="d2" committe="cufl" path="/cufl/leagues/division-two" heading="Division 2">
                         <p>Group A</p>
                         <p>Group B</p>
                         <p>Group C</p>
                         <p>Group D</p>
                     </LeagueCard>
-                    <LeagueStar identifier="d3" committe="cufl" path="/" star="" heading="Division 3">
+                    <LeagueStar identifier="d3" committe="cufl" path="/cufl/leagues/division-three" star="" heading="Division 3">
                         <p>Group A</p>
                         <p>Group B</p>
                         <p>Group C</p>
                         <p>Group D</p>
                     </LeagueStar>
-                    <LeagueCard identifier="d4" committe="cufl" path="/" heading="Division 4">
+                    <LeagueCard identifier="d4" committe="cufl" path="/cufl/leagues/division-four" heading="Division 4">
                         <p>Group A</p>
                         <p>Group B</p>
                         <p>Group C</p>
@@ -40,7 +40,7 @@ function SectionLeagues(props) {
                     </LeagueCard>
                 </div>
                 <div className="leagues__form u-center">
-                    <Link to="/" className="btn leagues__link">Leagues 
+                    <Link to="/cufl/leagues/premier-division" className="btn leagues__link">Leagues 
                     <span><svg className="arrow-button-icon">
                                 <use xlinkHref={sprite + "#icon-chevron-right"}></use>
                             </svg>

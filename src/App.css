@@ -1668,11 +1668,9 @@
     .subnav__links {
       font-size: .9rem;
       padding: 1.2rem 0.2rem; } }
-
-.subnav__active {
-  border-bottom: 2px solid rgba(255, 0, 0, 0.6); }
   .subnav__active--link {
-    font-weight: 600; }
+    font-weight: 600; 
+    background-color: rgba(255, 0, 0, 0.6);}
 
 .latest-fixtures {
   background-image: url("assets/images/jc-gellidon-XmYSlYrupL8-unsplash.jpg");
