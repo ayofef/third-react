@@ -1,11 +1,8 @@
 import React from "react";
-import gql from "graphql-tag";
-import { useQuery } from "@apollo/react-hooks";
-
 
 import Masthead from "../../components/Ui/Masthead/Masthead";
 import LandingCard from "../../components/Ui/LandingCard/LandingCard";
-import Loader from "../../components/Ui/Loader/Loader";
+
 
 
 import Cufl from "../../assets/images/markus.jpg";
@@ -22,26 +19,7 @@ import WscaiLogo from "../../assets/images/indesign.png";
 
 
 
-const getLandingData = gql`
-    query($id: ID){
-        landingPages(where: {id: $id}){
-        bannerLarge,
-        bannerSmall
-        id
-        }
-    }
-
-
-
-`;
-
-function Landing() {
-    const { loading, error, data } = useQuery(getLandingData, {variables: { "id" : "ck6rpq0f8b3qx0b20rv5shcc6" }});
-
-  if (loading) return (
-    <Loader />
-  );
-  if (error) return `Error! ${error.message}`;
+function Landing() { 
   return (
     <React.Fragment>
         <div className="landing2-container">
@@ -58,10 +36,10 @@ function Landing() {
                         <div className="landing2-content">
                             <div className="landing2__banner">
                                 <h1 className="landing2__banner--heading">
-                                    {data.landingPages[0].bannerLarge}
+                                    Welcome to FAI's
                                 </h1>
                                 <p className="landing2__banner--paragraph">
-                                {data.landingPages[0].bannerSmall}
+                                    Third Level Football
                                 </p>
                             </div> 
 
@@ -119,4 +97,4 @@ function Landing() {
 
 
 
-export default Landing;
+export default React.memo(Landing);
