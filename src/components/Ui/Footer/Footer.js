@@ -60,7 +60,7 @@ function footer (props) {
                 </div>
                 <div className="footer__content">
                     <img src={Fai} alt="Fai's Logo" className="footer__content--img"/>
-                    <Link to="/fai-data-policies" className="footer__content--link">Legal & Privacy</Link>
+                    <Link to="/data-policies" className="footer__content--link">Legal & Privacy</Link>
                     <p className="footer__content--text">
                         COPYRIGHT &copy; <span>{thisYear}</span>, CUFL
                     </p>

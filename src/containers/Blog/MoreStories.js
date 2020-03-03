@@ -37,7 +37,7 @@ function MoreStories(props) {
   return (
       
         <div className="more-stories">
-            <h3 className="more-stories__header">More Stories</h3>
+            <h3 className="more-stories__header">Blog</h3>
             {data.blogs.map(el => <div className="blog-posts__card" key={el.id}>
                 <div className="blog-posts__card--image">
                     <img className="blog-posts__card--image-img" src={el.postImage.url} alt={el.imageDesc} />

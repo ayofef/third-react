@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import sprite from "../../../assets/images/sprite.svg";
 import PropTypes from "prop-types";
-
+import "./SectionResources.css";
 
 
 
@@ -82,7 +82,7 @@ function SectionFutsal(props) {
 
                     <div className="resources__referee" id={props.identifier + "-referee"} >
                         <h3 className={["u-bold", "resources__sub-heading", `${props.identifier + "-heading"}`].join(" ")}>Referees</h3>
-                        <div className="resources__referee-box" style={{height: collapse ? "100%" : "40rem"}}>
+                        <div className={["resources__referee-box", `${ collapse ? "complete__ref" : "collapsible__ref"}`].join(" ")}>
                             {props.children}
                         </div>
                     </div>

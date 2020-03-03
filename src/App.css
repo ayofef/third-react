@@ -617,6 +617,25 @@
   object-position: 50%, 50%; 
 
 }
+.rules__forms{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 37.5em) {
+  .rules__forms{
+    flex-direction: column;
+  }
+}
+.rules__link{
+  margin: 0 2rem;
+}
+@media screen and (max-width: 37.5em) {
+  .rules__link{
+    margin: 2rem 0;
+  }
+}
 
 
 .rules__subhead {
@@ -786,8 +805,6 @@
 .international__link {
   margin-top: 4rem; }
 
-.committee {
-  margin-bottom: 5rem; }
   .committee__container {
     display: flex;
     flex-flow: row wrap;
@@ -975,7 +992,8 @@
     margin-bottom: 3rem; }
     @media screen and (max-width: 37.5em) {
       .resources__referee-box--card {
-        width: 100%; } }
+        width: 100%;
+        margin: 0; } }
     .resources__referee-box--card-sub-heading {
       display: inline-block;
       padding: 1.2rem 4rem;
@@ -1432,9 +1450,7 @@
 
 /*single blog-post*/
 
-  @media screen and (max-width: 37.5em) {
-    .blog-single {
-      margin-top: 6rem; } }
+  
   .blog-single__container {
     display: flex;
     flex-flow: row wrap;
@@ -2223,5 +2239,68 @@
   }
 
 
+
+.data-pdf{
+  padding: 1.5rem 0 3rem 0;
+  border-bottom: 1px solid rgba(0,0,0, .2);
+  display: block;
+}
+.data__link{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  color: #333;
+}
+
+
   
+.data-pdf__img{
+  height: 4rem;
+  display: inline-block;
+  margin-right: 2rem;
+  transform: translateY(1.2rem);
+}
+
+.data-pdf__text{
+  font-weight: 600;
+  flex: 1;
+  display: inline-block;
+  font-size: 2rem;
+  padding-top: 1rem;
+  color: #333;
+  transition: color .3s ease-out;
+}
+.data-pdf__text:hover,
+.data-pdf__text:active{
+  color: #777;
+}
+.data-pdf__text-span{
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 31.25em) {
+  .data-pdf__img{
+    height: 2rem;
+    transform: translateY(.2rem);
+  }
+  .data-pdf__text{
+    font-size: 1.5rem;
+  }
+  .data-pdf{
+    display: block;
+  }
+}
+@media screen and (max-width: 21.87em) {
+  .data-pdf__img{
+    height: 2rem;
+    transform: translateY(.2rem);
+  }
+  .data-pdf__text{
+    font-size: 1.3rem;
+  }
+  .data-pdf{
+    display: block;
+  }
+}
 

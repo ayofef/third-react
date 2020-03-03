@@ -12,6 +12,7 @@ import IufuPage from "../Iufu/Iufu";
 import WscaiPage from "../Wscai/Wscai";
 import Blogs from "../Blog/Blogs";
 import BlogSingle from "../Blog/Blog-single";
+import DataPolicies from "../DataPrivacy/DataPrivacy";
 
 
 class Layout extends Component {
@@ -32,6 +33,7 @@ class Layout extends Component {
                     <Route path="/wscai" exact component ={WscaiPage} />
                     <Route path="/blog" exact component ={Blogs} />
                     <Route path="/blog/:slug" exact component ={BlogSingle} />
+                    <Route path="/data-policies" exact component ={DataPolicies} />
                     {/* <Route component ={Landing} />  */}
                 </Switch>
             </React.Fragment>

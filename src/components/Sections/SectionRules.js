@@ -25,13 +25,22 @@ function SectionRules(props) {
                                     
                                 </ul>
                             </div>
-                            <a className="rules__link btn" href={props.rulePdf} download>
-                                <span>
-                                    <svg className="download-button-icon">
-                                        <use xlinkHref={sprite + "#icon-download"}></use>
-                                    </svg>
-                                </span> Competition Rules
-                            </a>
+                            <div className="rules__forms">
+                                <a className="rules__link btn" href={props.rulePdf} download target="_blank" rel="noopener noreferrer">
+                                    <span>
+                                        <svg className="download-button-icon">
+                                            <use xlinkHref={sprite + "#icon-download"}></use>
+                                        </svg>
+                                    </span> Competition Rules
+                                </a>
+                                <a className="rules__link btn" href={props.formPdf} download target="_blank" rel="noopener noreferrer">
+                                    <span>
+                                        <svg className="download-button-icon">
+                                            <use xlinkHref={sprite + "#icon-download"}></use>
+                                        </svg>
+                                    </span> Competition Form
+                                </a>
+                            </div>
                         </div>
                     </section>
     );
@@ -47,7 +56,8 @@ SectionRules.propTypes = {
     ruleTwo: PropTypes.string.isRequired,
     ruleThree: PropTypes.string.isRequired,
     ruleFour: PropTypes.string.isRequired,
-    rulePdf: PropTypes.string.isRequired
+    rulePdf: PropTypes.string.isRequired,
+    formPdf: PropTypes.string.isRequired
 }
 
 export default SectionRules;

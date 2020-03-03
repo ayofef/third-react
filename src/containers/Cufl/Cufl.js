@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 import Loader from "../../components/Ui/Loader/Loader";
+import Error from "../../components/Ui/Error/Error";
 
 import CuflNav from "../../components/Ui/PageMasthead/CuflNavs/CuflNavs";
 import "./Cufl.css";
@@ -11,7 +12,6 @@ import Footer from "../../components/Ui/Footer/Footer";
 
 import Emblem from "../../components/Sections/SectionEmblem";
 import About from "../../components/Sections/SectionAbout";
-import Competiton from "../../components/Sections/SectionCompetition";
 import Rules from "../../components/Sections/SectionRules";
 import Leagues from "../../components/Sections/SectionLeague/SectionLeagues";
 import International from "../../components/Sections/SectionInternational";
@@ -88,7 +88,7 @@ const getCuflPageData = gql`
             }
         
         },
-        cuflRefereeses{
+        cuflRefereeses(orderBy: refereeCounty_ASC){
             id,
             refereeName,
             refereeEmail,
@@ -106,16 +106,13 @@ function Cufl() {
 
     const [nav, setNav] = useState(false);
 
-    const { loading, error, data } = useQuery(getCuflPageData, {variables: { "id" : "ck6rpq0f8b3qx0b20rv5shcc6" }});
+    const { loading, error, data } = useQuery(getCuflPageData);
 
     
 
-    if (loading) return (
-    <Loader />
-    );
-    console.log(data);
+    if (loading) return <Loader /> ;
 
-    if (error) return `Error! ${error.message}`;
+    if (error) return <Error /> ;
 
 
 
@@ -141,12 +138,6 @@ function Cufl() {
                             imageDesc={data.cuflPages[0].cuflAboutImageDesc}
                             path="/blog"
                         />
-                        <Competiton 
-                            identifier="cufl"
-                            context={data.cuflPages[0].competitionText}
-                            competitionPdf={data.cuflPages[0].competitionForm.url}
-                            
-                        />
                         <Rules 
                             identifier="cufl"
                             ruleImage={data.cuflPages[0].rulesImage.url}
@@ -157,6 +148,7 @@ function Cufl() {
                             ruleThree={data.cuflPages[0].ruleThree}
                             ruleFour={data.cuflPages[0].ruleFour}
                             rulePdf={data.cuflPages[0].rulesPdf.url}
+                            formPdf={"###"}
 
                         />
                         <Leagues identifier="cufl" />
@@ -204,4 +196,4 @@ function Cufl() {
     );
 }
 
-export default Cufl;
+export default React.memo(Cufl);
