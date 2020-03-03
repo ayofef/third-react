@@ -606,8 +606,18 @@
         .rule-list-box > :not(:last-child) > * {
           border-left: 2px dashed #333; } }
 
+
+.rules__image{
+    height: 30rem;
+}
 .rules__img {
-  width: 100%; }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%, 50%; 
+
+}
+
 
 .rules__subhead {
   font-size: 2rem;
@@ -2211,3 +2221,7 @@
     cursor: pointer;
     fill: #333;
   }
+
+
+  
+

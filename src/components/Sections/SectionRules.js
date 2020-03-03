@@ -9,8 +9,10 @@ function SectionRules(props) {
     return(
         <section className={["rules", `${props.identifier + "-rules"}`].join(" ")} id={props.identifier + "-rules"}>
                         <div className="container">
-                            <h2 className="u-heading cufl-heading">RULES</h2>
-                            <img className="rules__img" src={props.ruleImage} alt={props.ruleImageDesc} />
+                            <h2 className={["u-heading", `${props.identifier + "-heading"}`].join(" ")}>RULES</h2>
+                            <div className="rules__image">
+                                <img className="rules__img" src={props.ruleImage} alt={props.ruleImageDesc} />
+                            </div>
                             <p className="rules__subhead">{props.ruleWhose}</p>
                             <div className="rule-list-box">
                                 <ul className="rules__list">
