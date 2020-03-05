@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import gql from "graphql-tag";
+import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import Loader from "../../components/Ui/Loader/Loader";
 import Error from "../../components/Ui/Error/Error";

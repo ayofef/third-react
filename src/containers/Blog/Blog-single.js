@@ -1,5 +1,5 @@
 import React from "react";
-import gql from "graphql-tag";
+import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import sprite from "../../assets/images/sprite.svg";
 import { useHistory, useParams } from "react-router-dom";

@@ -1,6 +1,6 @@
 import React from "react";
 import createPersistedState from "use-persisted-state";
-import gql from "graphql-tag";
+import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import sprite from "../../assets/images/sprite.svg";
 import { Link } from 'react-router-dom';
