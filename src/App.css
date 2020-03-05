@@ -1646,7 +1646,7 @@
 .subnav__list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: #e7dcdc; }
 
@@ -2301,4 +2301,5 @@
     display: block;
   }
 }
+
 

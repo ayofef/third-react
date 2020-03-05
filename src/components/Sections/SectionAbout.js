@@ -3,12 +3,13 @@ import sprite from "../../assets/images/sprite.svg";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+
 function SectionAbout(props) {
 
 
 
     return(
-        <section className={["about", `${props.identifier + "-about"}`].join(" ")} id={props.identifier + "-about"}>
+        <section className={["about", `${props.identifier + "-about"}`].join(" ")} id={props.identifier + "-about"} id="trigger1">
             <div className="container">
                 <div className="about__container">
                     <div className="about__text">
@@ -25,6 +26,7 @@ function SectionAbout(props) {
                     <div className="about__image">
                         <img className="about__image--img" src={props.image} alt={props.imageDesc} />
                     </div>
+
                 </div>
             </div>
         </section>

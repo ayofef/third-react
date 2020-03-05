@@ -1,0 +1,51 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+
+
+
+function fixturesCard (props) {
+
+    return(
+        
+        <div className="fixtures-card">
+            <div className="fixtures-card__dates">
+                <p>{props.time}</p>
+                <p className="fixtures-card__dates--day">{props.date}</p>
+                <p>{props.venue}</p>
+            </div>
+            <div className="fixtures-card__details">
+                <div className="fixtures-card__details--box fixtures-card__details--box-first">
+                    <p className="fixtures-card__details--text">{props.homeName}</p>
+                    <img src={props.homeLogo} alt={props.homeName} className="fixtures-card__details--img" />
+                    <p className="fixtures-card__details--score">{props.homeScore}</p>
+                </div>
+                <p className="fixtures-card__vs">-</p>
+                <div className="fixtures-card__details--box fixtures-card__details--box-second">
+                    <p className="fixtures-card__details--score">{props.awayScore}</p>
+                    <img src={props.awayLogo} alt={props.awayName} className="fixtures-card__details--img" />
+                    <p className="fixtures-card__details--text">{props.awayName}</p>
+                </div>
+            </div>
+        </div>
+        
+
+    );
+
+}
+
+fixturesCard.propTypes = {
+
+    time: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    venue: PropTypes.string.isRequired,
+    homeName: PropTypes.string.isRequired,
+    homeLogo: PropTypes.string.isRequired,
+    homeScore: PropTypes.string.isRequired,
+    awayName: PropTypes.string.isRequired,
+    awayLogo: PropTypes.string.isRequired,
+    awayScore: PropTypes.string.isRequired
+}
+
+
+export default fixturesCard;
