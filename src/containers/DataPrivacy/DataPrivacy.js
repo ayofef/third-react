@@ -48,7 +48,6 @@ const getPolicies = gql`
 function DataPrivacy (){
 
     const { loading, error, data } = useQuery(getPolicies);
-    console.log(data);
     
     
 

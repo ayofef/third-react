@@ -1,0 +1,10 @@
+
+.emptyArrayText{
+    text-align: center;
+    transform: translateY(2rem);
+}
+.emptyArrayTextSpan{
+    transform: translateY(.2rem);
+    display: inline-block;
+    
+}

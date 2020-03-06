@@ -14,19 +14,18 @@ function SectionAbout(props) {
                 <div className="about__container">
                     <div className="about__text">
                         <h2 className={["u-heading", `${props.identifier + "-heading"}`].join(" ")}>ABOUT US</h2>
-                            <p className="u-paragraph">{props.context}</p>
-                            <Link to={props.path} className="btn about__link">Read Our Blog 
-                                <span><svg className="arrow-button-icon" aria-hidden="true">
-                                        <use xlinkHref={sprite + "#icon-chevron-right"}></use>
-                                    </svg>
-                                </span>
-                            </Link>
-                                    
+                        <p className="u-paragraph">{props.context}</p>
+                        <Link to={props.path} className="btn about__link">Read Our Blog 
+                            <span><svg className="arrow-button-icon" aria-hidden="true">
+                                    <use xlinkHref={sprite + "#icon-chevron-right"}></use>
+                                </svg>
+                            </span>
+                        </Link>          
                     </div>
+                
                     <div className="about__image">
                         <img className="about__image--img" src={props.image} alt={props.imageDesc} />
                     </div>
-
                 </div>
             </div>
         </section>

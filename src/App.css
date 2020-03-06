@@ -2140,7 +2140,8 @@
 }
 .select{
   transform: translateY(-1rem);
-}
+ }
+ 
 .blog-post__nav--select {
   background-color: whitesmoke;
   color: #333;
@@ -2336,3 +2337,4 @@
   align-self: center;
 
 }
+
