@@ -20,7 +20,6 @@ import Leagues from "../../components/Leagues/Leagues";
 function Layout(){
 
 
-
     return(
         <React.Fragment>
             <ToTop />

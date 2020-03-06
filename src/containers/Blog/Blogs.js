@@ -1,5 +1,5 @@
 import React from "react";
-import createPersistedState from "use-persisted-state";
+import createPersistedState from 'use-persisted-state';
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import sprite from "../../assets/images/sprite.svg";
@@ -8,7 +8,6 @@ import Error from "../../components/Ui/Error/Error";
 import Loader from "../../components/Ui/Loader/Loader";
 import EmptyMast from "../../components/Ui/Masthead/EmptyMast";
 import Footer from "../../components/Ui/Footer/Footer";
-
 
 
 
@@ -37,13 +36,14 @@ const getBlogPostsData = gql`
 `;
 function Blogs() {
 
+    
 
     const [whose, setWhose] = useCounterState("");
 
 
     const { loading, error, data } = useQuery(getBlogPostsData, {variables: {"orderBy":"postDate_DESC", "where": { "postCategory_contains": whose}}});
 
-
+   
     
     let headerText;
     if(whose === ""){

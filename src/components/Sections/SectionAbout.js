@@ -9,7 +9,7 @@ function SectionAbout(props) {
 
 
     return(
-        <section className={["about", `${props.identifier + "-about"}`].join(" ")} id={props.identifier + "-about"} id="trigger1">
+        <section className={["about", `${props.identifier + "-about"}`].join(" ")} id={props.identifier + "-about"}>
             <div className="container">
                 <div className="about__container">
                     <div className="about__text">
