@@ -1673,7 +1673,7 @@
     background-color: rgba(255, 0, 0, 0.6);}
 
 .latest-fixtures {
-  background-image: url("assets/images/jc-gellidon-XmYSlYrupL8-unsplash.jpg");
+  background-image: url("assets/images//leagues/league-bg.jpg");
   background-size: cover;
   background-position: 20% center; }
 
@@ -2303,3 +2303,36 @@
 }
 
 
+ svg .svg-elem-1 {
+  fill: rgb(255, 255, 255);
+  animation: svg 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 1s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes svg{
+  0%{
+    stroke-dashoffset: 1455.34521484375px;
+    stroke-dasharray: 1455.34521484375px;
+    fill: transparent;
+  
+  }
+
+  100%{
+    stroke-dashoffset: 0;
+    fill: rgb(255, 255, 255);
+  }
+}
+.next-up-fixtures{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.next-up-fixtures svg{
+  transform: translateY(50%);
+  align-self: center;
+
+}

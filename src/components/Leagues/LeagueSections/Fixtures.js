@@ -12,14 +12,24 @@ import fixturesQuery from "../LeaguesQuerys/CuflFixtures";
 
 function LatestImage () {
 
-    const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" ]
+    const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" ];
+
+    const time = (hour, minute) =>{
+        if(hour <= 11){
+            return hour + " : " + minute + " AM";
+        }else if(hour > 11){
+            return (hour - 12) + " : " + minute + " PM"
+        }else if(hour < 1){
+            return (hour) + " : " + minute + " AM"
+        } 
+    }
 
     const location = useLocation();
     let matched;
 
-    if(location.pathname === "/cufl/leagues/premier-division" || "/cufl/leagues/premier-division/fixtures-result"){
+    if((location.pathname === "/cufl/leagues/premier-division") || (location.pathname === "/cufl/leagues/premier-division/fixtures-result")){
       matched = fixturesQuery.premierDivision
-    }else if(location.pathname === "/cufl/leagues/division-one"){
+    }else if((location.pathname === "/cufl/leagues/division-one") || (location.pathname === "/cufl/leagues/division-one/fixtures-result")){
         matched = fixturesQuery.divisionOne
     }
     
@@ -30,7 +40,7 @@ function LatestImage () {
     if (error) return <ErrorMini />;  
     
     
-    if(location.pathname === "/cufl/leagues/premier-division" || "/cufl/leagues/premier-division/fixtures-result"){
+    if((location.pathname === "/cufl/leagues/premier-division") || (location.pathname === "/cufl/leagues/premier-division/fixtures-result")){
     
         return(
             <React.Fragment>
@@ -38,7 +48,7 @@ function LatestImage () {
                 {data.cuflNorthPremierDivisionFixtureses.map(el => (
                     <FixturesCard 
                         key={el.id}
-                        time={`${[el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1]].join(" : ")}`}
+                        time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
                         date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
@@ -56,7 +66,7 @@ function LatestImage () {
                 {data.cuflSouthPremierDivisionFixtureses.map(el => (
                     <FixturesCard 
                         key={el.id}
-                        time={`${[el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1]].join(" : ")}`}
+                        time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
                         date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
@@ -75,8 +85,89 @@ function LatestImage () {
     
         );
 
+    }else if((location.pathname === "/cufl/leagues/division-one") || (location.pathname === "/cufl/leagues/division-one/fixtures-result")){
+
+        return (
+            <React.Fragment>
+            <FixturesBox whose="Group A">
+                {data.cuflDivisionOneGroupAFixtureses.map(el => (
+                    <FixturesCard 
+                        key={el.id}
+                        time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        venue={el.venue}
+                        homeName={el.homeTeamName}
+                        homeLogo={el.homeTeamLogo.url}
+                        homeScore={el.homeTeamScore}
+                        awayScore={el.awayTeamScore}
+                        awayLogo={el.awayTeamLogo.url}
+                        awayName={el.awayTeamName}
+                        
+                    
+                    />
+                ))}
+            </FixturesBox>
+            <FixturesBox whose="Group B">
+                {data.cuflDivisionOneGroupBFixtureses.map(el => (
+                    <FixturesCard 
+                        key={el.id}
+                        time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        venue={el.venue}
+                        homeName={el.homeTeamName}
+                        homeLogo={el.homeTeamLogo.url}
+                        homeScore={el.homeTeamScore}
+                        awayScore={el.awayTeamScore}
+                        awayLogo={el.awayTeamLogo.url}
+                        awayName={el.awayTeamName}
+                        
+                    
+                    />
+                ))}
+            </FixturesBox>
+            <FixturesBox whose="Group C">
+                {data.cuflDivisionOneGroupCFixtureses.map(el => (
+                    <FixturesCard 
+                        key={el.id}
+                        time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        venue={el.venue}
+                        homeName={el.homeTeamName}
+                        homeLogo={el.homeTeamLogo.url}
+                        homeScore={el.homeTeamScore}
+                        awayScore={el.awayTeamScore}
+                        awayLogo={el.awayTeamLogo.url}
+                        awayName={el.awayTeamName}
+                        
+                    
+                    />
+                ))}
+            </FixturesBox>
+            <FixturesBox whose="Group D">
+                {data.cuflDivisionOneGroupDFixtureses.map(el => (
+                    <FixturesCard 
+                        key={el.id}
+                        time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        venue={el.venue}
+                        homeName={el.homeTeamName}
+                        homeLogo={el.homeTeamLogo.url}
+                        homeScore={el.homeTeamScore}
+                        awayScore={el.awayTeamScore}
+                        awayLogo={el.awayTeamLogo.url}
+                        awayName={el.awayTeamName}
+                        
+                    
+                    />
+                ))}
+            </FixturesBox>
+            </ React.Fragment>
+        
+        
+        );
+
     }else{
-        return <Loader />
+        return ( <Loader /> );
     }
 
     

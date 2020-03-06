@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch, useParams, useLocation }from "react-router-dom";
 
 
+
 import Header from "../Ui/PageMasthead/CuflNavs/CuflNavs";
 import Masthead from "../Ui/PageMasthead/PageMasthead";
 import Footer from "../Ui/Footer/Footer"; 
@@ -11,8 +12,7 @@ import LatestImage from "./LeagueSections/LatestImage";
 import SubNav from "./LeagueSections/FixResTable";
 import Fixtures from "./LeagueSections/Fixtures";
 import Standings from "./LeagueSections/Standings";
-
-
+import Svg from "./LeaguesHtml/FixturesHtml/TextSvg";
 
 
 function League (props){
@@ -23,6 +23,23 @@ function League (props){
 
     let match = useLocation();
 
+    let icon;
+
+    if(slug === "premier-division"){
+        icon = Svg.prem
+    }else if(slug === "division-one"){
+        icon = Svg.d1
+    }
+    else if(slug === "division-two"){
+        icon = Svg.d2
+    }else if(slug === "division-three"){
+        icon = Svg.d3
+    }else if(slug === "division-four"){
+        icon = Svg.d4
+    }
+
+    
+
     return(
         <React.Fragment>
         <Masthead> <Header /> </Masthead>
@@ -30,7 +47,9 @@ function League (props){
             <div className="league-main-content">
                 <div className="league-container">
                     <Nav />
-                    <LatestImage />
+                    <LatestImage>
+                        <div>{icon}</div>
+                    </LatestImage>
                     <SubNav slug={slug} match={match.pathname}/>
 
                     <Switch>
