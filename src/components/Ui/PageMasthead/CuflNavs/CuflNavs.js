@@ -1,7 +1,6 @@
 import React from "react";
 import sprite from "../../../../assets/images/sprite.svg";
-import { NavHashLink } from "react-router-hash-link";
-
+import NavLi from "../NavLiHtml/NavLiHtml";
 
 
 function CuflNav(props) {
@@ -9,24 +8,24 @@ function CuflNav(props) {
 
     return(
         <ul className="main-navigation__nav">
-            <li className="main-navigation__nav--item"><NavHashLink to="/cufl/#cufl-about" className="main-navigation__nav--links" onClick={props.clicked}>About Us</NavHashLink></li>
-            <li className="main-navigation__nav--item"><NavHashLink to="/cufl/#cufl-rules" className="main-navigation__nav--links" onClick={props.clicked}>Rules</NavHashLink></li>
-            <li className="main-navigation__nav--item"><NavHashLink to="/cufl/#cufl-leagues" className="main-navigation__nav--links" onClick={props.clicked}>Leagues</NavHashLink></li>
-            <li className="main-navigation__nav--item"><NavHashLink to="/cufl/#cufl-committee" className="main-navigation__nav--links" onClick={props.clicked}>Committee</NavHashLink></li>
-   
+            <NavLi path="/cufl/#cufl-about" name="About Us" clicken={props.clicked}/>
+            <NavLi path="/cufl/#cufl-rules" name="Rules" clicken={props.clicked}/>
+            <NavLi path="/cufl/#cufl-leagues" name="Leagues" clicken={props.clicked}/>
+            <NavLi path="/cufl/#cufl-committee" name="Committee" clicken={props.clicked}/>
+
             <li className="main-navigation__nav--item main-navigation__resources" onClick={props.clicked}>
                 <p href="#" className="main-navigation__nav--links d-none-md">More 
                     <span><svg className="main-navigation__resources--icon">
                     <use xlinkHref={sprite + "#icon-chevron-down"}></use></svg></span>                                            
                 </p>
                     <ul className="main-navigation__resources--dropdown">
-                        <li className="main-navigation__nav--item"><NavHashLink className="main-navigation__nav--links" to="/cufl/#cufl-international">Intl. Team</NavHashLink></li>
-                        <li className="main-navigation__nav--item"><NavHashLink className="main-navigation__nav--links" to="/cufl/#cufl-futsul">Futsul</NavHashLink></li>
-                        <li className="main-navigation__nav--item"><NavHashLink className="main-navigation__nav--links" to="/cufl/#cufl-contacts">Contacts</NavHashLink></li>
-                        <li className="main-navigation__nav--item"><NavHashLink className="main-navigation__nav--links" to="/cufl/#cufl-club-guide">Club Guide</NavHashLink></li>
-                        <li className="main-navigation__nav--item"><NavHashLink className="main-navigation__nav--links" to="/cufl/#cufl-team-sheet">Team Sheet</NavHashLink></li>
-                        <li className="main-navigation__nav--item"><NavHashLink className="main-navigation__nav--links" to="/cufl/#cufl-referee">Referees</NavHashLink></li>
-                        <li className="main-navigation__nav--item"><NavHashLink className="main-navigation__nav--links" to="/blog">Blog</NavHashLink></li>
+                        <NavLi path="/cufl/#cufl-international" name="Intl. Team" />
+                        <NavLi path="/cufl/#cufl-futsul" name="Futsul" />
+                        <NavLi path="/cufl/#cufl-contacts" name="Contacts" />
+                        <NavLi path="/cufl/#cufl-club-guide" name="Club Guide" />
+                        <NavLi path="/cufl/#cufl-team-sheet" name="Team Sheet" />
+                        <NavLi path="/cufl/#cufl-referee" name="Referees" />
+                        <NavLi path="/blog" name="Blog" />
                     </ul>
                 
             </li>
@@ -34,4 +33,4 @@ function CuflNav(props) {
     );
 }
 
-export default CuflNav
+export default CuflNav;
