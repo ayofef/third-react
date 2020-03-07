@@ -1,4 +1,5 @@
 import React from "react";
+import GraphImg from "graphcms-image";
 import createPersistedState from 'use-persisted-state';
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
@@ -22,8 +23,9 @@ const getBlogPostsData = gql`
             imageDesc,
                 postCategory
             postImage {
-            id,
-            url
+            handle,
+            width,
+            height
             },
             postExcerpt,
             postDate,
@@ -78,7 +80,8 @@ function Blogs() {
                 <div className="blog-posts__container">               
                     {data.blogs.map(el => <div className="blog-posts__card" key={el.id}>
                         <div className="blog-posts__card--image">
-                            <img className="blog-posts__card--image-img" src={el.postImage.url} alt={el.imageDesc}/>
+                            {/* <img className="blog-posts__card--image-img" src={el.postImage.url} alt={el.imageDesc}/> */}
+                            <GraphImg image={el.postImage} alt={el.imageDesc} maxWidth={800} className="blog-posts__card--image-img" SameSite="None" Secure/>
                         </div>
                         <div className="blog-posts__card--text">
                             <h3 className="blog-posts__card--text-heading">{el.postHeading}</h3>

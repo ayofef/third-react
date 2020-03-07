@@ -1397,10 +1397,7 @@
   .blog-posts__container > :first-child {
     flex-basis: 100%; }
     .blog-posts__container > :first-child .blog-posts__card--image {
-      height: 30rem; }
-      @media screen and (max-width: 31.25em) {
-        .blog-posts__container > :first-child .blog-posts__card--image {
-          height: 20rem; } }
+      max-height: 30rem; }
       .blog-posts__container > :first-child .blog-posts__card--image-img {
         object-position: 50% 0%; }
 
@@ -1408,7 +1405,7 @@
   flex: 1 1 30rem;
   margin-bottom: 5rem; }
   .blog-posts__card--image {
-    height: 20rem;
+    max-height: 20rem;
     overflow: hidden; }
     .blog-posts__card--image-img {
       width: 100%;
@@ -1880,7 +1877,9 @@
       margin-right: 2rem; }
       @media screen and (max-width: 31.25em) {
         .fixtures-card__details--box-second .fixtures-card__details--score {
-          margin-right: 1rem; } }
+          margin-right: 1rem; } 
+          .fixtures-card__details--box-first .fixtures-card__details--score {
+            margin-left: 1rem; } }
   .fixtures-card__vs {
     margin: 0 1rem;
     font-weight: 600; }
@@ -2304,7 +2303,8 @@
 }
 
 
- svg .svg-elem-1 {
+svg .svg-elem-1 {
+  stroke: whitesmoke;
   fill: rgb(255, 255, 255);
   animation: svg 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 1s;
   animation-fill-mode: backwards;
@@ -2335,6 +2335,5 @@
 .next-up-fixtures svg{
   transform: translateY(50%);
   align-self: center;
-
 }
 

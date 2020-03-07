@@ -15,11 +15,10 @@ import Standings from "./LeagueSections/Standings";
 import Svg from "./LeaguesHtml/FixturesHtml/TextSvg";
 
 
-function League (props){
+function League (){
 
     let { slug } = useParams();
-    
-    console.log(props)
+
 
     let match = useLocation();
 
@@ -39,7 +38,6 @@ function League (props){
     }
 
     
-
     return(
         <React.Fragment>
         <Masthead> <Header /> </Masthead>
@@ -48,7 +46,8 @@ function League (props){
                 <div className="league-container">
                     <Nav />
                     <LatestImage>
-                        <div>{icon}</div>
+                        <div>{icon}
+                        </div>
                     </LatestImage>
                     <SubNav slug={slug} match={match.pathname}/>
 

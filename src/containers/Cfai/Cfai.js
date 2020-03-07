@@ -15,38 +15,56 @@ import About from "../../components/Sections/SectionAbout";
 import Rules from "../../components/Sections/SectionRules";
 import Committee from "../../components/Sections/SectionCommittee/SectionComittee";
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
+import Resources from "../../components/Sections/SectionResources/SectionResources";
+import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";
 
 
 import Logo from "../../assets/images/indesign.png";
 
 const getCfaiPageData = gql`
     query{
-        cfaiPages{
-            cfaiAbout,
-            cfaiAboutImage {
-              id,
-              url
+        pageses(where: {id: "ck7i57xmb1eo10b2013ftzdez"}){
+            aboutText,
+            aboutImage {
+            id,
+            url
             },
             aboutImageDesc,
-             competitionText,
-             competitionForm{
-                 id,
-                 url
-             },
-             rulesImage {
+            competitionText,
+            competitionForm{
                 id,
                 url
-              },
-             rulesImageDesc,
-             ruleWhose,
-             ruleOne,
-             ruleTwo,
-             ruleThree,
-             ruleFour,
-             rulePdf{
-                 id,
-                 url
-             }
+            },
+            rulesImage {
+            id,
+            url
+            },
+            rulesImageDesc,
+            ruleWhose,
+            ruleOne,
+            ruleTwo,
+            ruleThree,
+            ruleFour,
+            rulesPdf{
+                id,
+                url
+            },
+            email,
+            twitter,
+        facebook,
+            instagram,
+            clubGuide{
+            id,
+            url
+            },
+            teamSheet{
+            id,
+            url
+            },
+            rulesPdf{
+            id,
+            url
+            }
         },
         cfaiCommittees{
             id,
@@ -58,8 +76,16 @@ const getCfaiPageData = gql`
                 url
             }
         
+        },
+        cfaiRefereeses(orderBy: refereeCounty_ASC){
+            id,
+            refereeName,
+            refereeEmail,
+            refereeCounty,
+            refereeMobile
         }
     }
+
 
 `;
 
@@ -71,8 +97,6 @@ function Cfai() {
     const [nav, setNav] = useState(false);
 
     const { loading, error, data } = useQuery(getCfaiPageData);
-
-    console.log(data)
     
 
     if (loading) return <Loader /> ;
@@ -98,22 +122,22 @@ function Cfai() {
                         />
                         <About 
                             identifier="cfai"
-                            context={data.cfaiPages[0].cfaiAbout}
-                            image={data.cfaiPages[0].cfaiAboutImage.url}
-                            imageDesc={data.cfaiPages[0].aboutImageDesc}
+                            context={data.pageses[0].aboutText}
+                            image={data.pageses[0].aboutImage.url}
+                            imageDesc={data.pageses[0].aboutImageDesc}
                             path="/blog"
                         />
                         <Rules 
                             identifier="cfai"
-                            ruleImage={data.cfaiPages[0].rulesImage.url}
-                            ruleImageDesc={data.cfaiPages[0].rulesImageDesc}
-                            ruleWhose={data.cfaiPages[0].ruleWhose}
-                            ruleOne={data.cfaiPages[0].ruleOne}
-                            ruleTwo={data.cfaiPages[0].ruleTwo}
-                            ruleThree={data.cfaiPages[0].ruleThree}
-                            ruleFour={data.cfaiPages[0].ruleFour}
-                            rulePdf={data.cfaiPages[0].rulePdf.url}
-                            formPdf={"###"}
+                            ruleImage={data.pageses[0].rulesImage.url}
+                            ruleImageDesc={data.pageses[0].rulesImageDesc}
+                            ruleWhose={data.pageses[0].ruleWhose}
+                            ruleOne={data.pageses[0].ruleOne}
+                            ruleTwo={data.pageses[0].ruleTwo}
+                            ruleThree={data.pageses[0].ruleThree}
+                            ruleFour={data.pageses[0].ruleFour}
+                            rulePdf={data.pageses[0].rulesPdf.url}
+                            formPdf={data.pageses[0].competitionForm.url}
 
                         />
                         <Committee identifier="cfai">
@@ -123,13 +147,27 @@ function Cfai() {
                                 ))
                             }
                         </Committee>
-                        
-                        <Blog identifier="cfai" />
+                        <Resources 
+                            identifier="cfai" 
+                            email={data.pageses[0].email}
+                            facebook={data.pageses[0].facebook}
+                            twitter={data.pageses[0].twitter}
+                            instagram={data.pageses[0].instagram}
+                            clubGuide={data.pageses[0].clubGuide.url}
+                            teamSheet={data.pageses[0].teamSheet.url}
+                        >
+                            {
+                                data.cfaiRefereeses.map(el => (
+                                    <Referee key={el.id} county={el.refereeCounty} refereeName={el.refereeName} refereeMobile={el.refereeMobile} refereeEmail={el.refereeEmail} identifier="cfai" />
+                                ))
+                            }
+                        </Resources>
+                        <Blog identifier="cfai" whose="CFAI" />
                     </div>
                 </div>
             </main>
             <Footer 
-            page="cufl"
+            page="cfai"
             activeCufl=""
             activeIufu=""
             activeCfai="fcard-active"

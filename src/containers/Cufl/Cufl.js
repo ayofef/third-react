@@ -29,13 +29,13 @@ import Logo from "../../assets/images/indesign.png";
 
 const getCuflPageData = gql`
     query{
-        cuflPages{
-            cuflAbout,
-            cuflAboutImage {
+        pageses(where: {id: "ck76m4pul3pfd0b84ipy6kdyn"}){
+            aboutText,
+            aboutImage {
               id,
               url
             },
-            cuflAboutImageDesc,
+            aboutImageDesc,
             competitionText,
             competitionForm{
                 id,
@@ -61,10 +61,10 @@ const getCuflPageData = gql`
               url
             },
             internationalTeamImageDesc,
-            cuflEmail,
-            cuflTwitter,
-            cuflFacebook,
-            cuflInstagram,
+            email,
+            twitter,
+           facebook,
+            instagram,
             clubGuide{
               id,
               url
@@ -108,6 +108,7 @@ function Cufl() {
     const [nav, setNav] = useState(false);
 
     const { loading, error, data } = useQuery(getCuflPageData);
+    console.log(data)
 
     
 
@@ -134,30 +135,30 @@ function Cufl() {
                         />
                         <About 
                             identifier="cufl"
-                            context={data.cuflPages[0].cuflAbout}
-                            image={data.cuflPages[0].cuflAboutImage.url}
-                            imageDesc={data.cuflPages[0].cuflAboutImageDesc}
+                            context={data.pageses[0].aboutText}
+                            image={data.pageses[0].aboutImage.url}
+                            imageDesc={data.pageses[0].aboutImageDesc}
                             path="/blog"
                         />
                         <Rules 
                             identifier="cufl"
-                            ruleImage={data.cuflPages[0].rulesImage.url}
-                            ruleImageDesc={data.cuflPages[0].rulesImageDesc}
-                            ruleWhose={data.cuflPages[0].ruleWhose}
-                            ruleOne={data.cuflPages[0].ruleOne}
-                            ruleTwo={data.cuflPages[0].ruleTwo}
-                            ruleThree={data.cuflPages[0].ruleThree}
-                            ruleFour={data.cuflPages[0].ruleFour}
-                            rulePdf={data.cuflPages[0].rulesPdf.url}
-                            formPdf={"###"}
+                            ruleImage={data.pageses[0].rulesImage.url}
+                            ruleImageDesc={data.pageses[0].rulesImageDesc}
+                            ruleWhose={data.pageses[0].ruleWhose}
+                            ruleOne={data.pageses[0].ruleOne}
+                            ruleTwo={data.pageses[0].ruleTwo}
+                            ruleThree={data.pageses[0].ruleThree}
+                            ruleFour={data.pageses[0].ruleFour}
+                            rulePdf={data.pageses[0].rulesPdf.url}
+                            formPdf={data.pageses[0].competitionForm.url}
 
                         />
                         <Leagues identifier="cufl" />
                         <International 
                             identifier="cufl"
-                            context={data.cuflPages[0].internationalTeamText}
-                            Intlimage={data.cuflPages[0].internationalTeamImage.url}
-                            IntlImageDesc={data.cuflPages[0].internationalTeamImageDesc}
+                            context={data.pageses[0].internationalTeamText}
+                            Intlimage={data.pageses[0].internationalTeamImage.url}
+                            IntlImageDesc={data.pageses[0].internationalTeamImageDesc}
                         />
                         <Futsal />
                         <Committee identifier="cufl">
@@ -169,12 +170,12 @@ function Cufl() {
                         </Committee>
                         <Resources 
                             identifier="cufl" 
-                            email={data.cuflPages[0].cuflEmail}
-                            facebook={data.cuflPages[0].cuflFacebook}
-                            twitter={data.cuflPages[0].cuflTwitter}
-                            instagram={data.cuflPages[0].cuflInstagram}
-                            clubGuide={data.cuflPages[0].clubGuide.url}
-                            teamSheet={data.cuflPages[0].teamSheet.url}
+                            email={data.pageses[0].email}
+                            facebook={data.pageses[0].facebook}
+                            twitter={data.pageses[0].twitter}
+                            instagram={data.pageses[0].instagram}
+                            clubGuide={data.pageses[0].clubGuide.url}
+                            teamSheet={data.pageses[0].teamSheet.url}
                         >
                             {
                                 data.cuflRefereeses.map(el => (
@@ -182,7 +183,7 @@ function Cufl() {
                                 ))
                             }
                         </Resources>
-                        <Blog identifier="cufl" />
+                        <Blog identifier="cufl" whose="CUFL"/>
                     </div>
                 </div>
             </main>

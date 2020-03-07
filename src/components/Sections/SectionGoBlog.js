@@ -11,8 +11,8 @@ function SectionGoBlog (props){
         <section className={["to-blog", `${props.identifier + "-to-blog"}`].join(" ")}>
             <div className="container">
                 <div className="to-blog-container">
-                    <h4 className="to-blog-container__heading cufl-heading">For Latest News, Visit CUFL Blog</h4>
-                    <a href="/blog.html" className="btn to-blog-container__link">CUFL Blog
+                    <h4 className={["to-blog-container__heading", `${props.identifier + "-heading"}`].join(" ")}>For Latest News, Visit {props.whose} Blog</h4>
+                    <a href="/blog.html" className="btn to-blog-container__link">{props.whose} Blog
                         <span><svg className="arrow-button-icon" aria-hidden="true">
                             <use xlinkHref={sprite + "#icon-chevron-right"}></use>
                         </svg></span>
@@ -25,7 +25,8 @@ function SectionGoBlog (props){
 
 
 SectionGoBlog.propTypes = {
-    identifier: PropTypes.string.isRequired
+    identifier: PropTypes.string.isRequired,
+    whose: PropTypes.string.isRequired
 }
 
 export default SectionGoBlog;
