@@ -39,9 +39,7 @@ function FullBlogPosts(props) {
     }
 
     let { slug } = useParams();
-    console.log(props)
-
-    console.log(slug.split("_").join(" "))
+    
     const { loading, error, data } = useQuery(getBlogPostsData, { variables : { slug: slug.split("_").join(" ")}});
 
     

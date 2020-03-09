@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, useParams, useLocation }from "react-router-dom";
+import { Route, Switch, useParams }from "react-router-dom";
 
 
 
@@ -21,8 +21,6 @@ function League (){
 
     let { slug } = useParams();
 
-
-    let match = useLocation();
 
     let icon;
 
