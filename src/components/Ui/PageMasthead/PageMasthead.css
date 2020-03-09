@@ -1,6 +1,6 @@
 @media screen and (max-width: 37.5em) {
   .responsive-masthed {
-    width: 160px !important;
+    width: 23rem !important;
     opacity: 1 !important; 
     overflow-y: scroll;
     
@@ -16,6 +16,7 @@
   
   
   .main-navigation__resources--dropdown{
+      width: 100%;
       display: block;
       transform: scaleY(1);
       margin-bottom: 7rem;

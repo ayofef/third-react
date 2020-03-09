@@ -11,7 +11,7 @@ import EmptyData from "../../Ui/EmptyArray/EmptyArray";
 
 import fixturesQuery from "../LeaguesQuerys/CuflFixtures";
 
-function LatestImage () {
+function Fixtures () {
 
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
@@ -41,10 +41,11 @@ function LatestImage () {
     }
     
     const { loading, error, data } = useQuery(matched);
-
+    
 
     if (loading) return <Loader /> ;
     if (error) return <ErrorMini />;  
+    
     
     
     if((location.pathname === "/cufl/leagues/premier-division") || (location.pathname === "/cufl/leagues/premier-division/fixtures-result")){
@@ -53,10 +54,11 @@ function LatestImage () {
             <React.Fragment>
             <FixturesBox whose="North Premier Division">
                 {data.cuflNorthPremierDivisionFixtureses < 1 ? <EmptyData /> : data.cuflNorthPremierDivisionFixtureses.map(el => (
+                    
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -67,6 +69,7 @@ function LatestImage () {
                         
                     
                     />
+                    
                 ))}
             </FixturesBox>
             <FixturesBox whose="South Premier Division">
@@ -74,7 +77,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -101,7 +104,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -119,7 +122,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -137,7 +140,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -155,7 +158,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -182,7 +185,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -200,7 +203,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -218,7 +221,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -236,7 +239,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -263,7 +266,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -281,7 +284,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -299,7 +302,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -317,7 +320,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -344,7 +347,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -362,7 +365,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -380,7 +383,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -398,7 +401,7 @@ function LatestImage () {
                     <FixturesCard 
                         key={el.id}
                         time={time(el.dateAndTime.split("T")[1].split(":")[0], el.dateAndTime.split("T")[1].split(":")[1])}
-                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[2] - 1]].join(" ")}`}
+                        date={`${[el.dateAndTime.split("T")[0].split("-")[2], month[el.dateAndTime.split("T")[0].split("-")[1] - 1]].join(" ")}`}
                         venue={el.venue}
                         homeName={el.homeTeamName}
                         homeLogo={el.homeTeamLogo.url}
@@ -424,4 +427,4 @@ function LatestImage () {
 }
 
 
-export default LatestImage;
+export default Fixtures;

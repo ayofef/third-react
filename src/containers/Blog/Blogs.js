@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import GraphImg from "graphcms-image";
-import createPersistedState from 'use-persisted-state';
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import sprite from "../../assets/images/sprite.svg";
@@ -12,7 +11,9 @@ import Footer from "../../components/Ui/Footer/Footer";
 
 
 
-const useCounterState = createPersistedState('count');
+const STATE_WHOSE = "WHOSE";
+
+sessionStorage.setItem(STATE_WHOSE, JSON.parse('""'));
 
 
 const getBlogPostsData = gql`
@@ -20,27 +21,30 @@ const getBlogPostsData = gql`
         blogs(orderBy: $orderBy, where: $where ) {
 
             id,
-            imageDesc,
                 postCategory
             postImage {
+                id,
             handle,
             width,
             height
             },
             postExcerpt,
             postDate,
-            postHeading,
-            slug
+            postHeading
 
         }
     }
 
 `;
-function Blogs() {
+function Blogs(props) {
 
-    
+  
 
-    const [whose, setWhose] = useCounterState("");
+    const [whose, setWhose] = useState(sessionStorage.getItem(STATE_WHOSE));
+
+    useEffect(() => {
+        sessionStorage.setItem(STATE_WHOSE, whose);
+      }, [whose, setWhose]);
 
 
     const { loading, error, data } = useQuery(getBlogPostsData, {variables: {"orderBy":"postDate_DESC", "where": { "postCategory_contains": whose}}});
@@ -57,7 +61,7 @@ function Blogs() {
 
     
   if (loading) return <Loader />;
-  if (error) return <Error />;
+  if (error) return <Error /> ;
   return (
 
     <React.Fragment>
@@ -65,7 +69,7 @@ function Blogs() {
         <div className={["blog-posts", `${"blog-posts--" + whose}`].join(" ")}>
             <div className="container">
                 <div className="blog-post__nav">
-                    <h1 className={["u-heading", "blog-posts__whose-heading", `${whose + "-heading"}`].join(" ")}>{headerText} <span> Blog Posts</span></h1>
+                    <h1 className={["u-heading", "blog-posts__whose-heading", `${whose + "-heading"}`].join(" ")}>{headerText} <span> Latest News</span></h1>
                     <div className="select">
                         <p className="blog-post__nav--text">Sort by Committee:</p>
                         <select className="blog-post__nav--select" defaultValue={whose} onChange={(event) => setWhose(event.target.value)}>
@@ -81,13 +85,13 @@ function Blogs() {
                     {data.blogs.map(el => <div className="blog-posts__card" key={el.id}>
                         <div className="blog-posts__card--image">
                             {/* <img className="blog-posts__card--image-img" src={el.postImage.url} alt={el.imageDesc}/> */}
-                            <GraphImg image={el.postImage} alt={el.imageDesc} maxWidth={800} className="blog-posts__card--image-img" SameSite="None" Secure/>
+                            <GraphImg image={el.postImage} alt={el.postHeading} maxWidth={800} className="blog-posts__card--image-img" SameSite="None" Secure/>
                         </div>
                         <div className="blog-posts__card--text">
                             <h3 className="blog-posts__card--text-heading">{el.postHeading}</h3>
                             <p className="blog-posts__card--text-excerpt">{el.postExcerpt}</p>
                             <p className="blog-posts__card--text-date">{el.postDate.split("T")[0].split("-").reverse().join("/")}</p>
-                            <Link to={`/blog/${el.slug}`} className="blog-posts__card--link">Read More<span><svg className="arrow-button-icon">
+                            <Link to={`/blog/${el.postHeading.split(" ").join("_")}`} className="blog-posts__card--link">Read More<span><svg className="arrow-button-icon">
                                 <use xlinkHref={sprite + "#icon-chevron-right"} />
                             </svg></span></Link>
                         </div>
@@ -104,4 +108,4 @@ function Blogs() {
   );
 }
 
-export default Blogs;
+export default React.memo(Blogs);

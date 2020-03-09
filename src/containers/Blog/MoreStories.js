@@ -8,10 +8,9 @@ import { Link } from "react-router-dom";
 
 const getMoreData = gql`
     query{
-        blogs(last: 4) {
+        blogs(first: 3, orderBy: postDate_DESC) {
 
             id,
-            imageDesc,
                 postCategory
             postImage {
             id,
@@ -19,8 +18,7 @@ const getMoreData = gql`
             },
             postExcerpt,
             postDate,
-            postHeading,
-            slug
+            postHeading
         }
     }
 
@@ -37,16 +35,16 @@ function MoreStories(props) {
   return (
       
         <div className="more-stories">
-            <h3 className="more-stories__header">Blog</h3>
+            <h3 className="more-stories__header">News Headlines</h3>
             {data.blogs.map(el => <div className="blog-posts__card" key={el.id}>
                 <div className="blog-posts__card--image">
-                    <img className="blog-posts__card--image-img" src={el.postImage.url} alt={el.imageDesc} />
+                    <img className="blog-posts__card--image-img" src={el.postImage.url} alt={el.postHeading} />
                 </div>
                 <div className="blog-posts__card--text">
                     <h3 className="blog-posts__card--text-heading">{el.postHeading}</h3>
                     <p className="blog-posts__card--text-excerpt">{el.postExcerpt}</p>
                     <p className="blog-posts__card--text-date">{el.postDate.split("T")[0].split("-").reverse().join("/")}</p>
-                    <Link to={`/blog/${el.slug}`} className="blog-posts__card--link">Read More<span><svg className="arrow-button-icon">
+                    <Link to={`/blog/${el.postHeading.split(" ").join("_")}`} className="blog-posts__card--link">Read More<span><svg className="arrow-button-icon">
                         <use xlinkHref={sprite + "#icon-chevron-right"} />
                             </svg></span>
                     </Link>

@@ -3,28 +3,28 @@ import { Link } from "react-router-dom";
 
 
 
-function LatestImage (props) {
+function FixResTable (props) {
     
-   const [active, setActive] = useState(true)
+   
 
     return(
 
         <section className="fixandstandings-navigation">
             <nav className="fixandstandings-navigation__nav">
                 <ul>
-                    <li className={active ? "fixandstandings-navigation__active" : ""} onClick={ active ? () => setActive(active) : () => setActive(!active) }>
+                    <li className={ props.active === true ? "fixandstandings-navigation__active" : ""} onClick={ props.Fclicked }>
                         <Link to={`/cufl/leagues/${props.slug}/fixtures-result`} 
                             className={["fixandstandings-navigation__link",
-                                    `${active ? "fixandstandings-navigation__active--link" : ""}`].join(" ")}>
+                                    `${props.active === true ? "fixandstandings-navigation__active--link" : ""}`].join(" ")}>
                                 Fixtures / Results
                         </Link>
                     </li>
 
 
-                    <li className={!active ? "fixandstandings-navigation__active" : ""} onClick={ !active ? () => setActive(active) : () => setActive(!active) }>
+                    <li className={ props.active === false ? "fixandstandings-navigation__active" : ""} onClick={ props.Sclicked }>
                         <Link to={`/cufl/leagues/${props.slug}/standings`} 
                             className={["fixandstandings-navigation__link",
-                            `${!active ? "fixandstandings-navigation__active--link" : ""}`].join(" ")}>
+                            `${props.active === false ? "fixandstandings-navigation__active--link" : ""}`].join(" ")}>
                             Standings
                         </Link>
                     </li>
@@ -37,4 +37,4 @@ function LatestImage (props) {
 }
 
 
-export default LatestImage;
+export default FixResTable;

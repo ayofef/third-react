@@ -94,7 +94,6 @@ const Wscai = (props) => {
 
     const { loading, error, data } = useQuery(getWscaiPageData);
 
-    console.log(data)
     
 
     if (loading) return <Loader /> ;

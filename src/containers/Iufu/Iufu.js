@@ -24,7 +24,7 @@ import Logo from "../../assets/images/indesign.png";
 
 const getIufuPageData = gql`
 query{
-    pageses(where: {id: "ck7i57xmb1eo10b2013ftzdez"}){
+    pageses(where: {id: "ck7i7tup21gsc0b20i578kpcu"}){
         aboutText,
         aboutImage {
           id,
@@ -97,8 +97,6 @@ function Iufu (props) {
 
     const { loading, error, data } = useQuery(getIufuPageData);
 
-    console.log(data)
-    
 
     if (loading) return <Loader /> ;
 

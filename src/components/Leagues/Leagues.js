@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch, useParams, useLocation }from "react-router-dom";
 
 
 
-import Header from "../Ui/PageMasthead/CuflNavs/CuflNavs";
+import CuflNav from "../Ui/PageMasthead/CuflNavs/CuflNavs";
 import Masthead from "../Ui/PageMasthead/PageMasthead";
 import Footer from "../Ui/Footer/Footer"; 
 
@@ -16,6 +16,8 @@ import Svg from "./LeaguesHtml/FixturesHtml/TextSvg";
 
 
 function League (){
+    const [nav, setNav] = useState(false);
+    const [active, setActive] = useState();
 
     let { slug } = useParams();
 
@@ -37,10 +39,17 @@ function League (){
         icon = Svg.d4
     }
 
+    useEffect(() => {
+        setActive(true);
+
+      }, [slug]);
+    
     
     return(
         <React.Fragment>
-        <Masthead> <Header /> </Masthead>
+        <Masthead identifier={"cufl-nav"} default={nav} changed={() => setNav(!nav)}>
+                <CuflNav clicked={() => setNav(!nav)}/>
+            </Masthead>
         <div className="container">
             <div className="league-main-content">
                 <div className="league-container">
@@ -49,7 +58,10 @@ function League (){
                         <div>{icon}
                         </div>
                     </LatestImage>
-                    <SubNav slug={slug} match={match.pathname}/>
+                    <SubNav slug={slug} 
+                            Fclicked={active ? () => setActive(active) : () => setActive(!active)} 
+                            Sclicked={!active ? () => setActive(active) : () => setActive(!active)} 
+                            active={active}/>
 
                     <Switch>
                         <Route path="/cufl/leagues" exact component ={Fixtures} />

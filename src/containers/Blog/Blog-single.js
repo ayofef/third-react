@@ -12,20 +12,18 @@ import Footer from "../../components/Ui/Footer/Footer";
 
 const getBlogPostsData = gql`
     query($slug : String!){
-        blogs(where: {slug : $slug} ){
-                    id,
-            imageDesc,
-            postImage {
+        blogs(where: {postHeading : $slug} ){
             id,
-            url
+            postImage {
+                id,
+                url
             },
             postExcerpt,
-                    postDate,
-                    postHeading,
-                    slug,
-                    postBody{
-                        html
-                    }
+            postDate,
+            postHeading,
+            postBody{
+                html
+            }
 
         }
     }
@@ -35,13 +33,16 @@ const getBlogPostsData = gql`
 function FullBlogPosts(props) {
 
     let history = useHistory();
+
     function backToBlogHandler(){
-        history.goBack();
+        history.push("/blog");
     }
 
     let { slug } = useParams();
-    
-    const { loading, error, data } = useQuery(getBlogPostsData, { variables : { slug: slug}});
+    console.log(props)
+
+    console.log(slug.split("_").join(" "))
+    const { loading, error, data } = useQuery(getBlogPostsData, { variables : { slug: slug.split("_").join(" ")}});
 
     
   if (loading) return <Loader />
@@ -56,12 +57,12 @@ function FullBlogPosts(props) {
                     <div className="blog-single__card">
                         <h3 className="blog-single__card--text-heading">{data.blogs[0].postHeading}</h3>
                         <p className="blog-single__card--text-date">{data.blogs[0].postDate.split("T")[0].split("-").reverse().join("/")}</p>
-                        <img className="blog-posts__card--image-img" src={data.blogs[0].postImage.url} alt={data.blogs[0].imageDesc}/>
+                        <img className="blog-posts__card--image-img blog-posts-single-img" src={data.blogs[0].postImage.url} alt={data.blogs[0].postHeading}/>
                         <div className="blog-single__content" dangerouslySetInnerHTML={{__html: data.blogs[0].postBody.html}} />
                         <div className="blog-single__button">
                             <p  type="button" onClick={backToBlogHandler}> <span><svg className="arrow-left-button-icon">
                                         <use xlinkHref={sprite + "#icon-chevron-left"}></use>
-                                </svg></span> Back </p>
+                                </svg></span> Latest News </p>
                         </div>
                     </div>
                     <MoreStories />
@@ -79,4 +80,4 @@ function FullBlogPosts(props) {
 
 
 
-export default FullBlogPosts;
+export default React.memo(FullBlogPosts);

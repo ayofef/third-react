@@ -108,7 +108,7 @@ function Cufl() {
     const [nav, setNav] = useState(false);
 
     const { loading, error, data } = useQuery(getCuflPageData);
-    console.log(data)
+ 
 
     
 
