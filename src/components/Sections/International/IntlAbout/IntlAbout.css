@@ -1,0 +1,30 @@
+.Intl-about__container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+
+}
+.Intl-about__text{
+    flex: 1;
+    order: 1;
+    margin-right: 2rem;
+}
+.Intl-about__image{
+    flex: 1;
+    order: 2;
+}
+
+.Intl-about__image img{
+    width: 100%;
+}
+@media screen and (max-width: 37.5em) {
+    .Intl-about__container{
+     flex-direction: column;
+    
+    }
+    .Intl-about__text{
+        margin-bottom: 2rem;
+    }
+}

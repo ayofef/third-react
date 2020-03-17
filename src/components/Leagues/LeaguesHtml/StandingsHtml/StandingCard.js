@@ -1,8 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useSpring, animated } from "react-spring";
 
 
 function StandingCard (props) {
+
+    const pointsRef = JSON.parse(props.points);
+    const spring = useSpring({ number: pointsRef, from: { number: 0 } });
+    
 
     return(
         <tr>
@@ -16,7 +21,7 @@ function StandingCard (props) {
             <td className="standing-table__draws">{props.draws}</td>
             <td className="standing-table__loses">{props.loses}</td>
             <td className="standing-table__goal-diff">{props.goalDiff}</td>
-            <td className="standing-table__points">{props.points}</td>
+            <td className="standing-table__points"><animated.div>{spring.number.interpolate(number => Math.floor(number))}</animated.div></td>
         </tr>
     );
 }

@@ -10,12 +10,7 @@ const Masthead = (props) => {
             <div className="container2">
                 <div className="landing-masthead">
                     <MastheadHome />
-                    <MastheadNav 
-                        setFacebook={props.facebook}
-                        setTwitter={props.twitter}
-                        setInstagram={props.instagram}
-                        setEmail={props.email}
-                    />
+                    <MastheadNav  />
                 </div>
             </div>
         </React.Fragment>

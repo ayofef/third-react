@@ -17,72 +17,82 @@ import Person from "../../components/Sections/SectionCommittee/CommitteeCard/Com
 import Resources from "../../components/Sections/SectionResources/SectionResources";
 import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";
 
-import "./Iufu.css";
 
 
-import Logo from "../../assets/images/indesign.png";
+
+import Logo from "../../assets/images/logo/iufu.jpg";
 
 const getIufuPageData = gql`
 query{
     pageses(where: {id: "ck7i7tup21gsc0b20i578kpcu"}){
-        aboutText,
+        aboutText
         aboutImage {
-          id,
-          url
-        },
-        aboutImageDesc,
-        competitionText,
+          id
+          handle
+          width
+          height
+        }
+        heroImage{
+            id
+            handle
+        }
+        aboutImageDesc
+        competitionText
         competitionForm{
-            id,
+            id
             url
-        },
+        }
         rulesImage {
-          id,
-          url
-        },
-        rulesImageDesc,
-        ruleWhose,
-        ruleOne,
-        ruleTwo,
-        ruleThree,
-        ruleFour,
+          id
+          handle
+          width
+          height
+        }
+        rulesImageDesc
+        ruleWhose
+        ruleOne
+        ruleTwo
+        ruleThree
+        ruleFour
         rulesPdf{
-            id,
+            id
             url
-        },
-        email,
-        twitter,
-       facebook,
-        instagram,
+        }
+        email
+        twitter
+       facebook
+        instagram
         clubGuide{
-          id,
-          url
-        },
-        teamSheet{
-          id,
-          url
-        },
-        rulesPdf{
-          id,
+          id
           url
         }
-      },
+        teamSheet{
+          id
+          url
+        }
+        rulesPdf{
+          id
+          url
+        }
+      }
     iufuCommittees{
-        id,
-        personName,
-        personRole,
-        personEmail,
+        id
+        personName
+        personRole
+        personEmail
         personPicture{
-            id,
-            url
+            id
+            handle
+            width
+            height
         }
     
-    },
+    }
     iufuRefereeses(orderBy: refereeCounty_ASC){
-        id,
-        refereeName,
-        refereeEmail,
-        refereeCounty,
+        id
+        refereeName
+        refereeEmail
+        refereeCounty
         refereeMobile
     }
 }
@@ -117,17 +127,18 @@ function Iufu (props) {
                             logoAlt="Iufu logo"
                             committee="IUFU"
                             committeeDesc="Colleges Football Association of Ireland"
+                            bckg={data.pageses[0].heroImage.handle}
                         />
                         <About 
                             identifier="iufu"
                             context={data.pageses[0].aboutText}
-                            image={data.pageses[0].aboutImage.url}
+                            image={data.pageses[0].aboutImage}
                             imageDesc={data.pageses[0].aboutImageDesc}
                             path="/blog"
                         />
                         <Rules 
                             identifier="iufu"
-                            ruleImage={data.pageses[0].rulesImage.url}
+                            ruleImage={data.pageses[0].rulesImage}
                             ruleImageDesc={data.pageses[0].rulesImageDesc}
                             ruleWhose={data.pageses[0].ruleWhose}
                             ruleOne={data.pageses[0].ruleOne}
@@ -138,10 +149,10 @@ function Iufu (props) {
                             formPdf={data.pageses[0].competitionForm.url}
 
                         />
-                        <Committee identifier="iufu">
+                        <Committee identifier="iufu" header="COMMITTEE">
                             {
                                 data.iufuCommittees.map(el => (
-                                    <Person key={el.id} personImage={el.personPicture.url} personEmail={el.personEmail} personRole={el.personRole} personName={el.personName}/>
+                                    <Person key={el.id} personImage={el.personPicture} personEmail={el.personEmail} personRole={el.personRole} personName={el.personName}/>
                                 ))
                             }
                         </Committee>
@@ -176,5 +187,3 @@ function Iufu (props) {
 }
 
 export default React.memo(Iufu);
-
-

@@ -6,7 +6,6 @@ import Error from "../../components/Ui/Error/Error";
 
 
 import CuflNav from "../../components/Ui/PageMasthead/CuflNavs/CuflNavs";
-import "./Cufl.css";
 
 import Masthead from "../../components/Ui/PageMasthead/PageMasthead";
 import Footer from "../../components/Ui/Footer/Footer";
@@ -25,75 +24,87 @@ import Blog from "../../components/Sections/SectionGoBlog";
 
 
 
-import Logo from "../../assets/images/indesign.png";
+import Logo from "../../assets/images/logo/cufl.png";
 
 const getCuflPageData = gql`
     query{
         pageses(where: {id: "ck76m4pul3pfd0b84ipy6kdyn"}){
-            aboutText,
+            aboutText
             aboutImage {
-              id,
-              url
-            },
+              id
+              handle
+              width
+              height
+            }
             aboutImageDesc,
             competitionText,
             competitionForm{
-                id,
+                id
                 url
-            },
+            }
             rulesImage {
-              id,
-              url
-            },
-            rulesImageDesc,
-            ruleWhose,
-            ruleOne,
-            ruleTwo,
-            ruleThree,
-            ruleFour,
+              id
+              handle
+              width
+              height
+            }
+            heroImage {
+                id
+                handle
+              }
+            rulesImageDesc
+            ruleWhose
+            ruleOne
+            ruleTwo
+            ruleThree
+            ruleFour
             rulesPdf{
-                id,
+                id
                 url
-            },
-            internationalTeamText,
+            }
+            internationalTeamText
             internationalTeamImage {
-              id,
-              url
-            },
+              id
+              handle
+              width
+              height
+            }
             internationalTeamImageDesc,
-            email,
-            twitter,
-           facebook,
-            instagram,
+            email
+            twitter
+           facebook
+            instagram
             clubGuide{
-              id,
-              url
-            },
-            teamSheet{
-              id,
-              url
-            },
-            rulesPdf{
-              id,
+              id
               url
             }
-          },
+            teamSheet{
+              id
+              url
+            }
+            rulesPdf{
+              id
+              url
+            }
+          }
         cuflCommittees{
-            id,
-            personName,
-            personRole,
-            personEmail,
+            id
+            personName
+            personRole
+            personEmail
             personPicture{
-                id,
-                url
+                id
+                handle
+                width
+                height
             }
         
         },
         cuflRefereeses(orderBy: refereeCounty_ASC){
-            id,
-            refereeName,
-            refereeEmail,
-            refereeCounty,
+            id
+            refereeName
+            refereeEmail
+            refereeCounty
             refereeMobile
         }
     }
@@ -121,7 +132,7 @@ function Cufl() {
     return(
         <React.Fragment>
             <Masthead identifier={"cufl-nav"} default={nav} changed={() => setNav(!nav)}>
-                <CuflNav clicked={() => setNav(!nav)}/>
+                <CuflNav clicked={() => setNav(!nav)} slideIn={nav === true ? "mobile-nav__slidein" : ""}/>
             </Masthead>
             <main>
                 <div className="main-content">
@@ -132,17 +143,18 @@ function Cufl() {
                             logoAlt="Cufl logo"
                             committee="CUFL"
                             committeeDesc="Colleges and Universities Football League"
+                            bckg={data.pageses[0].heroImage.handle}
                         />
                         <About 
                             identifier="cufl"
                             context={data.pageses[0].aboutText}
-                            image={data.pageses[0].aboutImage.url}
+                            image={data.pageses[0].aboutImage}
                             imageDesc={data.pageses[0].aboutImageDesc}
-                            path="/blog"
+                            path="/latest-news"
                         />
                         <Rules 
                             identifier="cufl"
-                            ruleImage={data.pageses[0].rulesImage.url}
+                            ruleImage={data.pageses[0].rulesImage}
                             ruleImageDesc={data.pageses[0].rulesImageDesc}
                             ruleWhose={data.pageses[0].ruleWhose}
                             ruleOne={data.pageses[0].ruleOne}
@@ -157,14 +169,14 @@ function Cufl() {
                         <International 
                             identifier="cufl"
                             context={data.pageses[0].internationalTeamText}
-                            Intlimage={data.pageses[0].internationalTeamImage.url}
+                            Intlimage={data.pageses[0].internationalTeamImage}
                             IntlImageDesc={data.pageses[0].internationalTeamImageDesc}
                         />
                         <Futsal />
-                        <Committee identifier="cufl">
+                        <Committee identifier="cufl" header="COMMITTEE">
                             {
                                 data.cuflCommittees.map(el => (
-                                    <Person key={el.id} personImage={el.personPicture.url} personEmail={el.personEmail} personRole={el.personRole} personName={el.personName}/>
+                                    <Person key={el.id} personImage={el.personPicture} personEmail={el.personEmail} personRole={el.personRole} personName={el.personName}/>
                                 ))
                             }
                         </Committee>

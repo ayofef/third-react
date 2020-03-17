@@ -4,8 +4,6 @@ import error from "../../../assets/images/error.svg";
 import Footer from "../Footer/Footer";
 import EmptyMast from "../Masthead/EmptyMast";
 
-
-
 function Error() {
 
 
@@ -19,7 +17,7 @@ function Error() {
                         <div className="error-box__text">
                             <div className="u-heading">Uh Oh Something Went Wrong..</div>
                             <p className="u-paragraph">Please Check your Internet Connection or Try Again</p>
-                            <Link to="/" className={["error-box__link", "btn"].join(" ")}>Go Bach Home</Link>
+                            <Link to="/" className={["error-box__link", "btn"].join(" ")}>Go Back Home</Link>
                         </div>
 
                 </div>

@@ -24,7 +24,7 @@ function SectionFutsal(props) {
         <section className={["resources", `${props.identifier + "-resources"}`].join(" ")} id={props.identifier + "-contacts"}>
             <div className="container">
                 <div className="resources-container">
-                    <h2 className={["u-heading", `${props.identifier + "-heading"}`].join(" ")}>Resources</h2>
+                    <h2 className={["u-heading", `${props.identifier + "-heading"}`].join(" ")}>RESOURCES</h2>
                     <div className="resources__contact">
                         <h3 className={["u-bold", "resources__sub-heading", `${props.identifier + "-heading"}`].join(" ")}>Contacts</h3>
                         <div className="resources__contact--box">
@@ -82,12 +82,12 @@ function SectionFutsal(props) {
 
                     <div className="resources__referee" id={props.identifier + "-referee"} >
                         <h3 className={["u-bold", "resources__sub-heading", `${props.identifier + "-heading"}`].join(" ")}>Referees</h3>
-                        <div className={["resources__referee-box", `${ collapse ? "complete__ref" : "collapsible__ref"}`].join(" ")}>
+                        <div className={["resources__referee-box", `${ (collapse === false && props.children.length > 3) ? "collapsible__ref" : (collapse === false && props.children.length < 4) ? "complete__ref" : "complete__ref" }`].join(" ")}>
                             {props.children}
                         </div>
                     </div>
-                    <div className="collapse__background" style={{display: collapse ? "none" : "block"}}></div>
-                    <div className="collapse__referee" onClick={() => setCollapse(!collapse)}>
+                    <div className="collapse__background" style={{display: (collapse || props.children.length < 4 ) ? "none" : "block"}}></div>
+                    <div className="collapse__referee" onClick={() => setCollapse(!collapse)} style={{display: (props.children.length < 4 ) ? "none" : "block"}}>
                         <p className="collapse__referee--text">{collapseWord} 
                             <span>
                                 <svg className="arrow-button-icon">

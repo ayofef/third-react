@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import Loader from "../../components/Ui/Loader/Loader";
 import Error from "../../components/Ui/Error/Error";
 
-import "./Cfai.css";
+
 
 import Masthead from "../../components/Ui/PageMasthead/PageMasthead";
 import Footer from "../../components/Ui/Footer/Footer";
@@ -19,69 +19,79 @@ import Resources from "../../components/Sections/SectionResources/SectionResourc
 import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";
 
 
-import Logo from "../../assets/images/indesign.png";
+import Logo from "../../assets/images/logo/cfai.png"
 
 const getCfaiPageData = gql`
     query{
         pageses(where: {id: "ck7i57xmb1eo10b2013ftzdez"}){
             aboutText,
             aboutImage {
-            id,
-            url
-            },
-            aboutImageDesc,
-            competitionText,
-            competitionForm{
-                id,
-                url
-            },
-            rulesImage {
-            id,
-            url
-            },
-            rulesImageDesc,
-            ruleWhose,
-            ruleOne,
-            ruleTwo,
-            ruleThree,
-            ruleFour,
-            rulesPdf{
-                id,
-                url
-            },
-            email,
-            twitter,
-        facebook,
-            instagram,
-            clubGuide{
-            id,
-            url
-            },
-            teamSheet{
-            id,
-            url
-            },
-            rulesPdf{
-            id,
-            url
+                id
+                handle
+                width
+                height
             }
-        },
-        cfaiCommittees{
-            id,
-            personName,
-            personRole,
-            personEmail,
-            personPicture{
-                id,
+            heroImage {
+                id
+                handle
+              }
+            aboutImageDesc
+            competitionText
+            competitionForm{
+                id
                 url
+            }
+            rulesImage {
+                id
+                handle
+                width
+                height
+            }
+            rulesImageDesc
+            ruleWhose
+            ruleOne
+            ruleTwo
+            ruleThree
+            ruleFour
+            rulesPdf{
+                id
+                url
+            }
+            email
+            twitter
+            facebook
+            instagram
+            clubGuide{
+                id
+                url
+            }
+            teamSheet{
+                id
+                url
+            }
+            rulesPdf{
+                id
+                url
+            }
+        }
+        cfaiCommittees{
+            id
+            personName
+            personRole
+            personEmail
+            personPicture{
+                id
+                handle
+                width
+                height
             }
         
-        },
+        }
         cfaiRefereeses(orderBy: refereeCounty_ASC){
-            id,
-            refereeName,
-            refereeEmail,
-            refereeCounty,
+            id
+            refereeName
+            refereeEmail
+            refereeCounty
             refereeMobile
         }
     }
@@ -108,7 +118,7 @@ function Cfai() {
     return(
         <React.Fragment>
             <Masthead identifier={"cfai-nav"} default={nav} changed={() => setNav(!nav)}>
-                <CfaiNav clicked={() => setNav(!nav)}/>
+                <CfaiNav clicked={() => setNav(!nav)} slideIn={nav === true ? "mobile-nav__slidein" : ""}/>
             </Masthead>
             <main>
                 <div className="main-content">
@@ -119,17 +129,18 @@ function Cfai() {
                             logoAlt="CFAI logo"
                             committee="CFAI"
                             committeeDesc="Colleges Football Association of Ireland"
+                            bckg={data.pageses[0].heroImage.handle}
                         />
                         <About 
                             identifier="cfai"
                             context={data.pageses[0].aboutText}
-                            image={data.pageses[0].aboutImage.url}
+                            image={data.pageses[0].aboutImage}
                             imageDesc={data.pageses[0].aboutImageDesc}
-                            path="/blog"
+                            path="/latest-news"
                         />
                         <Rules 
                             identifier="cfai"
-                            ruleImage={data.pageses[0].rulesImage.url}
+                            ruleImage={data.pageses[0].rulesImage}
                             ruleImageDesc={data.pageses[0].rulesImageDesc}
                             ruleWhose={data.pageses[0].ruleWhose}
                             ruleOne={data.pageses[0].ruleOne}
@@ -140,10 +151,10 @@ function Cfai() {
                             formPdf={data.pageses[0].competitionForm.url}
 
                         />
-                        <Committee identifier="cfai">
+                        <Committee identifier="cfai" header="COMMITTEE">
                             {
                                 data.cfaiCommittees.map(el => (
-                                    <Person key={el.id} personImage={el.personPicture.url} personEmail={el.personEmail} personRole={el.personRole} personName={el.personName}/>
+                                    <Person key={el.id} personImage={el.personPicture} personEmail={el.personEmail} personRole={el.personRole} personName={el.personName}/>
                                 ))
                             }
                         </Committee>

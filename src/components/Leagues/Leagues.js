@@ -39,7 +39,6 @@ function League (){
 
     useEffect(() => {
         setActive(true);
-
       }, [slug]);
     
     

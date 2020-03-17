@@ -8,7 +8,7 @@ const MastheadNav = (props) => {
         <nav className="landing-masthead__nav">
             <ul>
                 <li>
-                    <a href={props.setFacebook} target="_blank" rel="noopener noreferrer" className="landing-masthead__nav--link">
+                    <a href="https://www.facebook.com/faithirdlevelfootball" target="_blank" rel="noopener noreferrer" className="landing-masthead__nav--link">
                     <svg className="landing-masthead__icon">
                     <use xlinkHref={sprite + "#icon-facebook-with-circle"} />
                     </svg>
@@ -16,7 +16,7 @@ const MastheadNav = (props) => {
                 </li>
                 
                 <li>
-                    <a href={props.setTwitter} target="_blank" rel="noopener noreferrer" className="landing-masthead__nav--link">
+                    <a href="https://twitter.com/thirdlevelfootb" target="_blank" rel="noopener noreferrer" className="landing-masthead__nav--link">
                     <svg className="landing-masthead__icon">
                     <use xlinkHref={sprite + "#icon-twitter-with-circle"} />
                     </svg>
@@ -24,20 +24,13 @@ const MastheadNav = (props) => {
                 </li>
                                 
                 <li>
-                    <a href={props.setInstagram} target="_blank" rel="noopener noreferrer" className="landing-masthead__nav--link">
+                    <a href="https://www.instagram.com/thirdlevelfootball" target="_blank" rel="noopener noreferrer" className="landing-masthead__nav--link">
                     <svg className="landing-masthead__icon">
                     <use xlinkHref={sprite + "#icon-instagram-with-circle"} />
                     </svg>
                     </a>
                 </li>
 
-                <li>
-                    <a href={"mailto:" + props.setEmail} className="landing-masthead__nav--link">
-                    <svg className="landing-masthead__icon">
-                    <use xlinkHref={sprite + "#icon-google-with-circle"} />
-                    </svg>
-                    </a>
-                </li>
             </ul>
         </nav>
     );

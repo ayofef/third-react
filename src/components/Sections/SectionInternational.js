@@ -1,6 +1,10 @@
 import React from "react";
-import sprite from "../../assets/images/sprite.svg";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import GraphImg from "graphcms-image";
+
+
+import sprite from "../../assets/images/sprite.svg";
 
 
 function SectionInternational(props) {
@@ -11,15 +15,15 @@ function SectionInternational(props) {
                 <div className="international__box">
                     <div className="international__box--texts">
                         <div>
-                            <h2 className={["u-heading", `${props.identifier + "-heading"}`].join(" ")}>International Team</h2>
+                            <h2 className={["u-heading", `${props.identifier + "-heading"}`].join(" ")}>INTERNATIONAL TEAM</h2>
                         <p className="u-paragraph">{props.context}</p>
-                        <a href="leagues/league1.html" className="btn international__link">International Team <span><svg className="arrow-button-icon">
+                        <Link to="cufl/cufl-international" className="btn international__link">International Team <span><svg className="arrow-button-icon">
                             <use xlinkHref={sprite + "#icon-chevron-right"}></use>
-                        </svg></span></a>
+                        </svg></span></Link>
                         </div>
                     </div>
                     <div className="international__box--image">
-                        <img src={props.Intlimage} alt={props.IntlImageDesc} className="international__box--image-img" />
+                        <GraphImg image={props.Intlimage} alt={props.IntlImageDesc} fit="max" withWebp={true} maxWidth={900} className="international__box--image-img" SameSite="None" Secure/>
                     </div>
                 </div>
             </div>
@@ -33,7 +37,7 @@ function SectionInternational(props) {
 SectionInternational.propTypes = {
     identifier: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
-    Intlimage: PropTypes.string.isRequired,
+    Intlimage: PropTypes.object.isRequired,
     IntlImageDesc: PropTypes.string.isRequired
 };
 

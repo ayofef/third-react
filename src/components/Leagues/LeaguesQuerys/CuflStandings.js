@@ -5,30 +5,30 @@ const getStandings = {
     premierDivision: gql`
         query{
             cuflNorthPremierDivisionTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflSouthPremierDivisionTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
             }
@@ -38,58 +38,58 @@ const getStandings = {
     divisionOne: gql`
         query{
             cuflDivisionOneGroupATables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionOneGroupBTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionOneGroupCTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionOneGroupDTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
             }
@@ -99,58 +99,58 @@ const getStandings = {
     divisionTwo: gql`
         query{
             cuflDivisionTwoGroupATables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionTwoGroupBTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionTwoGroupCTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionTwoGroupDTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
             }
@@ -160,119 +160,119 @@ const getStandings = {
     divisionThree: gql`
         query{
             cuflDivisionThreeGroupATables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionThreeGroupBTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionThreeGroupCTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionThreeGroupDTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
             }
         }
 
-    `,
+    `, 
     divisionFour: gql`
         query{
             cuflDivisionFourGroupATables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionFourGroupBTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionFourGroupCTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
-            },
+            } 
             cuflDivisionFourGroupDTables(orderBy: points_DESC){
-                id,
-                teamName,
-                played,
-                wins,
-                draws,
-                losses,
-                goalDifference,
-                points,
+                id 
+                teamName 
+                played 
+                wins 
+                draws 
+                losses 
+                goalDifference 
+                points 
                 teamLogo{
-                    id,
+                    id 
                     url
                 }
             }

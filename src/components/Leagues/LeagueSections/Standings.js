@@ -15,6 +15,14 @@ import StandingCard from "../LeaguesHtml/StandingsHtml/StandingCard";
 
 
 function Standings () {
+    const emptyItem = {
+        width: "100%",
+        position: "absolute", 
+        left: "50%",
+        bottom: "-40%",
+        transform: "translateX(-50%)"
+    }
+    
     const location = useLocation();
     let matched;
 
@@ -38,11 +46,13 @@ function Standings () {
 
 
 
+
+
     if( location.pathname === "/cufl/leagues/premier-division/standings" ){
         return(
             <React.Fragment>
                 <StandingBox whose="North Premier Division">
-                    {data.cuflNorthPremierDivisionTables < 1 ? <EmptyData /> : data.cuflNorthPremierDivisionTables.map((el, index) => (
+                    {data.cuflNorthPremierDivisionTables < 1 ? <tr><td style={emptyItem}><tr><td style={emptyItem}><EmptyData /></td></tr> </td></tr>  : data.cuflNorthPremierDivisionTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -58,7 +68,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="South Premier Division">
-                    {data.cuflSouthPremierDivisionTables < 1 ? <EmptyData />: data.cuflSouthPremierDivisionTables.map((el, index) => (
+                    {data.cuflSouthPremierDivisionTables < 1 ? <tr><td style={emptyItem}><tr><td style={emptyItem}><EmptyData /></td></tr> </td></tr> : data.cuflSouthPremierDivisionTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={index + 1}
@@ -79,7 +89,7 @@ function Standings () {
         return(
             <React.Fragment>
                 <StandingBox whose="Group A">
-                    {data.cuflDivisionOneGroupATables < 1 ? <EmptyData /> : data.cuflDivisionOneGroupATables.map((el, index) => (
+                    {data.cuflDivisionOneGroupATables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionOneGroupATables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -95,7 +105,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group B">
-                    {data.cuflDivisionOneGroupBTables < 1 ? <EmptyData /> : data.cuflDivisionOneGroupBTables.map((el, index) => (
+                    {data.cuflDivisionOneGroupBTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionOneGroupBTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -111,7 +121,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group C">
-                    {data.cuflDivisionOneGroupCTables < 1 ? <EmptyData /> : data.cuflDivisionOneGroupCTables.map((el, index) => (
+                    {data.cuflDivisionOneGroupCTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionOneGroupCTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -127,7 +137,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group D">
-                    {data.cuflDivisionOneGroupDTables < 1 ? <EmptyData /> : data.cuflDivisionOneGroupDTables.map((el, index) => (
+                    {data.cuflDivisionOneGroupDTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionOneGroupDTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -148,7 +158,7 @@ function Standings () {
         return(
             <React.Fragment>
                 <StandingBox whose="Group A">
-                    {data.cuflDivisionTwoGroupATables < 1 ? <EmptyData /> : data.cuflDivisionTwoGroupATables.map((el, index) => (
+                    {data.cuflDivisionTwoGroupATables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionTwoGroupATables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -164,7 +174,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group B">
-                    {data.cuflDivisionTwoGroupBTables < 1 ? <EmptyData /> : data.cuflDivisionTwoGroupBTables.map((el, index) => (
+                    {data.cuflDivisionTwoGroupBTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionTwoGroupBTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -180,7 +190,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group C">
-                    {data.cuflDivisionTwoGroupCTables < 1 ? <EmptyData /> : data.cuflDivisionTwoGroupCTables.map((el, index) => (
+                    {data.cuflDivisionTwoGroupCTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionTwoGroupCTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -196,7 +206,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group D">
-                    {data.cuflDivisionTwoGroupDTables < 1 ? <EmptyData /> : data.cuflDivisionTwoGroupDTables.map((el, index) => (
+                    {data.cuflDivisionTwoGroupDTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionTwoGroupDTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -217,7 +227,7 @@ function Standings () {
         return(
             <React.Fragment>
                 <StandingBox whose="Group A">
-                    {data.cuflDivisionThreeGroupATables < 1 ? <EmptyData /> : data.cuflDivisionThreeGroupATables.map((el, index) => (
+                    {data.cuflDivisionThreeGroupATables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionThreeGroupATables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -233,7 +243,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group B">
-                    {data.cuflDivisionThreeGroupBTables < 1 ? <EmptyData /> : data.cuflDivisionThreeGroupBTables.map((el, index) => (
+                    {data.cuflDivisionThreeGroupBTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionThreeGroupBTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -249,7 +259,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group C">
-                    {data.cuflDivisionThreeGroupCTables < 1 ? <EmptyData /> : data.cuflDivisionThreeGroupCTables.map((el, index) => (
+                    {data.cuflDivisionThreeGroupCTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionThreeGroupCTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -265,7 +275,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group D">
-                    {data.cuflDivisionThreeGroupDTables < 1 ? <EmptyData /> : data.cuflDivisionThreeGroupDTables.map((el, index) => (
+                    {data.cuflDivisionThreeGroupDTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionThreeGroupDTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -286,7 +296,7 @@ function Standings () {
         return(
             <React.Fragment>
                 <StandingBox whose="Group A">
-                    {data.cuflDivisionFourGroupATables < 1 ? <EmptyData /> : data.cuflDivisionFourGroupATables.map((el, index) => (
+                    {data.cuflDivisionFourGroupATables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionFourGroupATables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -302,7 +312,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group B">
-                    {data.cuflDivisionFourGroupBTables < 1 ? <EmptyData /> : data.cuflDivisionFourGroupBTables.map((el, index) => (
+                    {data.cuflDivisionFourGroupBTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionFourGroupBTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -318,7 +328,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group C">
-                    {data.cuflDivisionFourGroupCTables < 1 ? <EmptyData /> : data.cuflDivisionFourGroupCTables.map((el, index) => (
+                    {data.cuflDivisionFourGroupCTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionFourGroupCTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -334,7 +344,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="Group D">
-                    {data.cuflDivisionFourGroupDTables < 1 ? <EmptyData /> : data.cuflDivisionFourGroupDTables.map((el, index) => (
+                    {data.cuflDivisionFourGroupDTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflDivisionFourGroupDTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}

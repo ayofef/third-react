@@ -6,37 +6,37 @@ const getFixtures = {
     premierDivision : gql`
         query{
             cuflNorthPremierDivisionFixtureses(orderBy : dateAndTime_ASC){
-            id,
-            homeTeamName,
+            id
+            homeTeamName
             homeTeamLogo{
-            id,
+            id
             url
             }
-            homeTeamScore,
-            awayTeamScore,
+            homeTeamScore
+            awayTeamScore
             awayTeamLogo{
-            id,
+            id
             url
             }
-            awayTeamName,
-            dateAndTime,
+            awayTeamName
+            dateAndTime
             venue
-            },
+            }
             cuflSouthPremierDivisionFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
                 }
         
@@ -47,71 +47,71 @@ const getFixtures = {
     divisionOne : gql`
         query{
             cuflDivisionOneGroupAFixtureses(orderBy : dateAndTime_ASC){
-            id,
-            homeTeamName,
+            id
+            homeTeamName
             homeTeamLogo{
-            id,
+            id
             url
             }
-            homeTeamScore,
-            awayTeamScore,
+            homeTeamScore
+            awayTeamScore
             awayTeamLogo{
-            id,
+            id
             url
             }
-            awayTeamName,
-            dateAndTime,
+            awayTeamName
+            dateAndTime
             venue
-            },
+            }
             cuflDivisionOneGroupBFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
-            },
+            }
             cuflDivisionOneGroupCFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
-            },
+            }
             cuflDivisionOneGroupDFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
             }
         
@@ -122,71 +122,71 @@ const getFixtures = {
     divisionTwo : gql`
         query{
             cuflDivisionTwoGroupAFixtureses(orderBy : dateAndTime_ASC){
-            id,
-            homeTeamName,
+            id
+            homeTeamName
             homeTeamLogo{
-            id,
+            id
             url
             }
-            homeTeamScore,
-            awayTeamScore,
+            homeTeamScore
+            awayTeamScore
             awayTeamLogo{
-            id,
+            id
             url
             }
-            awayTeamName,
-            dateAndTime,
+            awayTeamName
+            dateAndTime
             venue
-            },
+            }
             cuflDivisionTwoGroupBFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
-            },
+            }
             cuflDivisionTwoGroupCFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
-            },
+            }
             cuflDivisionTwoGroupDFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
             }
         
@@ -197,71 +197,71 @@ const getFixtures = {
     divisionThree : gql`
         query{
             cuflDivisionThreeGroupAFixtureses(orderBy : dateAndTime_ASC){
-            id,
-            homeTeamName,
+            id
+            homeTeamName
             homeTeamLogo{
-            id,
+            id
             url
             }
-            homeTeamScore,
-            awayTeamScore,
+            homeTeamScore
+            awayTeamScore
             awayTeamLogo{
-            id,
+            id
             url
             }
-            awayTeamName,
-            dateAndTime,
+            awayTeamName
+            dateAndTime
             venue
-            },
+            }
             cuflDivisionThreeGroupBFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
-            },
+            }
             cuflDivisionThreeGroupCFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
-            },
+            }
             cuflDivisionThreeGroupDFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
             }
         
@@ -271,71 +271,71 @@ const getFixtures = {
     divisionFour : gql`
         query{
             cuflDivisionFourGroupAFixtureses(orderBy : dateAndTime_ASC){
-            id,
-            homeTeamName,
+            id
+            homeTeamName
             homeTeamLogo{
-            id,
+            id
             url
             }
-            homeTeamScore,
-            awayTeamScore,
+            homeTeamScore
+            awayTeamScore
             awayTeamLogo{
-            id,
+            id
             url
             }
-            awayTeamName,
-            dateAndTime,
+            awayTeamName
+            dateAndTime
             venue
-            },
+            }
             cuflDivisionFourGroupBFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
-            },
+            }
             cuflDivisionFourGroupCFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
-            },
+            }
             cuflDivisionFourGroupDFixtureses(orderBy : dateAndTime_ASC){
-                id,
-                homeTeamName,
+                id
+                homeTeamName
                 homeTeamLogo{
-                id,
+                id
                 url
                 }
-                homeTeamScore,
-                awayTeamScore,
+                homeTeamScore
+                awayTeamScore
                 awayTeamLogo{
-                id,
+                id
                 url
                 }
-                awayTeamName,
-                dateAndTime,
+                awayTeamName
+                dateAndTime
                 venue
             }
         

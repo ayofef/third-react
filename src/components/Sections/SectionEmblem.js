@@ -1,14 +1,24 @@
 import React from "react";
 import sprite from "../../assets/images/sprite.svg";
 import PropTypes from "prop-types";
-
+import { useMediaQuery } from "../mediaQuery/mediaQuery";
 
 function SectionEmblem(props) {
+
+    const isSmall = useMediaQuery("(max-width: 37.5em)");
+
+
+
+    const styles = {
+        container: isSmall => ({
+          backgroundImage: `url(https://media.graphcms.com/resize=width:${isSmall ? 700 : 1600}/output=format:jpg/${props.bckg})`
+        })
+      };
 
     return(
         <div className="banner">
             <div className="banner__image-container">
-                <div className={["banner__img", `${"banner__" + props.identifier}`].join(" ")}></div>
+                <div className={["banner__img", `${"banner__" + props.identifier}`].join(" ")} style={styles.container(isSmall)}></div>
             </div>
             <section className="emblem">
                 <div className="container">

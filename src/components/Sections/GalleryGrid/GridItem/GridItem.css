@@ -1,0 +1,23 @@
+.galleryGrid__item{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+.galleryGrid__item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease !important;
+}
+
+  .galleryGrid__item:hover img{
+    transform: scale(1.2);
+    filter: brightness(50%);
+
+}
+
+.galleryGrid__item div{
+    height: 100%;
+}
