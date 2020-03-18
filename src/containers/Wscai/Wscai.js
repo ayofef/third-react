@@ -1,6 +1,10 @@
 import React, { useState}  from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import Lightbox from 'fslightbox-react';
+
+
+
 import Loader from "../../components/Ui/Loader/Loader";
 import Error from "../../components/Ui/Error/Error";
 
@@ -15,6 +19,8 @@ import Committee from "../../components/Sections/SectionCommittee/SectionComitte
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
 import Resources from "../../components/Sections/SectionResources/SectionResources";
 import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";
+import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
+import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
 
 
 
@@ -93,12 +99,38 @@ query{
         refereeCounty
         refereeMobile
     }
+    errorImageses{
+        errorImage {
+            id
+            url(
+                transformation: {
+                  image: { resize: { width: 800 } }
+                  document: { output: { format: jpg } }
+                }
+              )
+            handle
+            fileName
+            height
+            width
+        }
+    }
 }
 
 
 `;
 
 const Wscai = (props) => {
+
+    /* LIGHT BOX */
+    const [lightbox, setLightbox] = useState(false);
+    const [image, setImage] = useState(0);
+
+    function showSlide (img) {
+        setLightbox(!lightbox);
+        setImage(img);
+    };
+    /* LIGHT BOX */
+
     const [nav, setNav] = useState(false);
 
     const { loading, error, data } = useQuery(getWscaiPageData);
@@ -109,6 +141,11 @@ const Wscai = (props) => {
 
     if (error) return <Error /> ;
 
+    /* LIGHT BOX */
+    const imgUrls = data.errorImageses[0].errorImage.map(el => {
+        return el.url;
+    });
+    /* LIGHT BOX */
 
     return(
         <React.Fragment>
@@ -168,6 +205,17 @@ const Wscai = (props) => {
                                 ))
                             }
                         </Resources>
+                        <Gallery identifier="wscai">
+                            {
+                                data.errorImageses[0].errorImage.map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
+                                clicked={ (event) => showSlide(index + 1) } />))
+                            }
+                        </Gallery>
+                        <Lightbox
+                            toggler={lightbox}
+                            slide={image}
+                            sources={imgUrls}
+                        /> 
                         <Blog identifier="wscai" whose="WSCAI" />
                     </div>
                 </div>

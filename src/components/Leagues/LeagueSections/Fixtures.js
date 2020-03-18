@@ -13,6 +13,7 @@ import fixturesQuery from "../LeaguesQuerys/CuflFixtures";
 
 function Fixtures () {
 
+    /* DATE AND TIME */
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
     const time = (hour, minute) =>{
@@ -24,6 +25,7 @@ function Fixtures () {
             return (hour) + " : " + minute + " AM"
         } 
     }
+    /* DATE AND TIME */
 
     const location = useLocation();
     let matched;

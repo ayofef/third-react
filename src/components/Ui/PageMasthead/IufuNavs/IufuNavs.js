@@ -10,8 +10,8 @@ function Iufu(props) {
         <ul className="main-navigation__nav">
             <NavLi path="/iufu/#iufu-about" name="About Us" clicken={props.clicked} animate={props.slideIn} duration="slidein000"/>
             <NavLi path="/iufu/#iufu-rules" name="Rules" clicken={props.clicked} animate={props.slideIn} duration="slidein001"/>
-            <NavLi path="/iufu/#iufu-leagues" name="Leagues" clicken={props.clicked} animate={props.slideIn} duration="slidein002"/>
-            <NavLi path="/iufu/#iufu-committee" name="Committee" clicken={props.clicked} animate={props.slideIn} duration="slidein003"/>
+            <NavLi path="/iufu/#iufu-committee" name="Committee" clicken={props.clicked} animate={props.slideIn} duration="slidein002"/>
+            <NavLi path="/iufu/#iufu-gallery" name="Gallery" animate={props.slideIn} duration="slidein003"/>
 
             <li className="main-navigation__nav--item main-navigation__resources" onClick={props.clicked}>
                 <p href="#" className="main-navigation__nav--links d-none-md">More 

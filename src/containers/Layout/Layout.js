@@ -1,4 +1,4 @@
-import React, { Suspense} from "react";
+import React, { Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import ToTop from "../../components/Ui/ToTopAlways/ToTopAlways";
@@ -12,7 +12,6 @@ import Blogs from "../Blog/Blogs";
 import BlogSearch from "../Blog/SearchBlog";
 import BlogSingle from "../Blog/Blog-single";
 import Leagues from "../../components/Leagues/Leagues";
-import ImageView from "../../components/Sections/GalleryGrid/ImageView/ImageView";
 
 const DataPolicies = React.lazy(() => import("../DataPrivacy/DataPrivacy"));
 const CuflInternational = React.lazy(() => import("../Cufl/CuflInternational/CuflInternational"));

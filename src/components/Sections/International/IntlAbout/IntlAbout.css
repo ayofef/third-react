@@ -3,13 +3,13 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5rem;
+    margin: 7rem 0;
 
 }
 .Intl-about__text{
     flex: 1;
     order: 1;
-    margin-right: 2rem;
+    margin-right: 5rem;
 }
 .Intl-about__image{
     flex: 1;
@@ -22,9 +22,14 @@
 @media screen and (max-width: 37.5em) {
     .Intl-about__container{
      flex-direction: column;
+     margin: 5rem 0;
     
     }
     .Intl-about__text{
+        margin-right: 0;
         margin-bottom: 2rem;
+    }
+    .Intl-about__image{
+        width: 100%;
     }
 }

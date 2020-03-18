@@ -10,8 +10,8 @@ function Wscai(props) {
         <ul className="main-navigation__nav">
             <NavLi path="/wscai/#wscai-about" name="About Us" clicken={props.clicked}animate={props.slideIn} duration="slidein000" />
             <NavLi path="/wscai/#wscai-rules" name="Rules" clicken={props.clicked}animate={props.slideIn} duration="slidein001" />
-            <NavLi path="/wscai/#wscai-leagues" name="Leagues" clicken={props.clicked}animate={props.slideIn} duration="slidein002" />
-            <NavLi path="/wscai/#wscai-committee" name="Committee" clicken={props.clicked}animate={props.slideIn} duration="slidein003" />
+            <NavLi path="/wscai/#wscai-committee" name="Committee" clicken={props.clicked}animate={props.slideIn} duration="slidein002" />
+            <NavLi path="/wscai/#wscai-gallery" name="Gallery" animate={props.slideIn} duration="slidein003"/>
 
             <li className="main-navigation__nav--item main-navigation__resources" onClick={props.clicked}>
                 <p href="#" className="main-navigation__nav--links d-none-md">More 

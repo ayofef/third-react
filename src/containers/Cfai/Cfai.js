@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import Lightbox from 'fslightbox-react';
+
 import Loader from "../../components/Ui/Loader/Loader";
 import Error from "../../components/Ui/Error/Error";
 
@@ -16,7 +18,8 @@ import Rules from "../../components/Sections/SectionRules";
 import Committee from "../../components/Sections/SectionCommittee/SectionComittee";
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
 import Resources from "../../components/Sections/SectionResources/SectionResources";
-import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";
+import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
+import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
 
 
 import Logo from "../../assets/images/logo/cfai.png"
@@ -94,6 +97,21 @@ const getCfaiPageData = gql`
             refereeCounty
             refereeMobile
         }
+        errorImageses{
+            errorImage {
+                id
+                url(
+                    transformation: {
+                      image: { resize: { width: 800 } }
+                      document: { output: { format: jpg } }
+                    }
+                  )
+                handle
+                fileName
+                height
+                width
+            }
+        }
     }
 
 
@@ -104,6 +122,16 @@ const getCfaiPageData = gql`
 
 function Cfai() {
 
+    /* LIGHT BOX */
+    const [lightbox, setLightbox] = useState(false);
+    const [image, setImage] = useState(0);
+
+    function showSlide (img) {
+        setLightbox(!lightbox);
+        setImage(img);
+    };
+    /* LIGHT BOX */
+
     const [nav, setNav] = useState(false);
 
     const { loading, error, data } = useQuery(getCfaiPageData);
@@ -113,7 +141,11 @@ function Cfai() {
 
     if (error) return <Error /> ;
 
-
+    /* LIGHT BOX */
+    const imgUrls = data.errorImageses[0].errorImage.map(el => {
+        return el.url;
+    });
+    /* LIGHT BOX */
 
     return(
         <React.Fragment>
@@ -173,6 +205,17 @@ function Cfai() {
                                 ))
                             }
                         </Resources>
+                        <Gallery identifier="cfai">
+                            {
+                                data.errorImageses[0].errorImage.map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
+                                clicked={ (event) => showSlide(index + 1) } />))
+                            }
+                        </Gallery>
+                        <Lightbox
+                            toggler={lightbox}
+                            slide={image}
+                            sources={imgUrls}
+                        /> 
                         <Blog identifier="cfai" whose="CFAI" />
                     </div>
                 </div>

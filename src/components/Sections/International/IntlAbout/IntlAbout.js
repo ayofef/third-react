@@ -1,6 +1,5 @@
 import React from 'react';
 import GraphImg from "graphcms-image";
-import INtlImg from "../../../../assets/images/leagues/league-bg.jpg";
 import "./IntlAbout.css";
 
 function IntlAbout(props) {
@@ -9,12 +8,12 @@ function IntlAbout(props) {
         <div className="container">
             <div className="Intl-about__container">
                 <div className="Intl-about__text">
+                    <h2 className={["u-heading", `${props.identifier + "-heading"}`].join(" ")}>CUFL International Team</h2>
                     <p className="u-paragraph">{props.context}</p>      
                 </div>
             
                 <div className="Intl-about__image">
-                    <img src={INtlImg} alt="that"/>
-                {/* <GraphImg image={props.image} alt={props.imageDesc} maxWidth={800} withWebp={true} fit="max" className="about__image" SameSite="None" Secure/> */}
+                    <GraphImg image={props.image} alt={props.imageDesc} maxWidth={800} withWebp={true} fit="max" className="about__image" SameSite="None" Secure/>
                 </div>
             </div>
         </div>

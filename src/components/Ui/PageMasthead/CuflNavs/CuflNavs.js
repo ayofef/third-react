@@ -23,9 +23,10 @@ function CuflNav(props) {
                         <NavLi path="/cufl/#cufl-futsul" name="Futsul"  animate={props.slideIn} duration="slidein005"/>
                         <NavLi path="/cufl/#cufl-contacts" name="Contacts"  animate={props.slideIn} duration="slidein006"/>
                         <NavLi path="/cufl/#cufl-club-guide" name="Club Guide"  animate={props.slideIn} duration="slidein007"/>
-                        <NavLi path="/cufl/#cufl-team-sheet" name="Team Sheet"  animate={props.slideIn} duration="slidein002"/>
-                        <NavLi path="/cufl/#cufl-referee" name="Referees"  animate={props.slideIn} duration="slidein002"/>
-                        <NavLi path="/latest-news" name="Latest News"  animate={props.slideIn} duration="slidein002"/>
+                        <NavLi path="/cufl/#cufl-team-sheet" name="Team Sheet"  animate={props.slideIn} duration="slidein008"/>
+                        <NavLi path="/cufl/#cufl-referee" name="Referees"  animate={props.slideIn} duration="slidein009"/>
+                        <NavLi path="/cufl/#cufl-gallery" name="Gallery" animate={props.slideIn} duration="slidein010"/>
+                        <NavLi path="/latest-news" name="Latest News"  animate={props.slideIn} duration="slidein011"/>
                     </ul>
                 
             </li>

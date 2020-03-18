@@ -11,7 +11,7 @@ function SectionEmblem(props) {
 
     const styles = {
         container: isSmall => ({
-          backgroundImage: `url(https://media.graphcms.com/resize=width:${isSmall ? 700 : 1600}/output=format:jpg/${props.bckg})`
+          backgroundImage: `url(https://media.graphcms.com/resize=width:${isSmall ? 800 : 1600}/output=format:jpg/${props.bckg})`
         })
       };
 

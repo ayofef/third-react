@@ -1,12 +1,14 @@
 import React from "react";
-import sample from "../../../../assets/images/jeffrey.jpg";
+import GraphImg from "graphcms-image";
 import classes from "./IntlTopImg.module.css";
 
-function EachImg () {
+function EachImg (props) {
 
     return(
         
-        <div className={classes.International__imagesBox}><img className={classes.International__imagesBoxImg}src={sample} alt="sample" /></div>
+        <div className={classes.International__imagesBox} >
+            <GraphImg image={props.image} alt={props.imageDesc} maxWidth={800} withWebp={true} fit="max" className={classes.International__imagesBoxImg} SameSite="None" Secure/>
+        </div>
             
    
     );

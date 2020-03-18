@@ -1,6 +1,8 @@
 import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import { Helmet } from "react-helmet";
+
 
 import Masthead from "../../components/Ui/Masthead/Masthead";
 import LandingCard from "../../components/Ui/LandingCard/LandingCard";
@@ -37,6 +39,15 @@ function Landing() {
 
   return (
     <React.Fragment>
+        <Helmet>
+            <title>Third Level Footbal | Home</title>
+            <meta name="og:title" content="#####" />
+            <meta name="description" content="#####" />
+            <meta name="og:type" content="website" />
+            <meta name="og:url" content="#######" />
+            <meta name="og:image" content="###" />
+            <meta name="og:description" content="#####" />
+        </Helmet>
         <div className="landing2-container">
             <header>
                 <Masthead 

@@ -385,8 +385,9 @@ body ul {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 2000; }
-
+  z-index: 2000;
+  box-shadow: 0 .5rem 1.5rem rgba(32, 32, 32, 0.3); }
+  
 .navigation {
   width: 100%;
   display: flex;
@@ -1442,7 +1443,11 @@ height: 21.2rem; }
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    display: inline-block; }
+    display: inline-block;
+  transition: all .3s ease-out; }
+    .fcard__heading:hover{
+      color: #777;
+    }
   .fcard__list > :not(:last-child) {
     margin-bottom: 1rem; }
   .fcard__link {

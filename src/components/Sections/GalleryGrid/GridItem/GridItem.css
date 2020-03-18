@@ -3,6 +3,7 @@
     height: 100%;
     overflow: hidden;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 .galleryGrid__item img{

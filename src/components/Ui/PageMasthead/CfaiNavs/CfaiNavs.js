@@ -10,8 +10,8 @@ function Cfai(props) {
         <ul className="main-navigation__nav">
             <NavLi path="/cfai/#cfai-about" name="About Us" clicken={props.clicked} animate={props.slideIn} duration="slidein000"/>
             <NavLi path="/cfai/#cfai-rules" name="Rules" clicken={props.clicked} animate={props.slideIn} duration="slidein001"/>
-            <NavLi path="/cfai/#cfai-leagues" name="Leagues" clicken={props.clicked} animate={props.slideIn} duration="slidein002"/>
-            <NavLi path="/cfai/#cfai-committee" name="Committee" clicken={props.clicked} animate={props.slideIn} duration="slidein003"/>
+            <NavLi path="/cfai/#cfai-committee" name="Committee" clicken={props.clicked} animate={props.slideIn} duration="slidein002"/>
+            <NavLi path="/cfai/#cfai-gallery" name="Gallery" animate={props.slideIn} duration="slidein004"/>
 
             <li className="main-navigation__nav--item main-navigation__resources" onClick={props.clicked}>
                 <p href="#" className="main-navigation__nav--links d-none-md">More 
@@ -25,7 +25,7 @@ function Cfai(props) {
                         <NavLi path="/cfai/#cfai-referee" name="Referees" animate={props.slideIn} duration="slidein007"/>
                         <NavLi path="/latest-news" name="Latest News" animate={props.slideIn} duration="slidein008"/>
                     </ul>
-                
+                    
             </li>
         </ul>
     );

@@ -3,13 +3,16 @@
     margin-bottom: 4rem;
     
 }
-
 .International__imagesBox{
     flex: 1;
+}
+.International__imagesBox > div{
+    height: 100%;
 }
 
 .International__imagesBoxImg{
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -19,9 +22,6 @@
         width: 100%;
     }
     .International__images > :nth-child(2){
-       display: none;
-    }
-    .International__images > :nth-child(3){
        display: none;
     }
 
