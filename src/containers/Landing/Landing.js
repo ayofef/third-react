@@ -1,7 +1,7 @@
 import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 
 import Masthead from "../../components/Ui/Masthead/Masthead";
