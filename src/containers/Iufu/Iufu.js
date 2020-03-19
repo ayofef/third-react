@@ -205,7 +205,7 @@ function Iufu (props) {
                         </Resources>
                         <Gallery identifier="iufu">
                             {
-                                data.errorImageses[0].errorImage.map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
+                                data.errorImageses[0].errorImage.slice(0, 15).map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
                                 clicked={ (event) => showSlide(index + 1) } />))
                             }
                         </Gallery>

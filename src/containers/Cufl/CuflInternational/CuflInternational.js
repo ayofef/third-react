@@ -77,7 +77,7 @@ const GET_CUFL_INTL_DATA = gql`
 
         }
         errorImageses{
-            errorImage {
+            errorImage(orderBy: updatedAt_DESC){
                 id
                 url(
                     transformation: {
@@ -201,7 +201,7 @@ function CuflIntl() {
                         </Committee>
                         <Gallery identifier="cufl">
                             {
-                                data.errorImageses[0].errorImage.map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
+                                data.errorImageses[0].errorImage.slice(0, 15).map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
                                 clicked={ (event) => showSlide(index + 1) } />))
                             }
                         </Gallery>

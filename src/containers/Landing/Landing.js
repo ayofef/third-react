@@ -41,12 +41,13 @@ function Landing() {
     <React.Fragment>
         <Helmet>
             <title>Third Level Footbal | Home</title>
+            <meta name="keywords" content="###"></meta>
             <meta name="og:title" content="#####" />
             <meta name="description" content="#####" />
             <meta name="og:type" content="website" />
             <meta name="og:url" content="#######" />
             <meta name="og:image" content="###" />
-            <meta name="og:description" content="#####" />
+            <meta name="og:description" content="Third Level" />
         </Helmet>
         <div className="landing2-container">
             <header>

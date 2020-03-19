@@ -17,7 +17,7 @@ function SectionInternational(props) {
                         <div>
                             <h2 className={["u-heading", `${props.identifier + "-heading"}`].join(" ")}>INTERNATIONAL TEAM</h2>
                         <p className="u-paragraph">{props.context}</p>
-                        <Link to="cufl/cufl-international" className="btn international__link">International Team <span><svg className="arrow-button-icon">
+                        <Link to="cufl/international-team" className="btn international__link">International Team <span><svg className="arrow-button-icon">
                             <use xlinkHref={sprite + "#icon-chevron-right"}></use>
                         </svg></span></Link>
                         </div>

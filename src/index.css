@@ -787,7 +787,6 @@ body ul {
   text-align: center;
   border-radius: .5rem;
   position: relative;
-  padding-bottom: 2rem;
   transition: all .2s ease-out; }
   .leagues__card--header::selection,
   .leagues__card--body p::selection{

@@ -26,8 +26,8 @@ function Layout(){
                 <Route path="/index" exact component={Landing} />
                 
                 <Route path="/cufl" exact component={CuflPage} />
-                <Route path="/cufl/cufl-international" exact render={() =><Suspense fallback={<Loader/>}><CuflInternational /></Suspense>} />
-                <Route path="/cufl/cufl/cufl-international" exact render={() =><Suspense fallback={<Loader/>}><CuflInternational /></Suspense>} />
+                <Route path="/cufl/international-team" exact render={() =><Suspense fallback={<Loader/>}><CuflInternational /></Suspense>} />
+                <Route path="/cufl/cufl/international-team" exact render={() =><Suspense fallback={<Loader/>}><CuflInternational /></Suspense>} />
                 <Route path="/cfai" exact component={CfaiPage} />
                 <Route path="/iufu" exact component={IufuPage} />
                 <Route path="/wscai" exact component={WscaiPage} />
