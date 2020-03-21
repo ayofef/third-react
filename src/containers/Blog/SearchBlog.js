@@ -52,28 +52,22 @@ function SearchBlogs(props) {
     useEffect(() => {
         const query = new URLSearchParams(props.location.search);
         for (let param of query.entries()) {
-            console.log(param); // yields ['query', 'input']
+            // console.log(param); yields ['query', 'input']
             setSearchQuery(param[1])
         }
     },[props.location.search]);
     
-   
-    console.log(searchQuery)
+
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" ];
-
-
 
 
     const { loading, error, data } = useQuery(GET_BLOG_SEARCH_DATA , {variables: {"where": { "_search": searchQuery}}});
     
+    if (loading) return <Loader />;
+    if (error) return <Error /> ;
 
-   
-  
-    console.log(props)
-    
-  if (loading) return <Loader />;
-  if (error) return <Error /> ;
-  return (
+
+    return (
 
     <React.Fragment>
         <EmptyMast />

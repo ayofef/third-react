@@ -81,7 +81,7 @@ const GET_CUFL_INTL_DATA = gql`
                 id
                 url(
                     transformation: {
-                      image: { resize: { width: 200 } }
+                      image: { resize: { width: 800 } }
                       document: { output: { format: jpg } }
                     }
                   )

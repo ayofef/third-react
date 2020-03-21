@@ -1401,11 +1401,19 @@ height: 21.2rem; }
     color: #fff;
     text-align: center;
     padding: 2rem 0; }
+    .footer__content--img-box{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: baseline;
+    }
   .footer__content--img{
-    width: 5rem;
+    width: 3.5rem;
     display: block;
-    margin: 0 auto;
-
+    margin: 1rem;
+  }
+  .footer__content--img-Dominant{
+    width: 5rem;
   }
   .footer__content--link{
     color: #fff;
@@ -1823,7 +1831,7 @@ height: 21.2rem; }
 .fixtures-card {
   box-sizing: border-box;
   padding: 2rem 0;
-  border-top: 0.9px solid rgba(119, 119, 119, 0.5);
+  border-top: 0.9px solid rgba(119, 119, 119, 0.2);
   width: 80%;
   margin: 0 auto; }
   @media screen and (max-width: 37.5em) {
@@ -1832,11 +1840,14 @@ height: 21.2rem; }
       margin: 0; } }
   .fixtures-card__dates {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     padding-bottom: 2rem;
-    font-weight: 600; }
+    font-weight: 600;
+  position: relative;
+  left: 50%;
+transform: translateX(-50%); }
     .fixtures-card__dates--day {
       margin: 0 3rem; }
     @media screen and (max-width: 31.25em) {

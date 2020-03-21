@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import Fai from "../../../assets/images/fai.png";
 import PropTypes from "prop-types";
 
+
+import Cfai from "../../../assets/images/logo/cfai.png";
+import Wscai from "../../../assets/images/logo/wscai.png";
+import Fai from "../../../assets/images/fai.png";
 
 function footer (props) {
 
@@ -63,10 +66,16 @@ function footer (props) {
                     
                 </div>
                 <div className="footer__content">
-                    <img src={Fai} alt="Fai's Logo" className="footer__content--img"/>
+                    <div className="footer__content--img-box">
+                        <img src={Fai} alt="Fai's Logo" className="footer__content--img"/>
+                        <img src={Cfai} alt="Fai's Logo" className="footer__content--img"/>
+                        <img src={Fai} alt="Fai's Logo" className="footer__content--img footer__content--img-Dominant"/>
+                        <img src={Fai} alt="Fai's Logo" className="footer__content--img"/>
+                        <img src={Wscai} alt="Fai's Logo" className="footer__content--img"/>
+                    </div>
                     <Link to="/data-policies" className="footer__content--link">Legal & Privacy</Link>
                     <p className="footer__content--text">
-                        COPYRIGHT &copy; <span>{thisYear}</span>, CUFL
+                        COPYRIGHT &copy; <span>{thisYear}</span>
                     </p>
                 </div>
             </div>
