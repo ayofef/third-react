@@ -1337,7 +1337,12 @@ height: 21.2rem; }
     background-color: #2a5298;
   }
 .blog-posts--iufu .blog-posts__card--link:hover, .blog-posts--iufu .blog-posts__card--link:visited, .blog-posts--iufu .blog-posts__card--link::after {
-  background-image: linear-gradient(to right, #2a5298, #005e93); }
+  background-image: linear-gradient(to right, #2a5298, #005e93); 
+  color: #fff;}
+
+  .blog-posts--iufu .blog-posts__card--link:hover .arrow-button-icon{
+    fill: #fff;
+  }
 
 /*wscai*/
 .footer-wscai .fcard-active::before,
@@ -1833,12 +1838,17 @@ height: 21.2rem; }
   padding: 2rem 0;
   border-top: 0.9px solid rgba(119, 119, 119, 0.2);
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+display: flex;
+flex-flow: column;
+justify-content: center;
+align-items: center; }
   @media screen and (max-width: 37.5em) {
     .fixtures-card {
       width: 100%;
       margin: 0; } }
   .fixtures-card__dates {
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;

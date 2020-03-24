@@ -130,7 +130,7 @@ const getCuflPageData = gql`
 
 
 
-function Cufl() {
+function Cufl(props) {
 
     /* LIGHT BOX */
     const [lightbox, setLightbox] = useState(false);
@@ -202,6 +202,7 @@ function Cufl() {
                             context={data.pageses[0].internationalTeamText}
                             Intlimage={data.pageses[0].internationalTeamImage}
                             IntlImageDesc={data.pageses[0].internationalTeamImageDesc}
+                            match={props.match.url}
                         />
                         <Futsal />
                         <Committee identifier="cufl" header="COMMITTEE">

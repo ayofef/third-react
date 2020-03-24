@@ -43,7 +43,7 @@ function MoreStories(props) {
             <h3 className="more-stories__header">Latest News</h3>
             {data.blogs.map(el => <div className="blog-posts__card" key={el.id}>
                 <div className="blog-posts__card--image">
-                    <GraphImg image={el.postImage} alt={el.postHeading} maxWidth={800} fit="max" withWebp={true} className="blog-posts__card--image-img" samesite="None" secure="true"/>
+                    <GraphImg image={el.postImage} alt={el.postHeading} maxWidth={500} fit="max" withWebp={true} className="blog-posts__card--image-img" samesite="None" secure="true"/>
                 </div>
                 <div className="blog-posts__card--text">
                     <h3 className="blog-posts__card--text-heading">{el.postHeading}</h3>

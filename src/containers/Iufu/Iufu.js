@@ -158,7 +158,7 @@ function Iufu (props) {
                             logo={Logo} 
                             logoAlt="Iufu logo"
                             committee="IUFU"
-                            committeeDesc="Colleges Football Association of Ireland"
+                            committeeDesc="Irish Universities Football Union"
                             bckg={data.pageses[0].heroImage.handle}
                         />
                         <About 

@@ -1,23 +1,12 @@
-import { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-function ScrollToTop(props) {
+export default function ScrollToTop() {
+  const { pathname } = useLocation();
+
   useEffect(() => {
-    if (props.history.action === 'POP') {
-      return;
-    }
-    let hash = props.location.hash;
-    if (hash) {
-      let element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({block: 'start', behavior: 'smooth'});
-      }
-    } else {
-      window.scrollTo(0, 0);
-    }
-  });
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-  return (null);
+  return null;
 }
-
-export default withRouter(ScrollToTop);
