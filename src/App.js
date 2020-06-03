@@ -11,7 +11,7 @@ import Layout from "./containers/Layout/Layout";
 
 
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_API_URL
+  uri: `https://api-euwest.graphcms.com/v1/${process.env.REACT_APP_API_URL}/master`
 });
 
 
