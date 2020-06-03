@@ -1,0 +1,64 @@
+
+/*wscai*/
+.footer-wscai .fcard-active::before,
+.wscai-nav .main-navigation__nav--item::after {
+  background-image: linear-gradient(to right, #F87277, #FC6DAB); }
+
+.wscai-heading {
+  color: #BA265D; }
+
+
+.wscai-latest-news,
+.wscai-about,
+.wscai-to-blog {
+  background-color: rgba(252, 109, 171, 0.1); }
+
+.wscai-resources .resources__referee-box--icon {
+  fill: #BA265D; }
+
+.wscai-committee .committee__backdrop {
+  background-color: rgba(252, 109, 171, 0.9); }
+
+
+.wscai-latest-news .latest-news__link,
+.wscai-about .about__link,
+.wscai-competition .competition__link,
+.wscai-rules .rules__link,
+.wscai-resources .resources__downloads--link,
+.wscai-resources .resources__contact--link,
+.wscai-to-blog .to-blog-container__link {
+  background-color: #FC6DAB; }
+  .wscai-about .about__link:hover, .wscai-about .about__link:active,
+  .wscai-competition .competition__link:hover,
+  .wscai-competition .competition__link:active,
+  .wscai-rules .rules__link:hover,
+  .wscai-rules .rules__link:active,
+  .wscai-resources .resources__downloads--link:hover,
+  .wscai-resources .resources__downloads--link:active,
+  .wscai-resources .resources__contact--link:hover,
+  .wscai-resources .resources__contact--link:active,
+  .wscai-to-blog .to-blog-container__link:hover,
+  .wscai-to-blog .to-blog-container__link:active {
+    background-color: #FC6DAB; }
+
+.wscai-resources .resources__downloads--club-guide,
+.wscai-resources .resources__downloads--team-sheet,
+.wscai-resources .resources__referee-box--contact-card {
+  background-color: rgba(255, 51, 102, 0.2); }
+
+.wscai-rules .rules__list > *::before {
+  background-image: url("../../assets/images/soccer.png"), linear-gradient(to right, #fff, #fff); }
+  .blog-posts--wscai .blog-posts__more--button{
+    border-color: #FC6DAB;
+  }
+  .blog-posts--wscai .blog-posts__more--button:hover{
+    background-color: #FC6DAB;
+  }
+.blog-posts--wscai .blog-posts__card--link:hover, .blog-posts--wscai .blog-posts__card--link::after {
+  background-image: linear-gradient(to right, #FC6DAB, #FC6DAB); }
+
+
+  .wscai-latest-news .blog-posts__card--link:hover,  
+  .wscai-latest-news .blog-posts__card--link::after{
+    background-image: linear-gradient(to right, #FC6DAB, #FC6DAB);
+  }

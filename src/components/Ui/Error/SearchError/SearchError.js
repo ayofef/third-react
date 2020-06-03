@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, useHistory } from "react-router-dom";
 
 
@@ -10,11 +10,11 @@ function SearchError() {
 
     const history = useHistory();
 
-    useEffect(() =>{
-        setTimeout(() => {
-            history.push("/latest-news")
-        }, 5000);
-    })
+    // useEffect(() =>{
+    //     setTimeout(() => {
+    //         history.push("/latest-news")
+    //     }, 5000);
+    // })
 
 
     return(
@@ -28,7 +28,7 @@ function SearchError() {
                             <div className="error-box__text">
                                 <div className="u-heading"><span  role="img" aria-label="sad face">&#128530;</span> No results found..</div>
                                 <p className="u-paragraph"></p>
-                                <Link to="/latest-news" className={["error-box__link", "btn"].join(" ")}>Latest News</Link>
+                                <i onClick={() => history.goBack()} className={["error-box__link", "errBtn"].join(" ")}>Latest News</i>
                             </div>
                         </div>
                 </div>

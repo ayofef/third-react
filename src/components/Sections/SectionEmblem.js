@@ -2,6 +2,7 @@ import React from "react";
 import sprite from "../../assets/images/sprite.svg";
 import PropTypes from "prop-types";
 import { useMediaQuery } from "../mediaQuery/mediaQuery";
+import Socials from "../Ui/Masthead/MastheadNav/MastheadNav";
 
 function SectionEmblem(props) {
 
@@ -30,6 +31,7 @@ function SectionEmblem(props) {
                         <p className="emblem__text--sub-text u-uppercase">{props.committeeDesc}</p>
                     </div>
                 </div>
+                <Socials />
             </section>
             <div className="banner__scroll-cue">
                 <svg className="banner__scroll-cue--icon">

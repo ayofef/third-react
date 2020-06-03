@@ -19,7 +19,7 @@ function Standings () {
         width: "100%",
         position: "absolute", 
         left: "50%",
-        bottom: "-40%",
+        bottom: "5rem",
         transform: "translateX(-50%)"
     }
     
@@ -52,7 +52,7 @@ function Standings () {
         return(
             <React.Fragment>
                 <StandingBox whose="North Premier Division">
-                    {data.cuflNorthPremierDivisionTables < 1 ? <tr><td style={emptyItem}><tr><td style={emptyItem}><EmptyData /></td></tr> </td></tr>  : data.cuflNorthPremierDivisionTables.map((el, index) => (
+                    {data.cuflNorthPremierDivisionTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>   : data.cuflNorthPremierDivisionTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={JSON.stringify(index + 1)}
@@ -68,7 +68,7 @@ function Standings () {
                     ))}
                 </StandingBox>
                 <StandingBox whose="South Premier Division">
-                    {data.cuflSouthPremierDivisionTables < 1 ? <tr><td style={emptyItem}><tr><td style={emptyItem}><EmptyData /></td></tr> </td></tr> : data.cuflSouthPremierDivisionTables.map((el, index) => (
+                    {data.cuflSouthPremierDivisionTables < 1 ? <tr><td style={emptyItem}><EmptyData /></td></tr>  : data.cuflSouthPremierDivisionTables.map((el, index) => (
                         <StandingCard 
                         key={el.id}
                         position={index + 1}

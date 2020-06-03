@@ -1,0 +1,91 @@
+.footer {
+    background-image: url("../assets/images/curvy.png"), linear-gradient(to right, #333, #333);
+    background-position: left 10%, center center; }
+    .footer__content {
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0; }
+      .footer__content--img-box{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: baseline;
+      }
+    .footer__content--img{
+      width: 3.5rem;
+      display: block;
+      margin: 1rem;
+    }
+    .footer__content--img-Dominant{
+      width: 5rem;
+    }
+    .footer__content--link{
+      color: #fff;
+      padding: 1rem 0;
+      margin: 1rem 0;
+      display: inline-block;
+      transition: color .3s ease-out;
+      
+    }
+    .footer__content--link:hover{
+      color: #777;
+      
+    }
+.footer__box {
+  padding: 8rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start; 
+}
+@media screen and (max-width: 37.5em) {
+  .footer__box {
+    flex-direction: column; 
+}
+}
+.footer__box > :not(:last-child) {
+  margin-right: 2rem; 
+}
+@media screen and (max-width: 37.5em) {
+  
+  .footer__box > :not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem; 
+  }
+}
+.fcard {
+  margin-bottom: 3rem; 
+}
+.fcard__heading {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  transition: all .3s ease-out; 
+}
+.fcard__heading:hover{
+  color: #777;
+}
+.fcard__list > :not(:last-child) {
+  margin-bottom: 1rem; 
+}
+.fcard__link {
+  color: #fff;
+  transition: color .3s ease-out; 
+}
+.fcard__link:hover {
+  color: #777; }
+        
+.fcard-active {
+  margin-bottom: 2rem; 
+}
+.fcard-active::before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-2rem); 
+}
+            

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -12,21 +12,23 @@ function FixResTable (props) {
         <section className="fixandstandings-navigation">
             <nav className="fixandstandings-navigation__nav">
                 <ul>
-                    <li className={ props.active === true ? "fixandstandings-navigation__active" : ""} onClick={ props.Fclicked }>
-                        <Link to={`/cufl/leagues/${props.slug}/fixtures-result`} 
-                            className={["fixandstandings-navigation__link",
-                                    `${props.active === true ? "fixandstandings-navigation__active--link" : ""}`].join(" ")}>
+                    <li onClick={ props.Fclicked }>
+                        <NavLink 
+                            activeStyle={{backgroundColor: "#333", color: "#fff"}}
+                            to={`/cufl/leagues/${props.slug}/fixtures-result`} 
+                            className={"fixandstandings-navigation__link"}>
                                 Fixtures / Results
-                        </Link>
+                        </NavLink>
                     </li>
 
 
-                    <li className={ props.active === false ? "fixandstandings-navigation__active" : ""} onClick={ props.Sclicked }>
-                        <Link to={`/cufl/leagues/${props.slug}/standings`} 
-                            className={["fixandstandings-navigation__link",
-                            `${props.active === false ? "fixandstandings-navigation__active--link" : ""}`].join(" ")}>
+                    <li  onClick={ props.Sclicked }>
+                        <NavLink 
+                            activeStyle={{backgroundColor: "#333", color: "#fff"}}
+                            to={`/cufl/leagues/${props.slug}/standings`} 
+                            className={"fixandstandings-navigation__link"}>
                             Standings
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

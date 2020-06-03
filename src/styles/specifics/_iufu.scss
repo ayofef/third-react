@@ -1,0 +1,96 @@
+
+/*IUFU*/
+.footer-iufu .fcard-active::before,
+.iufu-nav .main-navigation__nav--item::after {
+  background-image: linear-gradient(to right, #2a5298, #fff); }
+
+.iufu-heading {
+  color: #001746; }
+
+.iufu-latest-news,
+.iufu-about,
+.iufu-to-blog {
+  background-color: rgba(80, 102, 161, 0.1); }
+
+.iufu-resources .resources__referee-box--icon {
+  fill: #001746; }
+
+.iufu-committee .committee__backdrop {
+  background-color: rgba(0, 94, 147, 0.9); }
+
+.iufu-committee .committee__caption {
+  color: #fff; }
+
+
+.iufu-latest-news .latest-news__link,
+.iufu-about .about__link,
+.iufu-competition .competition__link,
+.iufu-rules .rules__link,
+.iufu-resources .resources__downloads--link,
+.iufu-resources .resources__contact--link,
+.iufu-to-blog .to-blog-container__link {
+  color: #fff;
+  background-color: #005e93; }
+  .iufu-about .about__link:hover, .iufu-about .about__link:active,
+  .iufu-competition .competition__link:hover,
+  .iufu-competition .competition__link:active,
+  .iufu-rules .rules__link:hover,
+  .iufu-rules .rules__link:active,
+  .iufu-resources .resources__downloads--link:hover,
+  .iufu-resources .resources__downloads--link:active,
+  .iufu-resources .resources__contact--link:hover,
+  .iufu-resources .resources__contact--link:active,
+  .iufu-to-blog .to-blog-container__link:hover,
+  .iufu-to-blog .to-blog-container__link:active {
+    background-color: #005e93; }
+
+.iufu-resources .resources__downloads--club-guide,
+.iufu-resources .resources__downloads--team-sheet,
+.iufu-resources .resources__referee-box--contact-card {
+  background-color: rgba(0, 94, 147, 0.2); }
+
+.iufu-rules .rules__list > *::before {
+  background-image: url("../../assets/images/soccer.png"), linear-gradient(to right, #fff, #fff); }
+
+.iufu-latest-news .arrow-button-icon,
+.iufu-about .arrow-button-icon,
+.iufu-to-blog .arrow-button-icon {
+  fill: #fff; }
+
+.iufu-competition .download-button-icon,
+.iufu-rules .download-button-icon,
+.iufu-resources .download-button-icon,
+.iufu-resources .resources-contact-button-icon {
+  fill: #fff; }
+
+  .blog-posts--iufu .blog-posts__more--button{
+    border-color: #005e93;
+  }
+  
+  .blog-posts--iufu .blog-posts__more--button:hover{
+    color: #fff;
+    background-color: #2a5298;
+  }
+  
+  .iufu-latest-news .blog-posts__card--link:hover, 
+  .iufu-latest-news .blog-posts__card--link::after{
+    color: #fff;
+    background-image: linear-gradient(to right, #005e93, #005e93);
+  
+  }
+  .iufu-latest-news .blog-posts__card--link:hover svg{
+    fill: #fff;
+  }
+  .blog-posts--iufu .blog-posts__card--link{
+    color: #162a4ecc ;
+  }
+.blog-posts--iufu .blog-posts__card--link:hover, .blog-posts--iufu .blog-posts__card--link::after {
+  background-image: linear-gradient(to right, #2a5298, #2a5298); 
+  color: #fff;}
+
+  .blog-posts--iufu .blog-posts__card--link:hover .arrow-button-icon{
+    fill: #fff;
+  }
+  .iufu-latest-news .blog-posts__card--link span svg{
+    fill: #333;
+  }

@@ -31,7 +31,6 @@ const GET_LANDING_PICTURES = gql`
 
 function Landing() { 
 
-
     const { loading, error, data } = useQuery(GET_LANDING_PICTURES);
 
     if (loading) return <Loader />;
@@ -49,6 +48,7 @@ function Landing() {
             <meta name="og:image" content="###" />
             <meta name="og:description" content="Third Level" />
         </Helmet>
+        <div className="landing2-background">
         <div className="landing2-container">
             <header>
                 <Masthead 
@@ -63,10 +63,10 @@ function Landing() {
                         <div className="landing2-content">
                             <div className="landing2__banner">
                                 <h1 className="landing2__banner--heading">
-                                    Welcome to FAI's
+                                    Welcome to Third
                                 </h1>
                                 <p className="landing2__banner--paragraph">
-                                    Third Level Football
+                                    Level Football
                                 </p>
                             </div> 
 
@@ -111,6 +111,7 @@ function Landing() {
                     </div>
                 </div>
             </main>
+        </div>
         </div>
     </React.Fragment>
     

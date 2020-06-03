@@ -1,0 +1,132 @@
+ 
+/*
+
+ @media screen and (max-width: $bp-smallest) {
+*/
+
+/* UTILITIES */
+.u-bold {
+    font-weight: 600; 
+  }
+  
+  .u-heading {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 2.5rem; 
+  }
+  @media screen and (max-width: 37.5em) {
+    .u-heading {
+      font-size: 2.2rem;
+      margin-bottom: 2rem; 
+    } 
+  }
+  
+  .u-center {
+    text-align: center; }
+  
+  .u-uppercase {
+    text-transform: uppercase; }
+  
+  .u-paragraph {
+    line-height: 3rem; 
+  }
+  @media screen and (max-width: 37.5em) {
+    .u-paragraph {
+      line-height: 2.5rem; 
+    } 
+    
+  }
+  
+  /* UTILITIES */   
+  
+  
+  /* BUTTON */ 
+  .btn:link,
+  .btn:visited {
+    display: inline-block;
+    border-radius: .5rem;
+    transition: all .2s ease-out;
+    backface-visibility: hidden;
+    position: relative;
+    padding: 1.5rem 4rem;
+    color: #162a4ecc; 
+  }
+  
+  .btn:hover {
+    /* transform: translateY(-0.188rem); */
+    transform: scale(1.1);
+    box-shadow: 0 0rem 0.5rem rgba(0, 0, 0, 0.3); 
+  }
+  
+  .btn:active {
+    /* transform: translateY(-0.063rem); */
+    transform: scale(1);
+    box-shadow: 0 0rem 0.2rem rgba(0, 0, 0, 0.05); 
+  }
+  
+  /* BUTTON */
+
+  /* ERROR SEARCH FIX */ 
+  .errBtn {
+    display: inline-block;
+    border-radius: .5rem;
+    transition: all .2s ease-out;
+    backface-visibility: hidden;
+    position: relative;
+    padding: 1.5rem 4rem;
+    color: #162a4ecc; 
+  }
+  
+  .errBtn:hover {
+    /* transform: translateY(-0.188rem); */
+    transform: scale(1.1);
+    box-shadow: 0 0rem 0.5rem rgba(0, 0, 0, 0.3); 
+  }
+  
+  .errBtn:active {
+    /* transform: translateY(-0.063rem); */
+    transform: scale(1);
+    box-shadow: 0 0rem 0.2rem rgba(0, 0, 0, 0.05); 
+  }
+  
+  /* ERROR SEARCH FIX */
+
+  /*Download button*/
+.download-button-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: #162a4ecc;
+  margin-right: .5rem; }
+
+/*Arrow Buttons*/
+.arrow-button-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: #162a4ecc;
+  margin-left: 1.5rem;
+  transform: translateY(0.3rem); }
+
+.arrow-left-button-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: #162a4ecc;
+  margin-right: 1.5rem;
+  transform: translateY(0.3rem); }
+
+.resources-contact-button-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: #162a4ecc;
+  margin-right: 1.5rem;
+  transform: translateY(0.4rem); }
+
+
+/* border radius image*/
+.about .graphcms-image-outer-wrapper,
+.rules .graphcms-image-outer-wrapper,
+.international .graphcms-image-outer-wrapper,
+.committee__image-box,
+.galleryGrid .graphcms-image-outer-wrapper{
+  overflow: hidden;
+  border-radius: .5rem;
+}

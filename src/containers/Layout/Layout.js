@@ -11,10 +11,20 @@ import WscaiPage from "../Wscai/Wscai";
 import Blogs from "../Blog/Blogs";
 import BlogSearch from "../Blog/SearchBlog";
 import BlogSingle from "../Blog/Blog-single";
-import Leagues from "../../components/Leagues/Leagues";
+
 
 const DataPolicies = React.lazy(() => import("../DataPrivacy/DataPrivacy"));
+const Leagues = React.lazy(() => import("../../components/Leagues/Leagues"));
+
+
 const CuflInternational = React.lazy(() => import("../Cufl/CuflInternational/CuflInternational"));
+const CuflResources = React.lazy(() => import("../Cufl/Resources/CuflResources"));
+const CfaiResources = React.lazy(() => import("../Cfai/Resources/CfaiResources"));
+const IufuResources = React.lazy(() => import("../Iufu/Resources/IufuResources"));
+const WscaiResources = React.lazy(() => import("../Wscai/Resources/WscaiResources"));
+
+
+
 
 function Layout(){
 
@@ -26,22 +36,31 @@ function Layout(){
                 <Route path="/index" exact component={Landing} />
                 
                 <Route path="/cufl" exact component={CuflPage} />
-                <Route path="/cufl/international-team" exact render={() =><Suspense fallback={<Loader/>}><CuflInternational /></Suspense>} />
+                <Route path="/cufl/international-team" exact component={() =><Suspense fallback={<Loader/>}><CuflInternational /></Suspense>} />
+                <Route path="/cufl/resources" exact component={() =><Suspense fallback={<Loader/>}><CuflResources /></Suspense>} />
+
                 <Route path="/cfai" exact component={CfaiPage} />
+                <Route path="/cfai/resources" exact component={() =><Suspense fallback={<Loader/>}><CfaiResources /></Suspense>} />
+
                 <Route path="/iufu" exact component={IufuPage} />
+                <Route path="/iufu/resources" exact component={() =><Suspense fallback={<Loader/>}><IufuResources /></Suspense>} />
+
                 <Route path="/wscai" exact component={WscaiPage} />
+                <Route path="/wscai/resources" exact component={() =><Suspense fallback={<Loader/>}><WscaiResources /></Suspense>} />
 
-                <Route path="/latest-news" exact component={Blogs} />
-                <Route path="/latest-news/search" exact component={BlogSearch} />
-                <Route path="/latest-news/:slug" exact component={BlogSingle} />
+                
+                <Route path="/latest-news/:whose" exact component={Blogs} />
+                <Route path="/latest-news/:whose/search" exact component={BlogSearch} />
+                <Route path="/latest-news/:whose/:slug" exact component={BlogSingle} />
+                
 
-                <Route path="/cufl/leagues" exact component={Leagues} />
-                <Route path="/cufl/leagues/:slug" exact component={Leagues} />
-                <Route path="/cufl/leagues/:slug/fixtures-result" exact component={Leagues} />
-                <Route path="/cufl/leagues/:slug/standings" exact component={Leagues} />
+                <Route path="/cufl/leagues" exact component={() => <Suspense fallback={<Loader/>}><Leagues /></Suspense>} />
+                <Route path="/cufl/leagues/:slug" exact component={() => <Suspense fallback={<Loader/>}><Leagues /></Suspense>} />
+                <Route path="/cufl/leagues/:slug/fixtures-result" exact component={() => <Suspense fallback={<Loader/>}><Leagues /></Suspense>} />
+                <Route path="/cufl/leagues/:slug/standings" exact component={() => <Suspense fallback={<Loader/>}><Leagues /></Suspense>} />
 
-                <Route path="/data-policies" exact render={() =><Suspense fallback={<Loader/>}><DataPolicies /></Suspense>} />
-                {/* <Route component ={Landing} />  */}
+                <Route path="/data-policies" exact component={() =><Suspense fallback={<Loader/>}><DataPolicies /></Suspense>} />
+                <Route component ={Landing} /> 
             </Switch>
         </React.Fragment>
     );

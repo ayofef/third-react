@@ -1,11 +1,25 @@
 import React from "react";
-import sprite from "../../../../assets/images/sprite.svg";
 import PropTypes from "prop-types";
+import sprite from "../../../assets/images/sprite.svg";
 
 
             
 
 function CommitteeCard(props) {
+    const number = (number) => {
+        const nbr = number.split("")
+        const firstSplit = [nbr[1], nbr[2], nbr[3]].join("")
+        const secondSplit = [nbr[4], nbr[5], nbr[6]].join("")
+        const thirdSplit = [nbr[7], nbr[8], nbr[9]].join("")
+
+        const formatedNumber = ["+353", firstSplit, secondSplit, thirdSplit].join(" ")
+        if(number.length > 10){
+            return number
+        }
+        return(
+            formatedNumber
+        )
+    } 
 
     return(
         <div className="resources__referee-box--card" >
@@ -32,7 +46,7 @@ function CommitteeCard(props) {
                             <use xlinkHref={sprite + "#icon-phone"}></use>
                         </svg>
                     </span>
-                    {props.refereeMobile}
+                    {number(props.refereeMobile)}
                 </p>
                 <p>
                     <span>

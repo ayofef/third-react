@@ -1,0 +1,134 @@
+.BlogResults{
+    flex: 0 0 25rem;
+    box-sizing: border-box;
+    margin-left: 6rem;
+    overflow: hidden;
+    border-radius: .4rem;
+    position: sticky;
+    top: 5rem;
+    background-color: #b0bec5;
+
+    @media screen and (max-width: 47em) {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        top: 0;
+        left: 0;
+        margin: 3rem 0;
+        overflow: visible;
+    }
+
+
+    &__Heading{
+        box-sizing: border-box;
+        width: 100%;
+        background-color: #b0bec5;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 1.5rem 1rem;
+        border-radius: .4rem;
+    }
+
+    &__ResultBox{
+        background-color: whitesmoke;
+        padding: 1rem 0;
+    }
+
+    &__LinkBox{
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 1.5rem;
+
+        & > :not(:last-child){
+            margin-bottom: 2rem;
+        }
+
+        &__Link{
+            transition: all .3s ease-out;
+            margin-right: 1.5rem;
+
+            &:link,
+            &:visited{
+                color: #162a4ecc;
+                display: inline-block;
+            }
+            &:hover,
+            &:active{
+                color: #333;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.ResultCard{
+    position: relative;
+    overflow: hidden;
+    background-color: inherit;
+    display: block;
+    cursor: pointer;
+
+    
+
+    &:hover &__FixRes,
+    &:focus &__FixRes{
+        transform: translateY(-5rem);
+        
+    }
+    &:hover &__Date,
+    &:focus &__Date{
+        transform: translateY(-5rem);
+        
+    }
+
+    &__FixRes{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: .5rem 1rem;
+        margin-bottom: 1rem;
+        transition: all .3s ease-out;
+
+        
+    }
+
+    &__Home,
+    &__Away{
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    &__VS{
+        flex: .5;
+        text-align: center;
+    }
+
+    &__Home{
+        justify-content: flex-end;
+
+        & img{
+            margin-right: 2rem;
+        }
+    }
+    &__Away{
+        justify-content: flex-start;
+
+        & img{
+            margin-left: 2rem;
+        }
+    }
+
+    &__Date{
+        text-align: center;
+        transform: translateY(3rem);
+        transition: all .3s ease-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

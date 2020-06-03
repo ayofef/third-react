@@ -1,0 +1,58 @@
+.Pagination{
+   width: 90%;
+   display: flex;
+   margin: 0 auto;
+   flex-flow: row wrap;
+   justify-content: space-between;
+   align-items: center;
+   padding: 3rem 0 0rem 0;
+   
+   &__Btn{
+      font-weight: 700;
+      text-transform: uppercase;
+      display: inline-block;
+      border-radius: .5rem;
+      transition: all .3s ease-out;
+      backface-visibility: hidden;
+      position: relative;
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      color: #162a4ecc;
+      background-color: rgba(#777, .4);
+      cursor: pointer;
+
+   @media screen and (max-width: 31.25em){
+      padding: 1.2rem 2rem;
+   }
+   
+
+   }
+   &__Btn:hover{
+      box-shadow: 0 0rem .8rem rgba(#777, .5);
+   }
+
+   
+   &__Btn_Forward{
+      margin-left: auto;
+
+      @media (hover: hover){
+         &:hover{
+            padding: 1rem 1.5rem 1rem 2.5rem;
+         }
+      }
+   }
+   &__Btn_Back{
+      margin-right: auto;
+      
+      @media (hover: hover){
+         &:hover{
+            padding: 1rem 2.5rem 1rem 1.5rem;
+         }
+      }
+   }
+}
+
+
+
+
+

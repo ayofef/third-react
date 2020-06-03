@@ -8,7 +8,7 @@ function LeagueCard(props) {
 
 
     return(
-        <div className={["leagues__card","btn", `${"leagues__card--" + props.identifier}`].join(" ")} id={props.committe + "-leagues"}>
+        <div className={["leagues__card", "btn", `${"leagues__card--" + props.identifier}`].join(" ")} id={props.committe + "-leagues"}>
             <Link to={props.path}>
                 <div style={{height: "100%", paddingBottom: "2rem"}}>
                     <h3 className="leagues__card--header">{props.heading}</h3>

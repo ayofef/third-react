@@ -1,0 +1,95 @@
+
+/*CUFL*/
+.footer-cufl .fcard-active::before,
+.cufl-nav .main-navigation__nav--item::after {
+  background-image: linear-gradient(to right, #a8e063, #89dd5f); 
+}
+
+.cufl-heading {
+  color: #1d7b00; }
+
+.cufl-latest-news,
+.cufl-about,
+.cufl-to-blog {
+  background-color: rgba(137, 221, 95, 0.1); }
+
+.cufl-resources .resources__referee-box--icon {
+  fill: #1d7b00; }
+
+.cufl-committee .committee__backdrop {
+  background-color: #47e59b; }
+
+.cufl-leagues .leagues__list--links {
+  background-color: #47e59b; }
+
+.cufl-latest-news .latest-news__link,
+.cufl-about .about__link,
+.cufl-competition .competition__link,
+.cufl-rules .rules__link,
+.cufl-resources .resources__downloads--link,
+.cufl-resources .resources__contact--link,
+.cufl-international .international__link,
+.cufl-to-blog .to-blog-container__link {
+  background-color: #47E59B; 
+}
+
+
+.cufl-about .about__link:hover, .cufl-about .about__link:active,
+.cufl-competition .competition__link:hover,
+.cufl-competition .competition__link:active,
+.cufl-rules .rules__link:hover,
+.cufl-rules .rules__link:active,
+.cufl-resources .resources__downloads--link:hover,
+.cufl-resources .resources__downloads--link:active,
+.cufl-resources .resources__contact--link:hover,
+.cufl-resources .resources__contact--link:active,
+.cufl-international .international__link:hover,
+.cufl-international .international__link:active,
+.cufl-to-blog .to-blog-container__link:hover,
+.cufl-to-blog .to-blog-container__link:active {
+background-color: #47E59B; 
+}
+
+.cufl-leagues .leagues__card--svg {
+  fill: #fff; }
+
+.cufl-leagues .leagues__card {
+  background-color: #ededed; }
+
+.cufl-leagues .leagues__card--header {
+  background-color: #333;
+  color: #fff; }
+
+.cufl-leagues .leagues__link {
+  background-color: #fff; }
+  .cufl-leagues .leagues__link:hover, .cufl-leagues .leagues__link:active {
+    background-color: #47E59B; }
+
+.cufl-resources .resources__downloads--club-guide,
+.cufl-resources .resources__downloads--team-sheet,
+.cufl-resources .resources__referee-box--contact-card {
+  background-color: rgba(71, 229, 155, 0.2); }
+
+.cufl-rules .rules__list > *::before {
+  background-image: url("../../assets/images/soccer.png"), linear-gradient(to right, #fff, #fff); }
+
+.cufl-leagues {
+  background-image: url("../../assets/images/competition.jpg");
+  background-size: cover;
+  background-position: right bottom; }
+.blog-posts--cufl .blog-posts__more--button{
+  border-color: #47E59B;
+}
+
+.blog-posts--cufl .blog-posts__more--button:hover{
+  background-color: #47E59B;
+}
+
+.blog-posts--cufl .blog-posts__card--link:hover,  
+.blog-posts--cufl .blog-posts__card--link::after {
+  background-image: linear-gradient(to right, #47E59B, #47E59B); }
+
+  .cufl-latest-news .blog-posts__card--link:hover,  
+.cufl-latest-news .blog-posts__card--link::after{
+  background-image: linear-gradient(to right, #47E59B, #47E59B);
+}

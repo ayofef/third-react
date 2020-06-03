@@ -1,0 +1,67 @@
+
+/*CFAI*/
+.footer-cfai .fcard-active::before,
+.cfai-nav .main-navigation__nav--item::after {
+  background-image: linear-gradient(to right, #FFC145, #71d78a); }
+
+.cfai-heading {
+  color: #007531; }
+.cfai-latest-news,
+.cfai-about,
+.cfai-to-blog {
+  background-color: rgba(255, 193, 69, 0.2); }
+
+.cfai-resources .resources__referee-box--icon {
+  fill: #007531; }
+
+.cfai-committee .committee__backdrop {
+  background-color: #71d78a; }
+
+.cfai-latest-news .latest-news__link,
+.cfai-about .about__link,
+.cfai-competition .competition__link,
+.cfai-rules .rules__link,
+.cfai-resources .resources__downloads--link,
+.cfai-resources .resources__contact--link,
+.cfai-to-blog .to-blog-container__link {
+  background-color: #71d78a; 
+}
+
+
+
+.cfai-about .about__link:hover, .cfai-about .about__link:active,
+.cfai-competition .competition__link:hover,
+.cfai-competition .competition__link:active,
+.cfai-rules .rules__link:hover,
+.cfai-rules .rules__link:active,
+.cfai-resources .resources__downloads--link:hover,
+.cfai-resources .resources__downloads--link:active,
+.cfai-resources .resources__contact--link:hover,
+.cfai-resources .resources__contact--link:active,
+.cfai-to-blog .to-blog-container__link:hover,
+.cfai-to-blog .to-blog-container__link:active {
+    background-color: #71d78a; 
+}
+
+.cfai-resources .resources__downloads--club-guide,
+.cfai-resources .resources__downloads--team-sheet,
+.cfai-resources .resources__referee-box--contact-card {
+  background-color: rgba(255, 193, 69, 0.2); }
+
+.cfai-rules .rules__list > *::before {
+  background-image: url("../../assets/images/soccer.png"), linear-gradient(to right, #fff, #fff); }
+  .blog-posts--cfai .blog-posts__more--button{
+    border-color: #71d78a;
+  }
+  
+  .blog-posts--cfai .blog-posts__more--button:hover{
+    background-color: #71d78a;}
+.blog-posts--cfai .blog-posts__card--link:hover, .blog-posts--cfai .blog-posts__card--link:visited, .blog-posts--cfai .blog-posts__card--link::after {
+  background-image: linear-gradient(to right, #71d78a, #71d78a); }
+
+
+  
+.cfai-latest-news .blog-posts__card--link:hover,  
+.cfai-latest-news .blog-posts__card--link::after{
+  background-image: linear-gradient(to right, #71d78a, #71d78a);
+}

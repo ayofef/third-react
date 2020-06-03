@@ -1,5 +1,6 @@
 import React from "react";
 import sprite from "../../../../assets/images/sprite.svg";
+import youtube from "../../../../assets/images/youtubeSprite.svg";
 
 const MastheadNav = (props) => {
 
@@ -27,6 +28,14 @@ const MastheadNav = (props) => {
                     <a href="https://www.instagram.com/thirdlevelfootball" target="_blank" rel="noopener noreferrer" className="landing-masthead__nav--link">
                     <svg className="landing-masthead__icon">
                     <use xlinkHref={sprite + "#icon-instagram-with-circle"} />
+                    </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.instagram.com/thirdlevelfootball" target="_blank" rel="noopener noreferrer" className="landing-masthead__nav--link">
+                    <svg className="landing-masthead__icon">
+                    <use xlinkHref={youtube + "#icon-youtube-with-circle"} />
                     </svg>
                     </a>
                 </li>

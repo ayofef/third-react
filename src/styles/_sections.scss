@@ -1,0 +1,635 @@
+/*BANNER*/
+
+.banner {
+  position: relative;
+  padding-top: 5rem; }
+  .banner__image-container {
+    height: 95vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #777; }
+  .banner__img {
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: animatedBackground 1s ease-out;
+    animation-fill-mode: backwards;
+    backface-visibility: hidden;
+    opacity: 1;
+    transform: scale(1.05);
+    transform-origin: center right; }
+  .banner__scroll-cue--icon {
+    position: absolute;
+    bottom: 5%;
+    fill: #000;
+    width: 1.5rem;
+    height: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+    animation: moveUpDown 2s ease-out 2s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: 3; }
+
+.emblem {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 10%); 
+  text-align: center;
+}
+  .emblem__text {
+    margin: 2rem 0;
+  color: #000; }
+    .emblem__text--heading {
+      font-size: 4rem;
+      animation: moveInBottom .7s ease-out 1s;
+      animation-fill-mode: backwards;
+      backface-visibility: hidden;
+      margin-bottom: 1.5rem;
+      letter-spacing: .5rem; }
+      @media screen and (max-width: 37.5em) {
+        .emblem__text--heading {
+          font-size: 3rem; } }
+    .emblem__text--sub-text {
+      animation: moveInBottom .7s ease-out 1.6s;
+      animation-fill-mode: backwards;
+      backface-visibility: hidden; }
+  .emblem__logo {
+    
+    animation: moveInBottom .6s ease-out .7s;
+    animation-fill-mode: backwards;
+    backface-visibility: hidden; }
+    .emblem__logo--img {
+      
+      width: 10rem;
+      height: 10rem; }
+      @media screen and (max-width: 37.5em) {
+        .emblem__logo--img {
+          width: 7rem;
+          height: 7rem; } }
+.emblem .landing-masthead__icon{
+  animation: opacity .7s ease-out 2s;
+  animation-fill-mode: backwards;
+  backface-visibility: hidden;
+  fill: #333;
+}
+.main-content {
+  position: relative; }
+
+
+
+/*ABOUT/COMPETITION/RULES*/
+.latest-news,
+.competition,
+.rules,
+.committee,
+.leagues,
+.futsal,
+.international,
+.to-blog {
+  padding: 8rem 0; }
+  @media screen and (max-width: 56.25em) {
+    .latest-news,
+    .competition,
+    .rules,
+    .committee,
+    .leagues,
+    .futsal,
+    .international,
+    .to-blog {
+      padding: 6rem 0; } }
+  @media screen and (max-width: 56.25em) {
+    .latest-news,
+    .competition,
+    .rules,
+    .committee,
+    .leagues,
+    .futsal,
+    .international,
+    .to-blog {
+      padding: 4rem 0; } }
+
+.about {
+  position: relative;
+  padding: 8rem 0; }
+  .about__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    @media screen and (max-width: 56.25em) {
+      .about__container {
+        flex-direction: column; } }
+  .about__image {
+    flex: 1; }
+    @media screen and (max-width: 56.25em) {
+      .about__image {
+        order: 1;
+        width: 100%;
+        margin-bottom: 1rem; } }
+    .about__image--img {
+      width: 100%;
+      height: 100%; }
+  .about__text {
+    flex: 1;
+    margin-right: 5rem; }
+    @media screen and (max-width: 56.25em) {
+      .about__text {
+        order: 2;
+        margin-right: 0; } }
+  .about__link {
+    margin-top: 3rem; }
+
+.competition__form {
+  margin-top: 4rem; }
+
+.rule-list-box {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between; }
+  @media screen and (max-width: 37.5em) {
+    .rule-list-box {
+      flex-direction: column; } }
+  .rule-list-box > :not(:last-child) {
+    margin-right: 3rem; }
+    @media screen and (max-width: 37.5em) {
+      .rule-list-box > :not(:last-child) {
+        margin-right: 0; }
+        .rule-list-box > :not(:last-child) > * {
+          border-left: 2px dashed #162a4ecc; } }
+
+
+.rules__image{
+    height: 30rem;
+}
+@media screen and (max-width: 37.5em) {
+  .rules__image{
+    height: 100%;
+}
+}
+.rules__image img{
+  object-position: center top !important;
+}
+.rules__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%, 50%; 
+
+}
+.rules__forms{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 37.5em) {
+  .rules__forms{
+    flex-direction: column;
+  }
+}
+.rules__link{
+  margin: 0 2rem;
+}
+@media screen and (max-width: 37.5em) {
+  .rules__link{
+    margin: 2rem 0;
+  }
+}
+
+
+.rules__subhead {
+  font-size: 2rem;
+  margin: 3rem 0; }
+  @media screen and (max-width: 37.5em) {
+    .rules__subhead {
+      margin-bottom: 5rem;
+      font-size: 1.5rem; } }
+
+.rules__list {
+  margin: 4rem 0 0 3rem;
+  position: relative; }
+  @media screen and (max-width: 37.5em) {
+    .rules__list {
+      margin: 0; } }
+  .rules__list > * {
+    padding-left: 4rem;
+    padding-bottom: 6rem;
+    position: relative; }
+    @media screen and (max-width: 37.5em) {
+      .rules__list > * {
+        padding-left: 2rem;
+        padding-bottom: 4rem; } }
+    .rules__list > *::before {
+      content: " ";
+      background-size: cover;
+      left: 0;
+      top: 0;
+      transform: translateX(-50%);
+      position: absolute;
+      border-radius: 50%;
+      padding: .5rem;
+      height: 2rem;
+      width: 2rem;
+      text-align: center;
+      color: white;
+      font-size: 1.2rem;
+      line-height: 2rem; }
+      @media screen and (max-width: 37.5em) {
+        .rules__list > *::before {
+          width: 1rem;
+          height: 1rem; } }
+  .rules__list > :not(:last-child) {
+    border-left: 2px dashed #162a4ecc; }
+
+.leagues__link {
+  display: inline-block;
+  color: #fff;
+  fill: #fff; }
+
+.leagues-box {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 10rem 0 3rem 0; }
+  @media screen and (max-width: 56.25em) {
+    .leagues-box {
+      flex-direction: column;
+      align-items: center; } }
+
+
+      .leagues__card{
+
+        &--premier,
+        &--d2,
+        &--d3,
+        &--d3,
+        &--d4{
+          margin-right: 2rem;
+
+          @media screen and (max-width: 56.25em) {
+            margin-right: 0;
+          }
+        }
+      }
+  // .leagues-box > :not(:last-child) {
+  //   margin-right: 2rem; }
+  //   @media screen and (max-width: 56.25em) {
+  //     .leagues-box > :not(:last-child) {
+  //       margin-right: 0; } }
+
+.leagues__card {
+  flex: 0 0 17rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 0rem 1rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: .5rem;
+  position: relative;
+  transition: all .2s ease-out; }
+  .leagues__card--header::selection,
+  .leagues__card--body p::selection{
+    color: none;
+    background: none;
+  }
+  .league-standing{
+    position: relative;
+  }
+  @media screen and (max-width: 56.25em) {
+    .leagues__card {
+      width: 100%; } }
+  .leagues__card--icon {
+    position: absolute;
+    top: -6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; }
+    @media screen and (max-width: 56.25em) {
+      .leagues__card--icon {
+        display: none; } }
+    .leagues__card--icon-premier-star {
+      display: none; }
+      @media screen and (max-width: 56.25em) {
+        .leagues__card--icon-premier-star {
+          display: block; } }
+  .leagues__card--svg {
+    width: 3rem;
+    height: 3rem; }
+    .leagues__card--svg-dominant {
+      width: 4rem;
+      height: 4rem; }
+  .leagues__card--header {
+    padding: 1rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem; }
+  .leagues__card--body {
+    color: #333; }
+    .leagues__card--body > * {
+      margin: 0 1.5rem 1rem 1.5rem; }
+    .leagues__card--body > :not(:last-child) {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  .leagues__card--premier {
+    order: 1; }
+  .leagues__card--d1 {
+    order: 5; }
+  .leagues__card--d2 {
+    order: 2; }
+  .leagues__card--d3 {
+    order: 3;
+    height: 27rem; }
+  .leagues__card--d4 {
+    order: 4; }
+  @media screen and (max-width: 56.25em) {
+    .leagues__card--premier {
+      order: 1; }
+    .leagues__card--d1 {
+      order: 2; }
+    .leagues__card--d2 {
+      order: 3; }
+    .leagues__card--d3 {
+      order: 4;
+      height: initial; }
+    .leagues__card--d4 {
+      order: 5; } }
+
+.international__box {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center; }
+  @media screen and (max-width: 37.5em) {
+    .international__box {
+      flex-direction: column; } }
+  .international__box--texts {
+    flex: 1.7;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: space-between; }
+    @media screen and (max-width: 37.5em) {
+      .international__box--texts {
+        order: 2; } }
+    .international__box--texts .u-paragraph {
+      width: 70%; }
+      @media screen and (max-width: 37.5em) {
+        .international__box--texts .u-paragraph {
+          width: 100%; } }
+  .international__box--image {
+    margin-bottom: 2rem;
+    flex: 1; }
+    @media screen and (max-width: 37.5em) {
+      .international__box--image {
+        order: 1;
+      width: 100%; } }
+    .international__box--image-img {
+      width: 100%; }
+
+.international__link {
+  margin-top: 4rem; }
+
+  .committee__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center; }
+    @media screen and (max-width: 56.25em) {
+      .committee__container {
+        justify-content: center; } }
+  .committee__item {
+    flex: 0 0 20rem;
+    margin: 2rem;
+    border-radius: .5rem;
+    position: relative;
+    cursor: pointer; }
+    .committee__item:hover .committee__image-box--contact,
+    .committee__item:active .committee__image-box--contact {
+      opacity: 1;
+      transform: translate(-50%, -50%); }
+  .committee__box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.5rem;
+    position: relative; }
+  .committee__image-box {
+    position: relative;
+  overflow: hidden;
+height: 21.2rem; }
+    .committee__image-box--img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: .5rem; }
+    .committee__image-box--contact {
+      position: absolute;
+      box-sizing: border-box;
+      width: 80%;
+      padding: 5rem .5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      display: inline-block;
+      word-wrap: break-word;
+      background-color: rgba(51, 51, 51, 0.8);
+      text-align: center;
+      color: #fff;
+      border-radius: .5rem;
+      opacity: 0;
+      transition: all .3s ease-out;
+      cursor: initial; }
+      .committee__image-box--contact-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        fill: #fff;
+        margin-bottom: 1.5rem; }
+  .committee__caption {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    background-color: transparent;
+    line-height: 2rem; }
+    .committee__caption--name {
+      font-size: 1.4rem; }
+  .committee__backdrop {
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+    border-radius: .5rem; }
+
+.futsal {
+  height: 400px;
+  background-image: url("../assets/images/kick.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center; }
+  .futsal-container {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 5rem;
+    color: #fff;}
+    .futsal-container__body-text {
+      font-size: 2rem;
+      line-height: 4rem; }
+      @media screen and (max-width: 37.5em) {
+        .futsal-container__body-text {
+          font-size: 1.5rem; } }
+    .futsal-container__link {
+      background-color: #fff;
+      margin-top: 5rem;
+      transition: all .3s ease-out; }
+      .futsal-container__link:hover, .futsal-container__link:active {
+        background-color: #47e59b; }
+
+.resources__sub-heading {
+  font-size: 1.7rem; }
+  @media screen and (max-width: 37.5em) {
+    .resources__sub-heading {
+      font-size: 1.9rem; } }
+
+.resources__contact {
+  margin-bottom: 5rem; }
+  .resources__contact--box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 0; }
+    @media screen and (max-width: 56.25em) {
+      .resources__contact--box {
+        flex-direction: column; } }
+    .resources__contact--box > :not(::last-child) {
+      margin-right: 1.5rem; }
+  .resources__contact--link {
+    font-size: 1.7rem;
+    transition: background-color .3s ease-out;
+    margin-bottom: 2.5rem; }
+    @media screen and (max-width: 56.25em) {
+      .resources__contact--link {
+        margin-bottom: 2.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center; } }
+    @media screen and (max-width: 37.5em) {
+      .resources__contact--link {
+        font-size: 1.5rem; } }
+
+.resources__downloads {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 5rem 0; }
+  @media screen and (max-width: 37.5em) {
+    .resources__downloads {
+      flex-direction: column; } }
+  .resources__downloads > :not(:last-child) {
+    margin-right: 3rem; }
+    @media screen and (max-width: 37.5em) {
+      .resources__downloads > :not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 2rem; } }
+  .resources__downloads--club-guide, .resources__downloads--team-sheet {
+    padding: 3rem 1rem;
+    box-sizing: border-box;
+    flex: 1 1 40%;
+    border-radius: .5rem;
+    text-align: center; }
+  .resources__downloads--link {
+    margin-top: 2rem; }
+.resources__referee{
+  overflow: hidden;
+  transition: all .3s ease-out;
+}
+.collapse__background{
+  background-image: linear-gradient(to bottom, transparent 0%,rgba(255, 255, 255, 0.562) 50%, #fff 100%);
+  height: 4rem;
+  transform: translateY(-4rem);
+  transition: all .3s ease-out;
+}
+.collapse__referee{
+  transition: all .3s ease-out;
+  text-align: center;
+  z-index: 100;
+  cursor: pointer;
+  padding: .5rem 0;
+}
+.collapse__referee .arrow-button-icon{
+  animation: forCollapse 5s ease-out;
+  animation-iteration-count: infinite;
+}
+
+.resources__referee-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: height .3s ease-out;
+}
+  @media screen and (max-width: 37.5em) {
+    .resources__referee-box {
+      
+      flex-direction: column; } }
+  .resources__referee-box--card {
+    flex: 1 0 25%;
+    margin-right: 3rem;
+    margin-bottom: 3rem; }
+    @media screen and (max-width: 37.5em) {
+      .resources__referee-box--card {
+        width: 100%;
+        margin: 0; } }
+    .resources__referee-box--card-sub-heading {
+      display: inline-block;
+      padding: 1.2rem 4rem;
+      border-radius: .5rem;
+      box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
+      text-align: center;
+      background-color: #fff;
+      box-sizing: border-box;
+      transform: translateY(50%);
+      margin-left: 1rem; }
+    
+  .resources__referee-box--icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 1rem; }
+    .resources__referee-box--icon-sub-head {
+      width: 1.6rem;
+      height: 1.6rem; 
+    transform: translateY(.2rem);}
+  .resources__referee-box--contact-card {
+    display: block;
+    padding: 4rem 2rem 2rem 2rem;
+    border-radius: .5rem;
+    line-height: 2.7rem; 
+
+    & p{
+      margin-bottom: 1.2rem;
+
+      & span{
+        
+        & svg{
+          transform: translateY(.1rem);
+        }
+      }
+    }
+  }
+
+
+  .resources{
+    padding: 5rem 0;
+  }

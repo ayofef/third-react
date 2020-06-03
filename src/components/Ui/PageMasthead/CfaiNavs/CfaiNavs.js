@@ -8,22 +8,23 @@ function Cfai(props) {
 
     return(
         <ul className="main-navigation__nav">
-            <NavLi path="/cfai#cfai-about" name="About Us" clicken={props.clicked} animate={props.slideIn} duration="slidein000"/>
-            <NavLi path="/cfai#cfai-rules" name="Rules" clicken={props.clicked} animate={props.slideIn} duration="slidein001"/>
-            <NavLi path="/cfai#cfai-committee" name="Committee" clicken={props.clicked} animate={props.slideIn} duration="slidein002"/>
-            <NavLi path="/cfai#cfai-gallery" name="Gallery" animate={props.slideIn} duration="slidein004"/>
+            <NavLi path="/cfai#cfai-latest-news" name="Latest News" clicken={props.clicked} />
+            <NavLi path="/cfai/resources#cfai-club-guide" name="Club Guide" clicken={props.clicked} />
+            <NavLi path="/cfai/resources#cfai-contacts" name="Contacts" clicken={props.clicked} />
+            <NavLi path="/cfai#cfai-committee" name="Committee" clicken={props.clicked} />
+            
 
             <li className="main-navigation__nav--item main-navigation__resources" onClick={props.clicked}>
-                <p href="#" className="main-navigation__nav--links d-none-md">More 
+                <i className="main-navigation__nav--links d-none-md">More 
                     <span><svg className="main-navigation__resources--icon">
                     <use xlinkHref={sprite + "#icon-chevron-down"}></use></svg></span>                                            
-                </p>
+                </i>
                     <ul className="main-navigation__resources--dropdown">
-                        <NavLi path="/cfai#cfai-contacts" name="Contacts" animate={props.slideIn} duration="slidein004"/>
-                        <NavLi path="/cfai#cfai-club-guide" name="Club Guide" animate={props.slideIn} duration="slidein005"/>
-                        <NavLi path="/cfai#cfai-team-sheet" name="Team Sheet" animate={props.slideIn} duration="slidein006"/>
-                        <NavLi path="/cfai#cfai-referee" name="Referees" animate={props.slideIn} duration="slidein007"/>
-                        <NavLi path="/latest-news" name="Latest News" animate={props.slideIn} duration="slidein008"/>
+                        <NavLi path="/cfai#cfai-gallery" name="Gallery" /> 
+                        <NavLi path="/cfai#cfai-about" name="About Us" />
+                        <NavLi path="/cfai#cfai-rules" name="Rules" />
+                        <NavLi path="/cfai/resources#cfai-team-sheet" name="Team Sheet" />
+                        <NavLi path="/cfai/resources#cfai-referee" name="Referees" />
                     </ul>
                     
             </li>

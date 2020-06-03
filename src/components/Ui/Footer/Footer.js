@@ -26,7 +26,7 @@ function footer (props) {
                             <li><HashLink to="/cufl#cufl-leagues" className="fcard__link">Leagues</HashLink></li>
                             <li><HashLink to="/cufl#cufl-committee" className="fcard__link">Committee</HashLink></li>
                             <li><HashLink to="/cufl#cufl-gallery" className="fcard__link">Gallery</HashLink></li>
-                            <li><HashLink to="/cufl#cufl-resources" className="fcard__link">Resources</HashLink></li>
+                            <li><HashLink to="/cufl/resources" className="fcard__link">Resources</HashLink></li>
                             <li><HashLink to="/latest-news" className="fcard__link">Latest News</HashLink></li>
                         </ul>
                     </div>
@@ -35,9 +35,10 @@ function footer (props) {
                         <ul className="fcard__list">
                             <li><HashLink to="/cfai#cfai-about" className="fcard__link">About Us</HashLink></li>
                             <li><HashLink to="/cfai#cfai-rules" className="fcard__link">Rules</HashLink></li>
+                            <li><HashLink to="/cufl#cufl-leagues" className="fcard__link">Cups</HashLink></li>
                             <li><HashLink to="/cfai#cfai-committee" className="fcard__link">Committee</HashLink></li>
                             <li><HashLink to="/cfai#cfai-gallery" className="fcard__link">Gallery</HashLink></li>
-                            <li><HashLink to="/cfai#cfai-resources" className="fcard__link">Resources</HashLink></li>
+                            <li><HashLink to="/cfai/resources" className="fcard__link">Resources</HashLink></li>
                             <li><HashLink to="/latest-news" className="fcard__link">Latest News</HashLink></li>
                         </ul>
                     </div>
@@ -46,9 +47,10 @@ function footer (props) {
                         <ul className="fcard__list">
                             <li><HashLink to="/iufu#iufu-about" className="fcard__link">About Us</HashLink></li>
                             <li><HashLink to="/iufu#iufu-rules" className="fcard__link">Rules</HashLink></li>
+                            <li><HashLink to="/cufl#cufl-leagues" className="fcard__link">Cups</HashLink></li>
                             <li><HashLink to="/iufu#iufu-committee" className="fcard__link">Committee</HashLink></li>
                             <li><HashLink to="/iufu#iufu-gallery" className="fcard__link">Gallery</HashLink></li>
-                            <li><HashLink to="/iufu#iufu-resources" className="fcard__link">Resources</HashLink></li>
+                            <li><HashLink to="/iufu/resources" className="fcard__link">Resources</HashLink></li>
                             <li><HashLink to="/latest-news" className="fcard__link">Latest News</HashLink></li>
                         </ul>
                     </div>
@@ -57,9 +59,10 @@ function footer (props) {
                         <ul className="fcard__list">
                             <li><HashLink to="/wscai#wscai-about" className="fcard__link">About Us</HashLink></li>
                             <li><HashLink to="/wscai#wscai-rules" className="fcard__link">Rules</HashLink></li>
+                            <li><HashLink to="/cufl#cufl-leagues" className="fcard__link">Cups</HashLink></li>
                             <li><HashLink to="/wscai#wscai-committee" className="fcard__link">Committee</HashLink></li>
                             <li><HashLink to="/wscai#wscai-gallery" className="fcard__link">Gallery</HashLink></li>
-                            <li><HashLink to="/wscai#wscai-resources" className="fcard__link">Resources</HashLink></li>
+                            <li><HashLink to="/wscai/resources" className="fcard__link">Resources</HashLink></li>
                             <li><HashLink to="/latest-news" className="fcard__link">Latest News</HashLink></li>
                         </ul>
                     </div>

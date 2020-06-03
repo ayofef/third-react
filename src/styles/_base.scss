@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-display: swap;
+  color: #162a4ecc;
+  font-size: 1.4rem;
+  background-color: #fff; }
+
+body a {
+  text-decoration: none; }
+
+body ul {
+  list-style-type: none; }
+
+.container,
+.container2 {
+  width: 90%;
+  margin: 0 auto; }
+
+.masthead-container {
+  width: 100%;
+  margin: 0 auto; }
+
+.copyright {
+  text-align: center; 
+}
+
+
+@media screen and (min-width: 1100px) {
+  .container,
+  .masthead-container {
+    max-width: 1100px; } }
+
+@media screen and (min-width: 1600px) {
+  .container2 {
+    max-width: 1600px; }
+  .landing2-container {
+    background-image: url("../assets/images/abigailbg.jpg"); } }
+
+
+
+@keyframes animatedBackground {
+  0% {
+    transform: scale(1);
+    opacity: 0; }
+  100% {
+    transform: scale(1.05);
+    opacity: 1; } }
+
+@keyframes stickynav {
+  0% {
+    transform: scaleY(0);
+    opacity: 0; }
+  100% {
+    transform: scaleY(1);
+    opacity: 1; } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  } 
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveUpDown {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem); }
+  50% {
+    opacity: 1;
+    transform: translateY(-0.5rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes forCollapse {
+  0% {
+    opacity: 0;
+    transform: translateY(.5rem); }
+  50% {
+    opacity: 1;
+    transform: translateY(-.5rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }

@@ -1,17 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import DateFormatter from "../../../Ui/CustomHooks/Date";
 
 
 
 function fixturesCard (props) {
 
+    /* Date and TIME */
+    const time = (datDate) =>{
+
+        
+        const receivedDate = new Date(datDate);
+        const precessedRecived = receivedDate.toTimeString().split(":");
+        const hour = precessedRecived[0] % 12 || 12;
+        const AmOrPm = precessedRecived[0] >= 12 ? 'PM' : 'AM';
+        const minute = precessedRecived[1];
+        const prefix = receivedDate.toTimeString().split(" ")[1];
+        console.log(precessedRecived, hour)
+        return hour + " : " + [minute, AmOrPm].join(" ");
+    }
+    /* Date and TIME */
+
     return(
         
         <div className="fixtures-card">
             <div className="fixtures-card__dates">
-                <p>{props.time}</p>
-                <p className="fixtures-card__dates--day">{props.date}</p>
+                <p>{time(props.time)}</p>
+                <p className="fixtures-card__dates--day">{DateFormatter(props.date)}</p>
                 <p>{props.venue}</p>
             </div>
             <div className="fixtures-card__details">

@@ -47,7 +47,9 @@ const GET_BLOG_SEARCH_DATA = gql`
 
 function SearchBlogs(props) {
 
-    const [searchQuery, setSearchQuery] = useState("")
+    const [searchQuery, setSearchQuery] = useState("");
+
+
 
     useEffect(() => {
         const query = new URLSearchParams(props.location.search);
@@ -66,15 +68,16 @@ function SearchBlogs(props) {
     if (loading) return <Loader />;
     if (error) return <Error /> ;
 
+    
 
     return (
 
     <React.Fragment>
         <EmptyMast />
-        <div className="blog-posts blog-posts--">
+        <div className="blog-posts blog-posts--all">
             <div className="container">
                 <div className="blog-post__nav">
-                    <h1 className={["u-heading", "blog-posts__whose-heading"].join(" ")}>Result for "{searchQuery}"</h1>
+                    <h1 className={["u-heading", "blog-posts__whose-heading"].join(" ")}>Search result for "{searchQuery}"</h1>
                 </div>
                 <div className="blog-posts__container">               
                     {data.blogsConnection.edges.length < 1 ? <MiniError /> : data.blogsConnection.edges.map(({node}, index) => <div className="blog-posts__card" key={node.id + index + Math.random(100000)}>
@@ -102,4 +105,4 @@ function SearchBlogs(props) {
   );
 }
 
-export default React.memo(SearchBlogs);
+export default SearchBlogs;

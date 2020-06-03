@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Switch, useParams }from "react-router-dom";
 
 
@@ -17,7 +17,6 @@ import Svg from "./LeaguesHtml/FixturesHtml/TextSvg";
 
 function League (){
     const [nav, setNav] = useState(false);
-    const [active, setActive] = useState();
 
     let { slug } = useParams();
 
@@ -37,9 +36,6 @@ function League (){
         icon = Svg.d4
     }
 
-    useEffect(() => {
-        setActive(true);
-      }, [slug]);
     
     
     return(
@@ -55,10 +51,7 @@ function League (){
                         <div>{icon}
                         </div>
                     </LatestImage>
-                    <SubNav slug={slug} 
-                            Fclicked={active ? () => setActive(active) : () => setActive(!active)} 
-                            Sclicked={!active ? () => setActive(active) : () => setActive(!active)} 
-                            active={active}/>
+                    <SubNav slug={slug} />
 
                     <Switch>
                         <Route path="/cufl/leagues" exact component ={Fixtures} />

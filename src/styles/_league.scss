@@ -1,0 +1,303 @@
+/*
+SVG
+
+*/
+
+svg .svg-elem-1 {
+  stroke: whitesmoke;
+  fill: rgb(255, 255, 255);
+  animation: svg 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 1s;
+  animation-fill-mode: backwards;
+}
+
+@media screen and (max-width: 31.25em) {
+  svg .svg-elem-1 {
+    animation: svg 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 2s;
+    animation-fill-mode: backwards;
+  }
+}
+
+@keyframes svg{
+  0%{
+    stroke-dashoffset: 1455.34521484375px;
+    stroke-dasharray: 1455.34521484375px;
+    fill: transparent;
+  
+  }
+
+  100%{
+    stroke-dashoffset: 0;
+    fill: rgb(255, 255, 255);
+  }
+}
+.next-up-fixtures {
+  padding: 0 3rem 0 3rem;
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box; 
+}
+@media screen and (max-width: 37.5em) {
+  .next-up-fixtures {
+    padding: 0 1rem;
+    height: 15rem; 
+  } 
+}
+
+
+.next-up-fixtures svg{
+  transform: translateY(50%);
+  align-self: center;
+}
+
+/*
+SVG
+
+*/
+
+.league-main-content {
+    padding-top: 6rem; }
+  
+  .league-container {
+    padding-bottom: 2rem; }
+  
+  .subnav__nav {
+    background-color: #e7dcdc; }
+  
+  .subnav__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7dcdc; }
+  
+  .subnav__li {
+    transition: all .3s ease-out; }
+    .subnav__li:hover, .subnav__li:active {
+      background-color: rgba(255, 0, 0, 0.6); }
+  
+  .subnav__links {
+    padding: 1.2rem 2rem;
+    display: inline-block;
+    color: #162a4e;
+    font-size: 1.2rem; }
+    @media screen and (max-width: 37.5em) {
+      .subnav__links {
+        font-size: 1rem;
+        padding: 1.2rem 1rem; } }
+    @media screen and (max-width: 31.25em) {
+      .subnav__links {
+        padding: 1.2rem 0.5rem; } }
+        @media screen and (max-width: 21.87em) {
+          .subnav__links {
+            padding: 1.2rem 0.2rem; } }
+    .subnav__active--link {
+      font-weight: 600; 
+      background-color: rgba(255, 0, 0, 0.6);}
+  
+  .latest-fixtures {
+    background-image: url("../assets/images//leagues/league-bg.jpg");
+    background-size: cover;
+    background-position: 20% center; }
+  
+
+    
+  .fixtures__division {
+    background-color: whitesmoke;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 2rem; 
+    border-radius: .5rem;
+    overflow: hidden;
+    transition: all .3s ease-out;
+  }
+  
+  .fixandstandings-navigation {
+    margin: 2rem 0; }
+    .fixandstandings-navigation__nav ul {
+      display: flex;
+      width: 100%;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center; }
+      .fixandstandings-navigation__nav ul > :not(:last-child) {
+        margin-right: 2rem; }
+      .fixandstandings-navigation__nav ul li {
+        flex: 1;
+        border-radius: .5rem;
+        transition: all .3s ease-out; }
+        .fixandstandings-navigation__nav ul li:hover {
+          background-color: #333; }
+        .fixandstandings-navigation__nav ul li:hover .fixandstandings-navigation__link {
+          color: #fff; }
+    .fixandstandings-navigation__link {
+      border: 1px solid #777;
+      border-radius: .5rem;
+      width: 100%;
+      display: inline-block;
+      padding: 1.2rem 0;
+      text-align: center;
+      box-sizing: border-box;
+      font-weight: 600;
+      color: #777; }
+  
+  .fixtures__header {
+    color: #fff;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: #333;
+    text-align: center;
+    font-weight: 600; }
+    @media screen and (max-width: 31.25em) {
+      .fixtures__header {
+        font-size: 1.2rem; } }
+  
+  .fixtures-card {
+    box-sizing: border-box;
+    padding: 3rem 0 5rem 0;
+    border-bottom: 0.9px solid rgba(119, 119, 119, 0.2);
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; }
+    @media screen and (max-width: 37.5em) {
+      .fixtures-card {
+        width: 100%;
+        margin: 0; } }
+    .fixtures-card__dates {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 2rem;
+      font-weight: 600;
+    position: relative;
+    left: 50%;
+  transform: translateX(-50%); }
+      .fixtures-card__dates--day {
+        margin: 0 3rem; }
+      @media screen and (max-width: 31.25em) {
+        .fixtures-card__dates {
+          font-size: 1.2rem; } }
+    .fixtures-card__details {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center; 
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);}
+      
+      .fixtures-card__details--box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem; }
+        
+      .fixtures-card__details--img {
+        display: block;
+        width: 3rem;
+        height: 3rem; }
+        @media screen and (max-width: 31.25em) {
+          .fixtures-card__details--img {
+            width: 2rem;
+            height: 2rem; } 
+            .fixtures-card__details--box {
+              font-size: 1.3rem;
+            }
+          }
+      
+      .fixtures-card__details--score {
+        font-weight: 600; }
+        .fixtures-card__details--box-first{
+          justify-content: flex-end;
+        }
+        .fixtures-card__details--box-second {
+          justify-content: flex-start;
+        }
+      .fixtures-card__details--box-first .fixtures-card__details--text,
+      .fixtures-card__details--box-first .fixtures-card__details--img {
+        margin-right: 1rem; }
+      .fixtures-card__details--box-first .fixtures-card__details--score {
+        margin-left: 2rem; }
+      .fixtures-card__details--box-second .fixtures-card__details--text,
+      .fixtures-card__details--box-second .fixtures-card__details--img {
+        margin-left: 1rem; }
+      .fixtures-card__details--box-second .fixtures-card__details--score {
+        margin-right: 2rem; }
+        @media screen and (max-width: 31.25em) {
+          .fixtures-card__details--box-second .fixtures-card__details--score {
+            margin-right: 1rem; } 
+            .fixtures-card__details--box-first .fixtures-card__details--score {
+              margin-left: 1rem; } }
+    .fixtures-card__vs {
+      margin: 0 1rem;
+      font-weight: 600; }
+  
+  .standing__division--heading {
+    padding: 1.2rem 0;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    font-weight: 600; }
+    @media screen and (max-width: 37.5em) {
+      .standing__division--heading {
+        font-size: 1.2rem;
+        padding: 1rem; } }
+  
+  .standing__division {
+    margin-bottom: 3rem; 
+    border-radius: .5rem;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .standing-table {
+    width: 100%;
+    border-collapse: collapse; }
+    .standing-table th {
+      padding: 1.2rem;
+      text-align: center; }
+      @media screen and (max-width: 37.5em) {
+        .standing-table th {
+          font-size: 1.2rem;
+          padding: 1rem; } }
+    .standing-table td {
+      padding: 1.5rem;
+      text-align: center; }
+      @media screen and (max-width: 37.5em) {
+        .standing-table td {
+          font-size: 1.2rem;
+          padding: 1rem; } }
+    .standing-table__header {
+      background-color: #D0D0D0;
+      font-weight: 600;
+      color: #162a4e; }
+    .standing-table__body {
+      text-align: center;
+      background-color: whitesmoke; }
+      .standing-table__body tr:nth-child(even) {
+        background-color: #fff; }
+    .standing-table__points {
+      font-weight: 600; }
+    .standing-table__team {
+      width: max-content;
+      display: flex; }
+      .standing-table__team img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem; }
+    @media screen and (max-width: 37.5em) {
+      .standing-table__wins, .standing-table__draws, .standing-table__loses {
+        display: none; } }
+
+        .league-standing{
+          padding-bottom: 5rem;
+        }

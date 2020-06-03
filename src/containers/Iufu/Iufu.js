@@ -9,14 +9,12 @@ import Error from "../../components/Ui/Error/Error";
 import Masthead from "../../components/Ui/PageMasthead/PageMasthead";
 import Footer from "../../components/Ui/Footer/Footer";
 import IufuNav from "../../components/Ui/PageMasthead/IufuNavs/IufuNavs";
-import Blog from "../../components/Sections/SectionGoBlog";
+import Blog from "../../components/Sections/SectionBlog/SectionBlog";
 import Emblem from "../../components/Sections/SectionEmblem";
 import About from "../../components/Sections/SectionAbout";
 import Rules from "../../components/Sections/SectionRules";
 import Committee from "../../components/Sections/SectionCommittee/SectionComittee";
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
-import Resources from "../../components/Sections/SectionResources/SectionResources";
-import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";
 import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
 import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
 
@@ -64,20 +62,13 @@ query{
         twitter
        facebook
         instagram
-        clubGuide{
-          id
-          url
-        }
-        teamSheet{
-          id
-          url
-        }
+        
         rulesPdf{
           id
           url
         }
       }
-    iufuCommittees{
+    iufuCommittees(orderBy: personRole_ASC){
         id
         personName
         personRole
@@ -89,13 +80,6 @@ query{
             height
         }
     
-    }
-    iufuRefereeses(orderBy: refereeCounty_ASC){
-        id
-        refereeName
-        refereeEmail
-        refereeCounty
-        refereeMobile
     }
     errorImageses{
         errorImage {
@@ -111,6 +95,24 @@ query{
             height
             width
         }
+    },
+    blogsConnection(orderBy: createdAt_DESC, where: {postCategory_contains: "iufu"}, first: 3){
+        edges{
+            node{
+            id
+            createdAt
+            postCategory
+            postImage {
+                id
+                handle
+                width
+                height
+            }
+            postExcerpt
+            postHeading
+            }
+        }
+
     }
 }
 
@@ -145,10 +147,12 @@ function Iufu (props) {
     });
     /* LIGHT BOX */
 
+    
+
     return(
         <React.Fragment>
             <Masthead identifier={"iufu-nav"} default={nav} changed={() => setNav(!nav)}>
-                <IufuNav clicked={() => setNav(!nav)}/>
+                <IufuNav clicked={() => setNav(!nav)} slideIn={nav === true ? "mobile-nav__slidein" : ""}/>
             </Masthead>
             <main>
                 <div className="main-content">
@@ -161,13 +165,9 @@ function Iufu (props) {
                             committeeDesc="Irish Universities Football Union"
                             bckg={data.pageses[0].heroImage.handle}
                         />
-                        <About 
-                            identifier="iufu"
-                            context={data.pageses[0].aboutText}
-                            image={data.pageses[0].aboutImage}
-                            imageDesc={data.pageses[0].aboutImageDesc}
-                            path="/blog"
-                        />
+                        
+                        <Blog data={data.blogsConnection.edges} identifier="iufu" path="/latest-news/iufu"/>
+
                         <Rules 
                             identifier="iufu"
                             ruleImage={data.pageses[0].rulesImage}
@@ -188,21 +188,7 @@ function Iufu (props) {
                                 ))
                             }
                         </Committee>
-                        <Resources 
-                            identifier="iufu" 
-                            email={data.pageses[0].email}
-                            facebook={data.pageses[0].facebook}
-                            twitter={data.pageses[0].twitter}
-                            instagram={data.pageses[0].instagram}
-                            clubGuide={data.pageses[0].clubGuide.url}
-                            teamSheet={data.pageses[0].teamSheet.url}
-                        >
-                            {
-                                data.iufuRefereeses.map(el => (
-                                    <Referee key={el.id} county={el.refereeCounty} refereeName={el.refereeName} refereeMobile={el.refereeMobile} refereeEmail={el.refereeEmail} identifier="iufu" />
-                                ))
-                            }
-                        </Resources>
+                        
                         <Gallery identifier="iufu">
                             {
                                 data.errorImageses[0].errorImage.slice(0, 15).map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
@@ -214,7 +200,13 @@ function Iufu (props) {
                             slide={image}
                             sources={imgUrls}
                         />
-                        <Blog identifier="iufu" whose="IUFU" />
+                        <About 
+                            identifier="iufu"
+                            context={data.pageses[0].aboutText}
+                            image={data.pageses[0].aboutImage}
+                            imageDesc={data.pageses[0].aboutImageDesc}
+                            path="/latest-news/iufu"
+                        />
                     </div>
                 </div>
             </main>
@@ -229,4 +221,4 @@ function Iufu (props) {
     );
 }
 
-export default React.memo(Iufu);
+export default Iufu;

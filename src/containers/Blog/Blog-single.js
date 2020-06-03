@@ -10,7 +10,7 @@ import Loader from "../../components/Ui/Loader/Loader";
 import Error from "../../components/Ui/Error/Error";
 import EmptyMast from "../../components/Ui/Masthead/EmptyMast";
 import Footer from "../../components/Ui/Footer/Footer";
-
+import DateFormatter from "../../components/Ui/CustomHooks/Date";
 
 const getBlogPostsData = gql`
     query($slug : String!){
@@ -36,12 +36,11 @@ const getBlogPostsData = gql`
 
 function FullBlogPosts(props) {
     
-    const month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec" ];
 
     let history = useHistory();
 
     function backToBlogHandler(){
-        history.push("/latest-news");
+        history.goBack();
     }
 
     let { slug } = useParams();
@@ -60,15 +59,14 @@ function FullBlogPosts(props) {
                 <div className="blog-single__container">
                     <div className="blog-single__card">
                         <h3 className="blog-single__card--text-heading">{data.blogs[0].postHeading}</h3>
-                        <p className="blog-single__card--text-date">{
-                        [data.blogs[0].createdAt.split("T")[0].split("-")[2], month[data.blogs[0].createdAt.split("T")[0].split("-")[1] -1], data.blogs[0].createdAt.split("T")[0].split("-")[0]].join(" ꞏ ")}</p>
+                        <p className="blog-single__card--text-date">{DateFormatter(data.blogs[0].createdAt)}</p>
                        
                         <GraphImg image={data.blogs[0].postImage} alt={data.blogs[0].postHeading} fit="max" withWebp={true} maxWidth={800} className="blog-posts__card--image-img blog-posts-single-img" SameSite="None" Secure/>
                         <div className="blog-single__content" dangerouslySetInnerHTML={{__html: data.blogs[0].postBody.html}} />
                         <div className="blog-single__button">
                             <p  type="button" onClick={backToBlogHandler}> <span><svg className="arrow-left-button-icon">
                                         <use xlinkHref={sprite + "#icon-chevron-left"}></use>
-                                </svg></span> Latest News </p>
+                                </svg></span> Back </p>
                         </div>
                     </div>
                     <MoreStories />
@@ -86,4 +84,4 @@ function FullBlogPosts(props) {
 
 
 
-export default React.memo(FullBlogPosts);
+export default FullBlogPosts;

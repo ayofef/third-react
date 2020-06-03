@@ -11,14 +11,12 @@ import Error from "../../components/Ui/Error/Error";
 import Masthead from "../../components/Ui/PageMasthead/PageMasthead";
 import Footer from "../../components/Ui/Footer/Footer";
 import WscaiNav from "../../components/Ui/PageMasthead/WscaiNavs/WscaiNavs";
-import Blog from "../../components/Sections/SectionGoBlog";
+import Blog from "../../components/Sections/SectionBlog/SectionBlog";
 import Emblem from "../../components/Sections/SectionEmblem";
 import About from "../../components/Sections/SectionAbout";
 import Rules from "../../components/Sections/SectionRules";
 import Committee from "../../components/Sections/SectionCommittee/SectionComittee";
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
-import Resources from "../../components/Sections/SectionResources/SectionResources";
-import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";
 import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
 import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
 
@@ -79,7 +77,7 @@ query{
           url
         }
       }
-    wscaiCommittees{
+    wscaiCommittees(orderBy: personRole_ASC){
         id
         personName
         personRole
@@ -113,6 +111,24 @@ query{
             height
             width
         }
+    },
+    blogsConnection(orderBy: createdAt_DESC, where: {postCategory_contains: "wscai"}, first: 3){
+        edges{
+            node{
+            id
+            createdAt
+            postCategory
+            postImage {
+                id
+                handle
+                width
+                height
+            }
+            postExcerpt
+            postHeading
+            }
+        }
+
     }
 }
 
@@ -163,13 +179,8 @@ const Wscai = (props) => {
                             committeeDesc="Women Soccer Colleges Association of Ireland"
                             bckg={data.pageses[0].heroImage.handle}
                         />
-                        <About 
-                            identifier="wscai"
-                            context={data.pageses[0].aboutText}
-                            image={data.pageses[0].aboutImage}
-                            imageDesc={data.pageses[0].aboutImageDesc}
-                            path="/latest-news"
-                        />
+                        <Blog data={data.blogsConnection.edges} identifier="wscai" path="/latest-news/wscai"/>
+                        
                         <Rules 
                             identifier="wscai"
                             ruleImage={data.pageses[0].rulesImage}
@@ -190,21 +201,7 @@ const Wscai = (props) => {
                                 ))
                             }
                         </Committee>
-                        <Resources 
-                            identifier="wscai" 
-                            email={data.pageses[0].email}
-                            facebook={data.pageses[0].facebook}
-                            twitter={data.pageses[0].twitter}
-                            instagram={data.pageses[0].instagram}
-                            clubGuide={data.pageses[0].clubGuide.url}
-                            teamSheet={data.pageses[0].teamSheet.url}
-                        >
-                            {
-                                data.wscaiRefereeses.map(el => (
-                                    <Referee key={el.id} county={el.refereeCounty} refereeName={el.refereeName} refereeMobile={el.refereeMobile} refereeEmail={el.refereeEmail} identifier="wscai" />
-                                ))
-                            }
-                        </Resources>
+                        
                         <Gallery identifier="wscai">
                             {
                                 data.errorImageses[0].errorImage.slice(0, 15).map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
@@ -216,7 +213,13 @@ const Wscai = (props) => {
                             slide={image}
                             sources={imgUrls}
                         /> 
-                        <Blog identifier="wscai" whose="WSCAI" />
+                        <About 
+                            identifier="wscai"
+                            context={data.pageses[0].aboutText}
+                            image={data.pageses[0].aboutImage}
+                            imageDesc={data.pageses[0].aboutImageDesc}
+                            path="/latest-news/wscai"
+                        />
                     </div>
                 </div>
             </main>
@@ -231,4 +234,4 @@ const Wscai = (props) => {
     );
 }
 
-export default React.memo(Wscai);
+export default Wscai;

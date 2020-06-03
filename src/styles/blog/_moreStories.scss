@@ -1,0 +1,14 @@
+.more-stories {
+    flex: 1;
+    margin-top: 12rem;
+    opacity: 1; }
+    @media screen and (max-width: 37.5em) {
+      .more-stories {
+        margin-top: 8rem;
+        opacity: 1; } }
+    .more-stories__header {
+      text-align: center;
+      font-weight: 600;
+      background-color: #333;
+      color: #fff;
+      padding: 1.2rem 1rem; }

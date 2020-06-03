@@ -10,6 +10,7 @@ import CuflNav from "../../components/Ui/PageMasthead/CuflNavs/CuflNavs";
 import Masthead from "../../components/Ui/PageMasthead/PageMasthead";
 import Footer from "../../components/Ui/Footer/Footer";
 
+
 import Emblem from "../../components/Sections/SectionEmblem";
 import About from "../../components/Sections/SectionAbout";
 import Rules from "../../components/Sections/SectionRules";
@@ -18,9 +19,7 @@ import International from "../../components/Sections/SectionInternational";
 import Futsal from "../../components/Sections/SectionFutsal";
 import Committee from "../../components/Sections/SectionCommittee/SectionComittee";
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
-import Resources from "../../components/Sections/SectionResources/SectionResources";
-import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";
-import Blog from "../../components/Sections/SectionGoBlog";
+import Blog from "../../components/Sections/SectionBlog/SectionBlog";
 import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
 import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
 
@@ -75,20 +74,13 @@ const getCuflPageData = gql`
             twitter
            facebook
             instagram
-            clubGuide{
-              id
-              url
-            }
-            teamSheet{
-              id
-              url
-            }
+            
             rulesPdf{
               id
               url
             }
         }
-        cuflCommittees{
+        cuflCommittees(orderBy: personRole_ASC){
             id
             personName
             personRole
@@ -100,13 +92,6 @@ const getCuflPageData = gql`
                 height
             }
         
-        }
-        cuflRefereeses(orderBy: refereeCounty_ASC){
-            id
-            refereeName
-            refereeEmail
-            refereeCounty
-            refereeMobile
         }
         errorImageses{
             errorImage {
@@ -122,6 +107,24 @@ const getCuflPageData = gql`
                 height
                 width
             }
+        },
+        blogsConnection(orderBy: createdAt_DESC, where: {postCategory_contains: "cufl"}, first: 3){
+            edges{
+                node{
+                id
+                createdAt
+                postCategory
+                postImage {
+                    id
+                    handle
+                    width
+                    height
+                }
+                postExcerpt
+                postHeading
+                }
+            }
+  
         }
     }
 
@@ -160,6 +163,7 @@ function Cufl(props) {
     });
     /* LIGHT BOX */
 
+    console.log(data)
     return(
         <React.Fragment>
             <Masthead identifier={"cufl-nav"} default={nav} changed={() => setNav(!nav)}>
@@ -176,13 +180,9 @@ function Cufl(props) {
                             committeeDesc="Colleges and Universities Football League"
                             bckg={data.pageses[0].heroImage.handle}
                         />
-                        <About 
-                            identifier="cufl"
-                            context={data.pageses[0].aboutText}
-                            image={data.pageses[0].aboutImage}
-                            imageDesc={data.pageses[0].aboutImageDesc}
-                            path="/latest-news"
-                        />
+
+                        <Blog data={data.blogsConnection.edges} identifier="cufl" path="/latest-news/cufl" />
+                        
                         <Rules 
                             identifier="cufl"
                             ruleImage={data.pageses[0].rulesImage}
@@ -212,21 +212,7 @@ function Cufl(props) {
                                 ))
                             }
                         </Committee>
-                        <Resources 
-                            identifier="cufl" 
-                            email={data.pageses[0].email}
-                            facebook={data.pageses[0].facebook}
-                            twitter={data.pageses[0].twitter}
-                            instagram={data.pageses[0].instagram}
-                            clubGuide={data.pageses[0].clubGuide.url}
-                            teamSheet={data.pageses[0].teamSheet.url}
-                        >
-                            {
-                                data.cuflRefereeses.map(el => (
-                                    <Referee key={el.id} county={el.refereeCounty} refereeName={el.refereeName} refereeMobile={el.refereeMobile} refereeEmail={el.refereeEmail} identifier="cufl" />
-                                ))
-                            }
-                        </Resources>
+                        
                         <Gallery identifier="cufl">
                             {
                                 data.errorImageses[0].errorImage.slice(0, 15).map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
@@ -238,7 +224,13 @@ function Cufl(props) {
                             slide={image}
                             sources={imgUrls}
                         /> 
-                        <Blog identifier="cufl" whose="CUFL"/>
+                        <About 
+                            identifier="cufl"
+                            context={data.pageses[0].aboutText}
+                            image={data.pageses[0].aboutImage}
+                            imageDesc={data.pageses[0].aboutImageDesc}
+                            path="/latest-news/cufl"
+                        />
                     </div>
                 </div>
             </main>
@@ -253,4 +245,4 @@ function Cufl(props) {
     );
 }
 
-export default React.memo(Cufl);
+export default Cufl;

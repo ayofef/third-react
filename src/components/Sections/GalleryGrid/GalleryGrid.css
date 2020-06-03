@@ -3,6 +3,8 @@
     display: grid;
     grid-template: repeat(8, 5vw)/repeat(10, 1fr);
     grid-gap: 1rem;
+    padding: .5rem;
+    box-sizing: border-box;
   
 }
 @media screen and (max-width: 37.5em) {

@@ -11,14 +11,13 @@ import Error from "../../components/Ui/Error/Error";
 import Masthead from "../../components/Ui/PageMasthead/PageMasthead";
 import Footer from "../../components/Ui/Footer/Footer";
 import CfaiNav from "../../components/Ui/PageMasthead/CfaiNavs/CfaiNavs";
-import Blog from "../../components/Sections/SectionGoBlog";
+import Blog from "../../components/Sections/SectionBlog/SectionBlog";
 import Emblem from "../../components/Sections/SectionEmblem";
 import About from "../../components/Sections/SectionAbout";
 import Rules from "../../components/Sections/SectionRules";
 import Committee from "../../components/Sections/SectionCommittee/SectionComittee";
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
-import Resources from "../../components/Sections/SectionResources/SectionResources";
-import Referee from "../../components/Sections/SectionResources/refereeCard/refereeCard";import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
+import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
 import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
 
 
@@ -77,7 +76,7 @@ const getCfaiPageData = gql`
                 url
             }
         }
-        cfaiCommittees{
+        cfaiCommittees(orderBy: personRole_ASC){
             id
             personName
             personRole
@@ -111,6 +110,24 @@ const getCfaiPageData = gql`
                 height
                 width
             }
+        },
+        blogsConnection(orderBy: createdAt_DESC, where: {postCategory_contains: "cfai"}, first: 3){
+            edges{
+                node{
+                id
+                createdAt
+                postCategory
+                postImage {
+                    id
+                    handle
+                    width
+                    height
+                }
+                postExcerpt
+                postHeading
+                }
+            }
+  
         }
     }
 
@@ -163,13 +180,9 @@ function Cfai() {
                             committeeDesc="Colleges Football Association of Ireland"
                             bckg={data.pageses[0].heroImage.handle}
                         />
-                        <About 
-                            identifier="cfai"
-                            context={data.pageses[0].aboutText}
-                            image={data.pageses[0].aboutImage}
-                            imageDesc={data.pageses[0].aboutImageDesc}
-                            path="/latest-news"
-                        />
+
+                        <Blog data={data.blogsConnection.edges} identifier="cfai" path="/latest-news/cfai"/>
+                        
                         <Rules 
                             identifier="cfai"
                             ruleImage={data.pageses[0].rulesImage}
@@ -190,21 +203,6 @@ function Cfai() {
                                 ))
                             }
                         </Committee>
-                        <Resources 
-                            identifier="cfai" 
-                            email={data.pageses[0].email}
-                            facebook={data.pageses[0].facebook}
-                            twitter={data.pageses[0].twitter}
-                            instagram={data.pageses[0].instagram}
-                            clubGuide={data.pageses[0].clubGuide.url}
-                            teamSheet={data.pageses[0].teamSheet.url}
-                        >
-                            {
-                                data.cfaiRefereeses.map(el => (
-                                    <Referee key={el.id} county={el.refereeCounty} refereeName={el.refereeName} refereeMobile={el.refereeMobile} refereeEmail={el.refereeEmail} identifier="cfai" />
-                                ))
-                            }
-                        </Resources>
                         <Gallery identifier="cfai">
                             {
                                 data.errorImageses[0].errorImage.slice(0, 15).map((el, index) => ( <GalleryItem key={el.id} image={el} handle={el.handle} imageDesc={el.fileName} 
@@ -216,7 +214,13 @@ function Cfai() {
                             slide={image}
                             sources={imgUrls}
                         /> 
-                        <Blog identifier="cfai" whose="CFAI" />
+                        <About 
+                            identifier="cfai"
+                            context={data.pageses[0].aboutText}
+                            image={data.pageses[0].aboutImage}
+                            imageDesc={data.pageses[0].aboutImageDesc}
+                            path="/latest-news/cfai"
+                        />
                     </div>
                 </div>
             </main>
@@ -231,4 +235,4 @@ function Cfai() {
     );
 }
 
-export default React.memo(Cfai);
+export default Cfai;
