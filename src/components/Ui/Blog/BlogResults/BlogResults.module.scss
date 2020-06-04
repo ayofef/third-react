@@ -71,17 +71,21 @@
     background-color: inherit;
     display: block;
     cursor: pointer;
+    transition: all .3s ease-out;
+    opacity: 1;
 
     
 
     &:hover &__FixRes,
     &:focus &__FixRes{
-        transform: translateY(-5rem);
+        opacity: 0;
+        transform: translateY(-3rem);
         
     }
     &:hover &__Date,
     &:focus &__Date{
-        transform: translateY(-5rem);
+        opacity: 1;
+        transform: translateY(-4rem);
         
     }
 
@@ -124,6 +128,7 @@
     }
 
     &__Date{
+        opacity: 0;
         text-align: center;
         transform: translateY(3rem);
         transition: all .3s ease-out;

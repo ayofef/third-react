@@ -65,7 +65,15 @@ SVG
     padding-bottom: 2rem; }
   
   .subnav__nav {
-    background-color: #e7dcdc; }
+    background-color: #e7dcdc; 
+    transition: all .3s ease-out;
+
+      @media screen and (max-width: 37.5em) {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+      }
+  }
   
   .subnav__list {
     display: flex;
@@ -77,26 +85,17 @@ SVG
   .subnav__li {
     transition: all .3s ease-out; }
     .subnav__li:hover, .subnav__li:active {
-      background-color: rgba(255, 0, 0, 0.6); }
+      background-color: rgba(#162a4ecc, .2); }
   
   .subnav__links {
-    padding: 1.2rem 2rem;
+    padding: 1.5rem;
     display: inline-block;
-    color: #162a4e;
-    font-size: 1.2rem; }
-    @media screen and (max-width: 37.5em) {
-      .subnav__links {
-        font-size: 1rem;
-        padding: 1.2rem 1rem; } }
-    @media screen and (max-width: 31.25em) {
-      .subnav__links {
-        padding: 1.2rem 0.5rem; } }
-        @media screen and (max-width: 21.87em) {
-          .subnav__links {
-            padding: 1.2rem 0.2rem; } }
+    color: #162a4e;}
+    
+
     .subnav__active--link {
       font-weight: 600; 
-      background-color: rgba(255, 0, 0, 0.6);}
+      background-color: rgba(#162a4ecc, .4);}
   
   .latest-fixtures {
     background-image: url("../assets/images//leagues/league-bg.jpg");
@@ -301,3 +300,54 @@ SVG
         .league-standing{
           padding-bottom: 5rem;
         }
+
+.leagueSelect{
+
+  /*SELECT PLUGIN*/
+.basic-single{
+  color: #162a4ecc;
+  outline: none;
+  margin-top: 2rem;
+  display: none;
+
+  @media screen and (max-width: 37.5em) {
+    display: block;
+  }
+
+
+  
+  & .select__control{
+    border: 1px solid #777;
+    cursor: pointer;
+    outline: none;
+
+    &:focus,
+    &:hover,
+    &:target{
+      border-color: #162a4ecc;
+      outline: none;
+      box-shadow: 0 0 1px #162a4ecc;
+    }
+  }
+
+  & .select__menu{
+    cursor: pointer;
+    outline: none;
+    
+  }
+
+  & .select__option{
+    cursor: pointer;
+    outline: none;
+
+    &--is-focused{
+      background-color: #cfdbd5;
+    }
+
+    &--is-selected{
+      background-color: #777;
+    }
+  }
+}
+/*SELECT PLUGIN*/
+}

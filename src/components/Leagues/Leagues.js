@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Route, Switch, useParams }from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Route, Switch, useParams, useHistory }from "react-router-dom";
+import Select from 'react-select';
 
 
 
@@ -15,11 +16,36 @@ import Standings from "./LeagueSections/Standings";
 import Svg from "./LeaguesHtml/FixturesHtml/TextSvg";
 
 
-function League (){
-    const [nav, setNav] = useState(false);
-
+function League (props){
     let { slug } = useParams();
+    let history = useHistory();
 
+    const [nav, setNav] = useState(false);
+    const [sort, setSort] = useState({value: slug , label: slug.split("-").join(" ").toUpperCase()});
+
+    // let { slug } = useParams();
+
+    console.log(sort)
+    const handleChange = (selectedOption) => {
+        setSort(selectedOption);
+        history.push(`/cufl/leagues/${selectedOption.value}`);
+        // setCurrentPage(1);
+    }
+    const sortOption = [
+        {value: "premier-division" , label: "PREMIER DIVISION"},
+        {value: "division-one" , label: "DIVISION ONE"},
+        {value: "division-two" , label: "DIVISION TWO"},
+        {value: "division-three" , label: "DIVISION THREE"},
+        {value: "division-four" , label: "DIVISION FOUR"},
+    ];
+
+    /* MAKING SURE SUBNAV IS SYNCING WITH SELECT VALUE */
+
+    useEffect(() => {
+        setSort({value: slug , label: slug.split("-").join(" ").toUpperCase()})
+    },[slug])
+    /* MAKING SURE SUBNAV IS SYNCING WITH SELECT VALUE */
+    
 
     let icon;
 
@@ -38,6 +64,7 @@ function League (){
 
     
     
+    console.log(props)
     return(
         <React.Fragment>
         <Masthead identifier={"cufl-nav"} default={nav} changed={() => setNav(!nav)}>
@@ -51,7 +78,23 @@ function League (){
                         <div>{icon}
                         </div>
                     </LatestImage>
-                    <SubNav slug={slug} />
+                    <div className="leagueSelect">
+                        <Select
+                            className="basic-single"
+                            classNamePrefix="select"
+                            defaultValue={sort}
+                            isDisabled={false}
+                            isLoading={false}
+                            isClearable={false}
+                            isRtl={false}
+                            isSearchable={false}
+                            name="color"
+                            options={sortOption}
+                            value={sort}
+                            onChange={handleChange}
+                        />
+                        <SubNav slug={slug} />
+                    </div>
 
                     <Switch>
                         <Route path="/cufl/leagues" exact component ={Fixtures} />

@@ -1,9 +1,7 @@
 import { gql } from "apollo-boost";
 
-const getStandings = {
-
-    premierDivision: gql`
-        query{
+const getStandings = 
+    gql`query{
             cuflNorthPremierDivisionTables(orderBy: points_DESC){
                 id 
                 teamName 
@@ -32,11 +30,6 @@ const getStandings = {
                     url
                 }
             }
-        }
-
-    `,
-    divisionOne: gql`
-        query{
             cuflDivisionOneGroupATables(orderBy: points_DESC){
                 id 
                 teamName 
@@ -93,11 +86,6 @@ const getStandings = {
                     url
                 }
             }
-        }
-
-    `,
-    divisionTwo: gql`
-        query{
             cuflDivisionTwoGroupATables(orderBy: points_DESC){
                 id 
                 teamName 
@@ -154,11 +142,6 @@ const getStandings = {
                     url
                 }
             }
-        }
-
-    `,
-    divisionThree: gql`
-        query{
             cuflDivisionThreeGroupATables(orderBy: points_DESC){
                 id 
                 teamName 
@@ -215,11 +198,6 @@ const getStandings = {
                     url
                 }
             }
-        }
-
-    `, 
-    divisionFour: gql`
-        query{
             cuflDivisionFourGroupATables(orderBy: points_DESC){
                 id 
                 teamName 
@@ -278,10 +256,10 @@ const getStandings = {
             }
         }
 
-    `
+    `;
 
 
-}
+
 
 
 export default getStandings;

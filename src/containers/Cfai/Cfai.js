@@ -19,6 +19,7 @@ import Committee from "../../components/Sections/SectionCommittee/SectionComitte
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
 import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
 import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
+import Cup from "../../components/Sections/SectionCup/SectionCup";
 
 
 import Logo from "../../assets/images/logo/cfai.png"
@@ -164,6 +165,17 @@ function Cfai() {
     });
     /* LIGHT BOX */
 
+
+    /* LEAGUE CARD DATA */
+        const CUPS_CARD_CARD = [
+            "Perpetual Cup",
+            "Challenge Cup",
+            "Eustace Cup",
+            "Plate",
+            "Eustace Shield"
+        ]
+    /* LEAGUE CARD DATA */
+
     return(
         <React.Fragment>
             <Masthead identifier={"cfai-nav"} default={nav} changed={() => setNav(!nav)}>
@@ -196,6 +208,7 @@ function Cfai() {
                             formPdf={data.pageses[0].competitionForm.url}
 
                         />
+                        
                         <Committee identifier="cfai" header="COMMITTEE">
                             {
                                 data.cfaiCommittees.map(el => (

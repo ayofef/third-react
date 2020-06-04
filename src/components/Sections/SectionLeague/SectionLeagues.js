@@ -6,37 +6,39 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function SectionLeagues(props) {
+
+    const NthSth = ["North", "South"];
+    const Group = ["Group A", "Group B", "Group C", "Group D"];
     
     return(
         <section className={["leagues", `${props.identifier +"-leagues"}`].join(" ")} id={props.identifier + "-leagues"}>
             <div className="container">
-                <h2 className={["u-heading", "u-center", `${props.identifier + "-heading"}`].join(" ")}>LEAGUES</h2>
+                <h2 className={["u-heading", "u-center", `${props.identifier + "-heading"}`].join(" ")}>LEAGUE</h2>
                 <div className="leagues-box">
                     <LeagueStar identifier="premier" committe="cufl" star="leagues__card--icon-premier-star" path="/cufl/leagues/premier-division" heading="Premier Division">
-                        <p>North</p>
-                        <p>South</p>
+                        {
+                            NthSth.map((el, index) => <p key={index}>{el}</p>)
+                        }
                     </LeagueStar>
                     <LeagueCard identifier="d1" committe="cufl" path="/cufl/leagues/division-one" heading="Division 1">
-                        <p>North</p>
-                        <p>South</p>
+                        {
+                            NthSth.map((el, index) => <p key={index}>{el}</p>)
+                        }
                     </LeagueCard>
                     <LeagueCard identifier="d2" committe="cufl" path="/cufl/leagues/division-two" heading="Division 2">
-                        <p>Group A</p>
-                        <p>Group B</p>
-                        <p>Group C</p>
-                        <p>Group D</p>
+                        {
+                            Group.map((el, index) => <p key={index}>{el}</p>)
+                        }
                     </LeagueCard>
-                    <LeagueStar identifier="d3" committe="cufl" path="/cufl/leagues/division-three" star="" heading="Division 3">
-                        <p>Group A</p>
-                        <p>Group B</p>
-                        <p>Group C</p>
-                        <p>Group D</p>
+                    <LeagueStar identifier="d3" committe="cufl" path="/cufl/leagues/division-three" heading="Division 3">
+                        {
+                            Group.map((el, index) => <p key={index}>{el}</p>)
+                        }
                     </LeagueStar>
                     <LeagueCard identifier="d4" committe="cufl" path="/cufl/leagues/division-four" heading="Division 4">
-                        <p>Group A</p>
-                        <p>Group B</p>
-                        <p>Group C</p>
-                        <p>Group D</p>
+                        {
+                            Group.map((el, index) => <p key={index}>{el}</p>)
+                        }
                     </LeagueCard>
                 </div>
                 <div className="leagues__form u-center">
