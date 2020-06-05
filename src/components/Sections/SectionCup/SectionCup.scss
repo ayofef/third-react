@@ -1,92 +1,225 @@
-.Cup{
-    transition: all .3s ease-out;
+/*background*/
+.cfai-cup,
+.iufu-cup,
+.wscai-cup{
+    background-image: url("../../../assets/images/competition.jpg");
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    &__Box{
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap;
-        align-items: flex-end;
-        padding: 4rem 0;
-
-    
-
-        & > :nth-child(1){
-            order: 3;
-            margin-right: 3rem;
-            padding: 4rem 1rem;
-        }
-        & > :nth-child(2){
-            order: 1;
-            margin-right: 3rem;
-            
-        }
-        & > :nth-child(3){
-            order: 2;
-            margin-right: 3rem;
-            
-        }
-        & > :nth-child(4){
-            order: 4;
-            margin-right: 3rem;
-            
-        }
-        & > :nth-child(5){
-            order: 5;
-            margin-right: 0;
-        }
+    & .tocup__link{
+        background-color: #fff;
     }
-
-    // &__cfai{
-    //     opacity: 1;
-
-    //     & a{
-    //         background-color: #71d78a;
-    //         background-image: linear-gradient(to right, #71d78a, #71d78a);
-
-    //         &:hover{
-    //             background-image: linear-gradient(to right, #71d78a, #71d78a);
-    //         }
-    //     }
-    // }
 }
 
 
 
-.CupCard{
-    box-sizing: border-box;
-    background-color: whitesmoke;
-    flex: 0 1 18rem;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: .5rem;
-    padding: 2rem 1rem;
-    box-shadow: 0 0rem 0.5rem rgba(0, 0, 0, 0.3); 
+.cup{
+
     
 
+    &__icon{
+        height: 6rem;
+        padding: 2.5rem 0;
 
-    &__Link{
-        & p{
-            padding: 3rem 0;
-        }
-    
-    
-        &__Icon{
-            padding-top: 3rem;
-            height: 6rem;
-    
-            & img{
-                width: 100%;
-                height: 100%;
-            }
-    
+        &--svg{
+            width: 100%;
+            height: 100%;
         }
     }
 
+    &__text{
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        padding-bottom: .5rem;
+        font-weight: 700;
+    }
 
     
+}
 
+
+
+/*CFAI*/
+
+.cfai-cup .tocup__link:hover{
+    background-color: #71d78a;
+}
+
+.cup__card{
+
+    background-color: #ededed;
+
+    & .cup__link{
+        
+        &:link,
+        &:visited,
+        &:active{
+            color: #007531;
+        }
+    }
+
+    @media screen and (min-width: 56.25em){
+        &--perpetual-cup{
+            padding: 3rem 0;
+            order: 3;
+            margin-right: 2rem;
     
+            & .cup__icon{
+                height: 8rem;
+                padding: 2.5rem 0;
+        
+                &--svg{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        
+            &__text{
+                font-size: 1.3rem;
+                padding-bottom: .5rem;
+                font-weight: 700;
+            }
+        }
+        &--challenge-cup{
+            order: 1;
+            margin-right: 2rem;
+        }
+        &--eustace-cup{
+            order: 2;
+            margin-right: 2rem;
+        }
+        &--plate{
+            order: 4;
+            margin-right: 2rem;
+        }
+        &--eustace-shield{
+            order: 5;
+        }
+    }
+}
+
+
+/*IUFU*/
+.iufu-cup .tocup__link:hover{
+    background-color: #2a5298;
+    color: #fff;
+
+    & svg{
+        fill: #fff;
+    }
+}
+
+.cup__card{
+
+    background-color: #ededed;
+
+    & .cup__link{
+        
+        &:link,
+        &:visited,
+        &:active{
+            color: #2a5298;
+        }
+    }
+
+    @media screen and (min-width: 56.25em){
+        &--collingwood-cup{
+            padding: 3rem 0;
+            order: 3;
+            margin-right: 2rem;
+    
+            & .cup__icon{
+                height: 8rem;
+                padding: 2.5rem 0;
+        
+                &--svg{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        
+            &__text{
+                font-size: 1.3rem;
+                padding-bottom: .5rem;
+                font-weight: 700;
+            }
+        }
+        &--harding-cup{
+            order: 1;
+            margin-right: 2rem;
+        }
+        &--duggan-cup{
+            order: 2;
+            margin-right: 2rem;
+        }
+        &--crowley-cup{
+            order: 4;
+            margin-right: 2rem;
+        }
+        &--tobeconfirmed-cup{
+            order: 5;
+        }
+    }
+}
+
+
+
+
+/*WSCAI*/
+.wscai-cup .tocup__link:hover{
+    background-color: #FC6DAB;
+}
+
+.cup__card{
+
+    background-color: #ededed;
+
+    & .cup__link{
+        
+        &:link,
+        &:visited,
+        &:active{
+            color: #BA265D;
+        }
+    }
+
+    @media screen and (min-width: 56.25em){
+        &--collingwood-cup{
+            padding: 3rem 0;
+            order: 3;
+            margin-right: 2rem;
+    
+            & .cup__icon{
+                height: 8rem;
+                padding: 2.5rem 0;
+        
+                &--svg{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        
+            &__text{
+                font-size: 1.3rem;
+                padding-bottom: .5rem;
+                font-weight: 700;
+            }
+        }
+        &--harding-cup{
+            order: 1;
+            margin-right: 2rem;
+        }
+        &--duggan-cup{
+            order: 2;
+            margin-right: 2rem;
+        }
+        &--crowley-cup{
+            order: 4;
+            margin-right: 2rem;
+        }
+        &--tobeconfirmed-cup{
+            order: 5;
+        }
+    }
 }

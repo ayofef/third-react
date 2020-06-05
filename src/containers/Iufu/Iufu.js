@@ -17,7 +17,7 @@ import Committee from "../../components/Sections/SectionCommittee/SectionComitte
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
 import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
 import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
-
+import Cup from "../../components/Sections/SectionCup/SectionCup";
 
 
 import Logo from "../../assets/images/logo/iufu.jpg";
@@ -147,6 +147,15 @@ function Iufu (props) {
     });
     /* LIGHT BOX */
 
+    /* CUP CARD DATA */
+    const CUPS_CARD_CARD = [
+        "Collingwood Cup",
+        "Harding Cup",
+        "Duggan Cup",
+        "Crowley Cup",
+        "toBeConfirmed Cup"
+    ]
+    /* CUP CARD DATA */
     
 
     return(
@@ -181,6 +190,9 @@ function Iufu (props) {
                             formPdf={data.pageses[0].competitionForm.url}
 
                         />
+
+                        <Cup data={CUPS_CARD_CARD } identifier="iufu"/>
+
                         <Committee identifier="iufu" header="COMMITTEE">
                             {
                                 data.iufuCommittees.map(el => (

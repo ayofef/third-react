@@ -166,7 +166,7 @@ function Cfai() {
     /* LIGHT BOX */
 
 
-    /* LEAGUE CARD DATA */
+    /* CUP CARD DATA */
         const CUPS_CARD_CARD = [
             "Perpetual Cup",
             "Challenge Cup",
@@ -174,7 +174,7 @@ function Cfai() {
             "Plate",
             "Eustace Shield"
         ]
-    /* LEAGUE CARD DATA */
+    /* CUP CARD DATA */
 
     return(
         <React.Fragment>
@@ -208,7 +208,9 @@ function Cfai() {
                             formPdf={data.pageses[0].competitionForm.url}
 
                         />
-                        
+
+                        <Cup data={CUPS_CARD_CARD } identifier="cfai"/>
+
                         <Committee identifier="cfai" header="COMMITTEE">
                             {
                                 data.cfaiCommittees.map(el => (

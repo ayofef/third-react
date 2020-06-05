@@ -19,7 +19,7 @@ import Committee from "../../components/Sections/SectionCommittee/SectionComitte
 import Person from "../../components/Sections/SectionCommittee/CommitteeCard/CommitteeCard";
 import Gallery from "../../components/Sections/GalleryGrid/GalleryGrid";
 import GalleryItem from "../../components/Sections/GalleryGrid/GridItem/GridItem";
-
+import Cup from "../../components/Sections/SectionCup/SectionCup";
 
 
 import Logo from "../../assets/images/logo/wscai.png";
@@ -163,6 +163,16 @@ const Wscai = (props) => {
     });
     /* LIGHT BOX */
 
+    /* CUP CARD DATA */
+    const CUPS_CARD_CARD = [
+        "Collingwood Cup",
+        "Harding Cup",
+        "Duggan Cup",
+        "Crowley Cup",
+        "toBeConfirmed Cup"
+    ]
+    /* CUP CARD DATA */
+
     return(
         <React.Fragment>
             <Masthead identifier={"wscai-nav"} default={nav} changed={() => setNav(!nav)}>
@@ -194,6 +204,9 @@ const Wscai = (props) => {
                             formPdf={data.pageses[0].competitionForm.url}
 
                         />
+
+                        <Cup data={CUPS_CARD_CARD} identifier="wscai"/>
+
                         <Committee identifier="wscai" header="COMMITTEE">
                             {
                                 data.wscaiCommittees.map(el => (
