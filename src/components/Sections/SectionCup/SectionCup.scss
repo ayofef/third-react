@@ -42,13 +42,11 @@
 
 /*CFAI*/
 
-.cfai-cup .tocup__link:hover{
-    background-color: #71d78a;
-}
+.cfai-cup {
 
-.cup__card{
-
-    background-color: #ededed;
+    & .tocup__link:hover{
+        background-color: #71d78a;
+    }
 
     & .cup__link{
         
@@ -58,6 +56,13 @@
             color: #007531;
         }
     }
+}
+
+.cup__card{
+
+    background-color: #ededed;
+
+    
 
     @media screen and (min-width: 56.25em){
         &--perpetual-cup{
@@ -101,18 +106,17 @@
 
 
 /*IUFU*/
-.iufu-cup .tocup__link:hover{
-    background-color: #2a5298;
-    color: #fff;
+.iufu-cup{
 
-    & svg{
-        fill: #fff;
+    & .tocup__link:hover{
+        background-color: #2a5298;
+        color: #fff;
+    
+        & svg{
+            fill: #fff;
+        }
     }
-}
 
-.cup__card{
-
-    background-color: #ededed;
 
     & .cup__link{
         
@@ -122,6 +126,13 @@
             color: #2a5298;
         }
     }
+}
+
+.cup__card{
+
+    background-color: #ededed;
+
+    
 
     @media screen and (min-width: 56.25em){
         &--collingwood-cup{
@@ -167,13 +178,12 @@
 
 
 /*WSCAI*/
-.wscai-cup .tocup__link:hover{
-    background-color: #FC6DAB;
-}
+.wscai-cup{
 
-.cup__card{
+    & .tocup__link:hover{
+        background-color: #FC6DAB;
+    }
 
-    background-color: #ededed;
 
     & .cup__link{
         
@@ -183,6 +193,13 @@
             color: #BA265D;
         }
     }
+}
+
+.cup__card{
+
+    background-color: #ededed;
+
+    
 
     @media screen and (min-width: 56.25em){
         &--collingwood-cup{
