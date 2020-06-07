@@ -15,7 +15,7 @@ import BlogSingle from "../Blog/Blog-single";
 
 const DataPolicies = React.lazy(() => import("../DataPrivacy/DataPrivacy"));
 const Leagues = React.lazy(() => import("../../components/Leagues/Leagues"));
-
+const Cups = React.lazy(() => import("../../components/Leagues/Cups"));
 
 const CuflInternational = React.lazy(() => import("../Cufl/CuflInternational/CuflInternational"));
 const CuflResources = React.lazy(() => import("../Cufl/Resources/CuflResources"));
@@ -53,6 +53,13 @@ function Layout(){
                 <Route path="/latest-news/:whose/search" exact component={BlogSearch} />
                 <Route path="/latest-news/:whose/:slug" exact component={BlogSingle} />
                 
+
+                
+                <Route path="/cfai/cups/:slug" exact component={() => <Suspense fallback={<Loader/>}><Cups /></Suspense>} />
+                <Route path="/iufu/cups/:slug" exact component={() => <Suspense fallback={<Loader/>}><Cups /></Suspense>} />
+                <Route path="/wscai/cups/:slug" exact component={() => <Suspense fallback={<Loader/>}><Cups /></Suspense>} />
+                
+
 
                 <Route path="/cufl/leagues" exact component={() => <Suspense fallback={<Loader/>}><Leagues /></Suspense>} />
                 <Route path="/cufl/leagues/:slug" exact component={() => <Suspense fallback={<Loader/>}><Leagues /></Suspense>} />

@@ -12,7 +12,7 @@ import classes from "./BlogResults.module.scss";
 
 const GET_BLOG_RESULT_DATA = gql`
     query{
-        cuflNorthPremierDivisionFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflNorthPremierDivisionFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -29,7 +29,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflSouthPremierDivisionFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflSouthPremierDivisionFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -46,7 +46,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionOneGroupAFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionOneGroupAFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -63,7 +63,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionOneGroupBFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionOneGroupBFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -80,7 +80,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionOneGroupCFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionOneGroupCFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -97,7 +97,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionOneGroupDFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionOneGroupDFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -114,7 +114,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionTwoGroupAFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionTwoGroupAFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -131,7 +131,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionTwoGroupBFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionTwoGroupBFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -148,7 +148,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionTwoGroupCFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionTwoGroupCFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -165,7 +165,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionTwoGroupDFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionTwoGroupDFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -182,7 +182,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionThreeGroupAFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionThreeGroupAFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -199,7 +199,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionThreeGroupBFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionThreeGroupBFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -216,7 +216,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionThreeGroupCFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionThreeGroupCFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -233,7 +233,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionThreeGroupDFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionThreeGroupDFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -250,7 +250,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionFourGroupAFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionFourGroupAFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -267,7 +267,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionFourGroupBFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionFourGroupBFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -284,7 +284,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionFourGroupCFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionFourGroupCFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{
@@ -301,7 +301,7 @@ const GET_BLOG_RESULT_DATA = gql`
                     dateAndTime
                     venue
         },
-        cuflDivisionFourGroupDFixtureses(orderBy : dateAndTime_ASC, first: 1){
+        cuflDivisionFourGroupDFixtureses(orderBy : dateAndTime_ASC, first: 1, where: {status: PUBLISHED}){
                     id
                     homeTeamName
                     homeTeamLogo{

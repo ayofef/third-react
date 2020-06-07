@@ -16,8 +16,8 @@ function fixturesCard (props) {
         const hour = precessedRecived[0] % 12 || 12;
         const AmOrPm = precessedRecived[0] >= 12 ? 'PM' : 'AM';
         const minute = precessedRecived[1];
-        const prefix = receivedDate.toTimeString().split(" ")[1];
-        console.log(precessedRecived, hour)
+        // const prefix = receivedDate.toTimeString().split(" ")[1];
+        // console.log(precessedRecived, hour)
         return hour + " : " + [minute, AmOrPm].join(" ");
     }
     /* Date and TIME */

@@ -152,7 +152,7 @@ function CuflIntl() {
                             imageDesc={data.cuflInternationalAbouts[0].aboutImageDesc}
                         />
                         <div className="container">
-                            <FixturesBox whose="Upcoming Fixtures" data={data.cuflInternationalFixtureses} />
+                        {data && data.cuflInternationalFixtureses >= 1 ? <FixturesBox whose="Upcoming Fixtures" data={data.cuflInternationalFixtureses} /> : null}
                         </div>
                         <Committee identifier="cufl" header="TEAM STAFF">
                             {

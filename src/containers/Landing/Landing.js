@@ -2,6 +2,7 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import { Helmet } from "react-helmet-async";
+import { Spring, config } from "react-spring/renderprops";
 
 
 import Masthead from "../../components/Ui/Masthead/Masthead";
@@ -62,12 +63,22 @@ function Landing() {
                 <div className="container2">
                         <div className="landing2-content">
                             <div className="landing2__banner">
-                                <h1 className="landing2__banner--heading">
+                                <Spring
+                                    config={config.slow}
+                                    from={{ opacity: 0, transform: "translateX(-8rem)"}}
+                                    to={{ opacity: 1, transform: "translateX(0)" }}>
+                                {props => <h1 style={props} className="landing2__banner--heading">
                                     Welcome to Third
-                                </h1>
-                                <p className="landing2__banner--paragraph">
+                                </h1>}
+                                </Spring>
+                                <Spring
+                                    config={config.slow}
+                                    from={{ opacity: 0, transform: "translateX(8rem)"}}
+                                    to={{ opacity: 1, transform: "translateX(0)" }}>
+                                {props => <p style={props} className="landing2__banner--paragraph">
                                     Level Football
-                                </p>
+                                </p>}
+                                </Spring>
                             </div> 
 
                             <div className="landing2-card">

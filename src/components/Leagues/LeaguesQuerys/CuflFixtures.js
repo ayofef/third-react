@@ -5,7 +5,7 @@ const getFixtures = {
 
     premierDivision : gql`
         query{
-            cuflNorthPremierDivisionFixtureses(orderBy : dateAndTime_DESC){
+            cuflNorthPremierDivisionFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
             id
             homeTeamName
             homeTeamLogo{
@@ -22,7 +22,7 @@ const getFixtures = {
             dateAndTime
             venue
             }
-            cuflSouthPremierDivisionFixtureses(orderBy : dateAndTime_DESC){
+            cuflSouthPremierDivisionFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -46,7 +46,7 @@ const getFixtures = {
 
     divisionOne : gql`
         query{
-            cuflDivisionOneGroupAFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionOneGroupAFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
             id
             homeTeamName
             homeTeamLogo{
@@ -63,7 +63,7 @@ const getFixtures = {
             dateAndTime
             venue
             }
-            cuflDivisionOneGroupBFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionOneGroupBFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -80,7 +80,7 @@ const getFixtures = {
                 dateAndTime
                 venue
             }
-            cuflDivisionOneGroupCFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionOneGroupCFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -97,7 +97,7 @@ const getFixtures = {
                 dateAndTime
                 venue
             }
-            cuflDivisionOneGroupDFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionOneGroupDFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -121,7 +121,7 @@ const getFixtures = {
 
     divisionTwo : gql`
         query{
-            cuflDivisionTwoGroupAFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionTwoGroupAFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
             id
             homeTeamName
             homeTeamLogo{
@@ -138,7 +138,7 @@ const getFixtures = {
             dateAndTime
             venue
             }
-            cuflDivisionTwoGroupBFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionTwoGroupBFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -155,7 +155,7 @@ const getFixtures = {
                 dateAndTime
                 venue
             }
-            cuflDivisionTwoGroupCFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionTwoGroupCFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -172,7 +172,7 @@ const getFixtures = {
                 dateAndTime
                 venue
             }
-            cuflDivisionTwoGroupDFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionTwoGroupDFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -196,7 +196,7 @@ const getFixtures = {
 
     divisionThree : gql`
         query{
-            cuflDivisionThreeGroupAFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionThreeGroupAFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
             id
             homeTeamName
             homeTeamLogo{
@@ -213,7 +213,7 @@ const getFixtures = {
             dateAndTime
             venue
             }
-            cuflDivisionThreeGroupBFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionThreeGroupBFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -230,7 +230,7 @@ const getFixtures = {
                 dateAndTime
                 venue
             }
-            cuflDivisionThreeGroupCFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionThreeGroupCFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -247,7 +247,7 @@ const getFixtures = {
                 dateAndTime
                 venue
             }
-            cuflDivisionThreeGroupDFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionThreeGroupDFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -270,7 +270,7 @@ const getFixtures = {
     `,
     divisionFour : gql`
         query{
-            cuflDivisionFourGroupAFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionFourGroupAFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
             id
             homeTeamName
             homeTeamLogo{
@@ -287,7 +287,7 @@ const getFixtures = {
             dateAndTime
             venue
             }
-            cuflDivisionFourGroupBFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionFourGroupBFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -304,7 +304,7 @@ const getFixtures = {
                 dateAndTime
                 venue
             }
-            cuflDivisionFourGroupCFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionFourGroupCFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{
@@ -321,7 +321,7 @@ const getFixtures = {
                 dateAndTime
                 venue
             }
-            cuflDivisionFourGroupDFixtureses(orderBy : dateAndTime_DESC){
+            cuflDivisionFourGroupDFixtureses(orderBy : dateAndTime_DESC, where: {status: PUBLISHED}){
                 id
                 homeTeamName
                 homeTeamLogo{

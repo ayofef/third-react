@@ -11,7 +11,7 @@ import sprite from "../../assets/images/sprite.svg";
 
 const getMoreData = gql`
     query{
-        blogs(first: 3, orderBy: createdAt_DESC) {
+        blogs(first: 3, orderBy: createdAt_DESC where: {status: PUBLISHED}) {
 
             id
             createdAt

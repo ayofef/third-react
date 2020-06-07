@@ -23,9 +23,18 @@ function League (props){
     const [nav, setNav] = useState(false);
     const [sort, setSort] = useState({value: slug , label: slug.split("-").join(" ").toUpperCase()});
 
-    // let { slug } = useParams();
 
-    console.log(sort)
+    const navItem = [
+        {path: "/cufl/leagues/premier-division", label: "Premier Division"},
+        {path: "/cufl/leagues/division-one", label: "Division 1"},
+        {path: "/cufl/leagues/division-two", label: "Division 2"},
+        {path: "/cufl/leagues/division-three", label: "Division 3"},
+        {path: "/cufl/leagues/division-four", label: "Division 4"},
+        
+    ]
+
+
+
     const handleChange = (selectedOption) => {
         setSort(selectedOption);
         history.push(`/cufl/leagues/${selectedOption.value}`);
@@ -47,24 +56,30 @@ function League (props){
     /* MAKING SURE SUBNAV IS SYNCING WITH SELECT VALUE */
     
 
-    let icon;
+    const icon = () => {
 
-    if(slug === "premier-division"){
-        icon = Svg.prem
-    }else if(slug === "division-one"){
-        icon = Svg.d1
-    }
-    else if(slug === "division-two"){
-        icon = Svg.d2
-    }else if(slug === "division-three"){
-        icon = Svg.d3
-    }else if(slug === "division-four"){
-        icon = Svg.d4
-    }
+        switch (slug) {
+            case "premier-division":
+                return Svg.prem;
+            case "division-one":
+                return Svg.d1;
+            case "division-two":
+                return Svg.d2;
+            case "division-three":
+                return Svg.d3;
+            case "division-four":
+                return Svg.d4;
+        
+            default:
+                return null;
+        }
+    };
+
+
 
     
     
-    console.log(props)
+    // console.log(props)
     return(
         <React.Fragment>
         <Masthead identifier={"cufl-nav"} default={nav} changed={() => setNav(!nav)}>
@@ -73,9 +88,9 @@ function League (props){
         <div className="container">
             <div className="league-main-content">
                 <div className="league-container">
-                    <Nav />
+                    <Nav navItem={navItem} />
                     <LatestImage>
-                        <div>{icon}
+                        <div>{icon()}
                         </div>
                     </LatestImage>
                     <div className="leagueSelect">
@@ -95,7 +110,7 @@ function League (props){
                         />
                         <SubNav slug={slug} />
                     </div>
-
+                    
                     <Switch>
                         <Route path="/cufl/leagues" exact component ={Fixtures} />
                         <Route path={`/cufl/leagues/${slug}`} exact component ={Fixtures} />

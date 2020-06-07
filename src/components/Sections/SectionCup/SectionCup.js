@@ -20,14 +20,14 @@ function SectionCup(props) {
                             key={index}
                             identifier={el.split(" ").join("-").toLowerCase()}
                             committe={props.identifier} 
-                            path={`/${props.identifier}/cup/${el.split(" ").join("-").toLowerCase()}`}
+                            path={`/${props.identifier}/cups/${el.split(" ").join("-").toLowerCase()}`}
                             whose={el}
                             />
                         ))
                     }
                 </div>
                 <div className="leagues__form u-center">
-                    <Link to={`/${props.identifier}/cup/perpetual-cup`} className="btn tocup__link">Cups
+                    <Link to={`/${props.identifier}/cups/${props.data[0].split(" ").join("-").toLowerCase()}`} className="btn tocup__link">Cups
                     <span><svg className="arrow-button-icon">
                                 <use xlinkHref={sprite + "#icon-chevron-right"}></use>
                             </svg>

@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { useLocation } from "react-router-dom";
 import Loader from "../../Ui/Loader/Loader";
 import ErrorMini from "../../Ui/Error/ErrorMini/ErrorMini";
 import EmptyData from "../../Ui/EmptyArray/EmptyArray";
@@ -23,8 +22,8 @@ function Standings () {
         transform: "translateX(-50%)"
     }
     
-    const location = useLocation();
-    let matched;
+    // const location = useLocation();
+    // let matched;
 
     // if( location.pathname === "/cufl/leagues/premier-division/standings"  ){
     //     matched = standingsQuery.premierDivision
@@ -61,8 +60,6 @@ function Standings () {
         ...data.cuflDivisionThreeGroupBTables,
         ...data.cuflDivisionThreeGroupCTables,
         ...data.cuflDivisionThreeGroupDTables,
-        ...data.cuflDivisionFourGroupATables,
-        ...data.cuflDivisionFourGroupBTables,
         ...data.cuflDivisionFourGroupCTables,
         ...data.cuflDivisionFourGroupDTables
 
@@ -72,7 +69,7 @@ function Standings () {
 
 
 
-    console.log(data, DataStandings, sortedDataStandings)
+    // console.log(data, DataStandings, sortedDataStandings)
 
     if( data && sortedDataStandings){
         return(

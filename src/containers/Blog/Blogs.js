@@ -15,8 +15,8 @@ import MatchFixturesAndResults from "../../components/Ui/Blog/BlogResults/BlogRe
 import Pagination from "../../components/Ui/Pagination/Pagination";
 
 const GET_BLOG_DATA = gql`
-    query($where: BlogWhereInput){
-        blogsConnection(orderBy: createdAt_DESC, where: $where){
+    query($where: String!){
+        blogsConnection(orderBy: createdAt_DESC, where: {AND: [{postCategory_contains: $where}, {status: PUBLISHED}] } ){
         edges{
             node{
             id
@@ -67,7 +67,7 @@ function Blogs(props) {
         {value: "wscai" , label: "WSCAI"}
     ];
     
-    const { loading, error, data} = useQuery(GET_BLOG_DATA , {variables: {"where": { "postCategory_contains": whose === "all" ? "" : whose}}});
+    const { loading, error, data} = useQuery(GET_BLOG_DATA , {variables: {"where": whose === "all" ? "" : whose}});
 
     useEffect(() => {
         window.scrollTo(0, 0);

@@ -198,34 +198,6 @@ const getStandings =
                     url
                 }
             }
-            cuflDivisionFourGroupATables(orderBy: points_DESC){
-                id 
-                teamName 
-                played 
-                wins 
-                draws 
-                losses 
-                goalDifference 
-                points 
-                teamLogo{
-                    id 
-                    url
-                }
-            } 
-            cuflDivisionFourGroupBTables(orderBy: points_DESC){
-                id 
-                teamName 
-                played 
-                wins 
-                draws 
-                losses 
-                goalDifference 
-                points 
-                teamLogo{
-                    id 
-                    url
-                }
-            } 
             cuflDivisionFourGroupCTables(orderBy: points_DESC){
                 id 
                 teamName 

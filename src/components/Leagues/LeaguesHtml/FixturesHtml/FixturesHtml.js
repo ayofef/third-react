@@ -11,7 +11,7 @@ function FixturesHtml (props) {
 
     const [fixturesData, setFixturesData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const fixturesPerPage = 3;
+    const fixturesPerPage = props.perPage;
     
 
     /* Logic for displaying current todos */
@@ -47,6 +47,7 @@ function FixturesHtml (props) {
             <section className="fixtures">
                 <div className="fixtures__division">
                     <h1 className="fixtures__header">{props.whose}</h1>
+                    <div className="fixtures__content">
                     {
                     
                         fixturesData.length < 1 ? <EmptyData /> : currentFixtures.map((el) => (
@@ -68,6 +69,7 @@ function FixturesHtml (props) {
                         ))
                     
                     }
+                    </div>
                     {
                         fixturesData.length > fixturesPerPage ? <Pagination prev={() => prevPage(totalPages)} next={() => nextPage(totalPages)} currentPage={currentPage} totalPages={totalPages} /> : null
                     }

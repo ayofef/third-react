@@ -163,7 +163,7 @@ function Cufl(props) {
     });
     /* LIGHT BOX */
 
-    console.log(data)
+    // console.log(data)
     return(
         <React.Fragment>
             <Masthead identifier={"cufl-nav"} default={nav} changed={() => setNav(!nav)}>
