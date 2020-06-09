@@ -113,10 +113,18 @@ function Cups (props){
 
         switch (slug) {
             case "perpetual-cup":
-                return Querys.perpetualCup
+                return Querys.perpetualCup;
+            case "challenge-cup":
+                return Querys.challengeCup;
+            case "eustace-cup":
+                return Querys.eustaceCup;
+            case "eustace-shield":
+                return Querys.eustaceShield;
+            case "plate":
+                return Querys.plate;
         
             default:
-                return null
+                return null;
         }
     }
 
@@ -128,6 +136,34 @@ function Cups (props){
                     semiFinal: data.cfaiPerpetualCupSemiFinalFixtureses,
                     quaterFinal: data.cfaiPerpetualCupQuarterFinalFixtureses,
                     final: data.cfaiPerpetualCupFinalFixtureses
+                }
+            case "challenge-cup":
+                return {
+                    allFixtures: data.cfaiChallengeCupFixtureses,
+                    semiFinal: data.cfaiChallengeCupSemiFinalFixtureses,
+                    quaterFinal: data.cfaiChallengeCupQuarterFinalFixtureses,
+                    final: data.cfaiChallengeCupFinalFixtureses
+                }
+            case "eustace-cup":
+                return {
+                    allFixtures: data.cfaiEustaceCupFixtureses,
+                    semiFinal: data.cfaiEustaceCupSemiFinalFixtureses,
+                    quaterFinal: data.cfaiEustaceCupQuarterFinalFixtureses,
+                    final: data.cfaiEustaceCupFinalFixtureses
+                }
+            case "eustace-shield":
+                return {
+                    allFixtures: data.cfaiEustaceShieldFixtureses,
+                    semiFinal: data.cfaiEustaceShieldSemiFinalFixtureses,
+                    quaterFinal: data.cfaiEustaceShieldQuarterFinalFixtureses,
+                    final: data.cfaiEustaceShieldFinalFixtureses
+                }
+            case "plate":
+                return {
+                    allFixtures: data.cfaiPlateCupFixtureses,
+                    semiFinal: data.cfaiPlateCupSemiFinalFixtureses,
+                    quaterFinal: data.cfaiPlateCupQuarterFinalFixtureses,
+                    final: data.cfaiPlateCupFinalFixtureses
                 }
         
             default:
@@ -141,7 +177,7 @@ function Cups (props){
     if (loading) return <Loader /> ;
     if (error) return <Error />;
     
-    console.log(props,data, matchData().allFixtures)
+    console.log(props, data, matchData().allFixtures)
 
     const gotData = matchData();
 
@@ -178,10 +214,10 @@ function Cups (props){
                         gotData.final && gotData.final.length >= 1 ? <FixturesBox whose="Final" perPage={2} data={gotData.final} /> : null
                     }
                     {
-                        gotData.quaterFinal && gotData.quaterFinal.length >= 1 ? <FixturesBox whose="Quarter-Final" perPage={2} data={gotData.quaterFinal} /> : null
+                        gotData.semiFinal && gotData.semiFinal.length >= 1 ? <FixturesBox whose="Semi-Final" perPage={2} data={gotData.semiFinal} /> : null
                     }
                     {
-                        gotData.semiFinal && gotData.semiFinal.length >= 1 ? <FixturesBox whose="Semi-Final" perPage={2} data={gotData.semiFinal} /> : null
+                        gotData.quaterFinal && gotData.quaterFinal.length >= 1 ? <FixturesBox whose="Quarter-Final" perPage={2} data={gotData.quaterFinal} /> : null
                     }
                     {
                         gotData && (gotData.final.length < 1 || 
