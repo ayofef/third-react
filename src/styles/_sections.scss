@@ -18,7 +18,17 @@
     backface-visibility: hidden;
     opacity: 1;
     transform: scale(1.05);
-    transform-origin: center right; }
+    transform-origin: center right; 
+    
+    &--filter{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      // background-color: rgba(255, 255, 255, 0.6);
+      top: 0;
+      left: 0;
+    }
+  }
   .banner__scroll-cue--icon {
     position: absolute;
     bottom: 5%;
@@ -36,10 +46,10 @@
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-  top: 50%;
+  top: 40%;
   left: 50%;
   position: absolute;
-  transform: translate(-50%, 10%); 
+  transform: translate(-50%, 0%); 
   text-align: center;
 }
   .emblem__text {

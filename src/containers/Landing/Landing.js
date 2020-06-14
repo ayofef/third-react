@@ -68,7 +68,7 @@ function Landing() {
                                     from={{ opacity: 0, transform: "translateX(-8rem)"}}
                                     to={{ opacity: 1, transform: "translateX(0)" }}>
                                 {props => <h1 style={props} className="landing2__banner--heading">
-                                    Welcome to Third
+                                    Welcome to
                                 </h1>}
                                 </Spring>
                                 <Spring
@@ -76,7 +76,7 @@ function Landing() {
                                     from={{ opacity: 0, transform: "translateX(8rem)"}}
                                     to={{ opacity: 1, transform: "translateX(0)" }}>
                                 {props => <p style={props} className="landing2__banner--paragraph">
-                                    Level Football
+                                    Third Level Football
                                 </p>}
                                 </Spring>
                             </div> 

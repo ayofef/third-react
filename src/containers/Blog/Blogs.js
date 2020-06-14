@@ -125,7 +125,7 @@ function Blogs(props) {
                         <h1 className="u-heading blog-posts__whose-heading">{headerText} <span> Latest News</span></h1>
                         <div className="latest-news__sort-search">
                             <div className="latest-news__search">
-                                <input className="latest-news__search--input" list="sugesst" name="search" type="text" value={searched} onChange={(event) => setSearched(event.target.value)} onKeyPress={(event) => (event.key === "Enter" && searched.length > 1) ? history.push(`/latest-news/${whose}/search?query=${searched}`) : null}/>
+                                <input className="latest-news__search--input" placeholder="Search.." list="sugesst" name="search" type="text" value={searched} onChange={(event) => setSearched(event.target.value)} onKeyPress={(event) => (event.key === "Enter" && searched.length > 1) ? history.push(`/latest-news/${whose}/search?query=${searched}`) : null}/>
                                 <datalist id="sugesst">
                                     <option value="CUFL" />
                                     <option value="CFAI" />

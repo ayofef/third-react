@@ -20,6 +20,7 @@ function SectionEmblem(props) {
         <div className="banner">
             <div className="banner__image-container">
                 <div className={["banner__img", `${"banner__" + props.identifier}`].join(" ")} style={styles.container(isSmall)}></div>
+                <div className="banner__img--filter"></div>
             </div>
             <section className="emblem">
                 <div className="container">

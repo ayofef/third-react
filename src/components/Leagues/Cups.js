@@ -3,9 +3,9 @@ import {useParams, useHistory }from "react-router-dom";
 import Select from 'react-select';
 import { useQuery } from "@apollo/react-hooks";
 
-
-
-import CuflNav from "../Ui/PageMasthead/CuflNavs/CuflNavs";
+import WscaiNav from "../Ui/PageMasthead/WscaiNavs/WscaiNavs";
+import IufuNav from "../Ui/PageMasthead/IufuNavs/IufuNavs"
+import CfaiNav from "../Ui/PageMasthead/CfaiNavs/CfaiNavs";
 import Masthead from "../Ui/PageMasthead/PageMasthead";
 import Footer from "../Ui/Footer/Footer"; 
 import FixturesBox from "./LeaguesHtml/FixturesHtml/FixturesHtml";
@@ -23,6 +23,23 @@ function Cups (props){
 
     const [nav, setNav] = useState(false);
     const [sort, setSort] = useState({value: slug , label: slug.split("-").join(" ").toUpperCase()});
+
+    const mastheadNav = (url) => {
+
+        const location = url.location.pathname;
+        const processedLocation = location.split("/")[1];
+
+        switch (processedLocation) {
+            case "cfai":
+                return <CfaiNav clicked={() => setNav(!nav)}/> ;
+            case "iufu":
+                return <IufuNav clicked={() => setNav(!nav)}/> ;
+            case "wscai":
+                return <WscaiNav clicked={() => setNav(!nav)}/> ;
+            default:
+                return null;
+        }
+    }
 
     const navItem = (url) => {
 
@@ -184,8 +201,8 @@ function Cups (props){
     return(
         <React.Fragment>
         <Masthead identifier={"cufl-nav"} default={nav} changed={() => setNav(!nav)}>
-                <CuflNav clicked={() => setNav(!nav)}/>
-            </Masthead>
+            {mastheadNav(history)}
+        </Masthead>
         <div className="container">
             <div className="league-main-content">
                 <div className="league-container">
