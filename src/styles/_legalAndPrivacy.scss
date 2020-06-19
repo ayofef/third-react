@@ -1,65 +1,61 @@
+.data-pdf {
+  padding: 1.5rem 0 3rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+}
+.data__link {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  color: #333;
+}
 
-.data-pdf{
-    padding: 1.5rem 0 3rem 0;
-    border-bottom: 1px solid rgba(0,0,0, .2);
+.data-pdf__img {
+  height: 4rem;
+  display: inline-block;
+  margin-right: 2rem;
+  transform: translateY(1.2rem);
+}
+
+.data-pdf__text {
+  font-weight: 600;
+  flex: 1;
+  display: inline-block;
+  font-size: 2rem;
+  padding-top: 1rem;
+  color: #162a4e;
+  transition: color 0.3s ease-out;
+}
+.data-pdf__text:hover,
+.data-pdf__text:active {
+  color: #777;
+}
+.data-pdf__text-span {
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 31.25em) {
+  .data-pdf__img {
+    height: 2rem;
+    transform: translateY(0.2rem);
+  }
+  .data-pdf__text {
+    font-size: 1.5rem;
+  }
+  .data-pdf {
     display: block;
   }
-  .data__link{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-    color: #333;
+}
+@media screen and (max-width: 21.87em) {
+  .data-pdf__img {
+    height: 2rem;
+    transform: translateY(0.2rem);
   }
-  
-  
-    
-  .data-pdf__img{
-    height: 4rem;
-    display: inline-block;
-    margin-right: 2rem;
-    transform: translateY(1.2rem);
+  .data-pdf__text {
+    font-size: 1.3rem;
   }
-  
-  .data-pdf__text{
-    font-weight: 600;
-    flex: 1;
-    display: inline-block;
-    font-size: 2rem;
-    padding-top: 1rem;
-    color: #162a4e;
-    transition: color .3s ease-out;
+  .data-pdf {
+    display: block;
   }
-  .data-pdf__text:hover,
-  .data-pdf__text:active{
-    color: #777;
-  }
-  .data-pdf__text-span{
-    margin-left: 2rem;
-  }
-  
-  @media screen and (max-width: 31.25em) {
-    .data-pdf__img{
-      height: 2rem;
-      transform: translateY(.2rem);
-    }
-    .data-pdf__text{
-      font-size: 1.5rem;
-    }
-    .data-pdf{
-      display: block;
-    }
-  }
-  @media screen and (max-width: 21.87em) {
-    .data-pdf__img{
-      height: 2rem;
-      transform: translateY(.2rem);
-    }
-    .data-pdf__text{
-      font-size: 1.3rem;
-    }
-    .data-pdf{
-      display: block;
-    }
-  }
-  
+}
